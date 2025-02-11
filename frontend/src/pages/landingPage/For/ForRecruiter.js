@@ -22,7 +22,7 @@ export default function ForRecruiter() {
           <h1 className="mx-auto md:text-7xl text-5xl font-bold text-gray-900">
             Forget expensive headhunters
           </h1>
-          <p className="text-xl mx-auto md:w-8/12 w-12/12 pt-4 mb-12">
+          {/* <p className="text-xl mx-auto md:w-8/12 w-12/12 pt-4 mb-12">
             Post jobs for free and only pay when you interview or hire someone.
             Make your recruitment process crowdsourced and remove expensive
             headhunters from the equation.
@@ -41,10 +41,10 @@ export default function ForRecruiter() {
             alt="pricing example chart"
             className="mt-20 w-11/12 mx-auto bg-light"
             src={companies}
-          />
+          /> */}
         </div>
       </div>
-      <div className="pt-28">
+      {/* <div className="pt-28">
         <h1 className="max-w-2xl mx-auto text-center md:text-6xl text-4xl font-bold text-gray-900">
           How it works
         </h1>
@@ -118,7 +118,7 @@ export default function ForRecruiter() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="bg-white md:pt-0 mt-32 mb-20 md:w-10/12 w-11/12 mx-auto">
         <div className="grid lg:grid-cols-5 md:gap-6 gap-24 grid-cols-1 md:mt-20 mt-0 mx-auto">
@@ -148,7 +148,7 @@ export default function ForRecruiter() {
         </div>
       </div> */}
 
-      <FAQ
+      {/* <FAQ
         questionOne="What is the hiring reward, interview reward and Greet Fee?"
         answerOne="The hiring reward is what the Greeters will see on the job board and get paid if their referral results in a hiring. The interview reward is what is paid if a referral ends up with an interview. You decide what the hiring- and interview reward should be. The Greet Fee is equal to 20% of your hiring reward."
         questionTwo="When and how much do I pay?"
@@ -162,7 +162,7 @@ export default function ForRecruiter() {
           button="Post a job"
           link="new-recruiter"
         />
-      ) : null}
+      ) : null} */}
     </>
   );
 }

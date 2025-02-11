@@ -18,7 +18,7 @@ export default function ForApplicant() {
         <h1 className="max-w-2xl mx-auto text-center md:text-6xl text-4xl font-bold text-gray-900">
           Greet for Applicant
         </h1>
-        <div
+        {/* <div
           className="grid lg:grid-cols-3 grid-cols-1 gap-14 md:py-32 py-12
           md:text-left text-center md:w-10/12 w-11/12 mx-auto "
         >
@@ -67,10 +67,10 @@ export default function ForApplicant() {
               Waiting for your job application to be approved by the employer.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <div className="bg-white md:pt-0 mt-20 mb-20 md:w-10/12 w-11/12 mx-auto">
+      {/* <div className="bg-white md:pt-0 mt-20 mb-20 md:w-10/12 w-11/12 mx-auto">
         <div className="grid lg:grid-cols-12 md:gap-6 gap-24 grid-cols-1 md:mt-20 mt-0 mx-auto">
           <div className="md:col-span-6 col-span-1 mt-0 md:text-left text-center">
             <h1 className="mx-auto md:text-left text-center md:text-6xl text-4xl font-bold text-gray-900">
@@ -111,7 +111,7 @@ export default function ForApplicant() {
         title="Ready to refer someone?"
         button="See available jobs"
         link="/jobs"
-      />
+      /> */}
     </>
   );
 }

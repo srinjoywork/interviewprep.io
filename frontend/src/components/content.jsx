@@ -30,7 +30,7 @@ export default function Jumbotron() {
 
   return (
     <>
-      {type === "recruiter" ? (
+      {/* {type === "recruiter" ? (
         <main className="bg-[#f8e5d4] ">
           <div className="w-11/12 flex flex-wrap mx-auto">
             <div className="lg:text-left text-center lg:w-7/12 w-12/12 lg:pt-24 pt-12 lg:pb-40 pb-16 mx-auto">
@@ -347,7 +347,7 @@ export default function Jumbotron() {
             </div>
           </Dialog>
         </Transition>
-      )}
+      )} */}
     </>
   );
 }

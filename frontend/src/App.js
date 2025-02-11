@@ -13,7 +13,7 @@ import SignUp from "pages/landingPage/SignUp/SignUp";
 import Jobs from "pages/landingPage/Jobs";
 import ForRecruiter from "pages/landingPage/For/ForRecruiter";
 import ForApplicant from "pages/landingPage/For/ForApplicant";
-import Leaderboard from "pages/home/Leaderboard";
+
 import ResetPassword from "pages/landingPage/SignIn/ResetPassword";
 import { userType } from "libs/isAuth";
 import Referrals from "pages/home/Referrals";
@@ -33,8 +33,8 @@ import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import InfoRecruiter from "pages/landingPage/InfoRecruiter";
 import { Dashboard } from "pages/Admin1/Dashboard";
-import BlogHome from "components/blog/home-blog";
-import DetailNews from "components/blog/body-news/DetailNews";
+
+
 
 export const SetPopupContext = createContext();
 
@@ -92,7 +92,7 @@ export default function App() {
           <Route exact path="/jobs" element={<Jobs />} />
           <Route exact path="/for-recruiter" element={<ForRecruiter />} />
           <Route exact path="/for-applicant" element={<ForApplicant />} />
-          <Route exact path="/leaderboard" element={<Leaderboard />} />
+          
           <Route exact path="/jobs/:id" element={<Job />} />
           <Route exact path="/jobs/:id/refer" element={<Refer />} />
           <Route
@@ -135,10 +135,7 @@ export default function App() {
           <Route exact path="/admin/settings" element={<AdminSettings />} />
           <Route exact path="/logout" element={<Logout />} />
 
-          <Route exact path="/blog/*" element={<BlogHome />} />
-          <Route exact path="/blog/news" />
-          <Route exact path="/blog/news/:id" element={<DetailNews />} />
-          <Route exact path="/blog/programming-language" />
+          
         </Routes>
         <Footer />
       </Router>
