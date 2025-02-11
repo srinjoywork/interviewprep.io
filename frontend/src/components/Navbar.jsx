@@ -98,22 +98,29 @@ export default function Navbar() {
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/jobs"
                 >
-                  Jobs
+                  Interview AI
                 </Link>
 
                 <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/companies"
                 >
-                  Companies
+                  Code Collab
                 </Link>
 
                 <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/leaderboard"
                 >
-                  Leaderboard
+                  Plag Checker
                 </Link>
+                <Link
+                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
+                  to="/leaderboard"
+                >
+                  AI Voice Agent
+                </Link>
+                
                 <Blog />
               </div>
             </div>

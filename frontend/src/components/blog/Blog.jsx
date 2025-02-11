@@ -20,8 +20,8 @@ export default function Blog() {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            <Link to="/blog">
-              <span>Blog</span>
+            <Link to="/">
+              <span>Interview Prep Tools</span>
             </Link>
             <FontAwesomeIcon
               className={`${isOpen ? "transform rotate-180" : ""} ml-2`}
@@ -46,7 +46,7 @@ export default function Blog() {
               <div className="lg:block hidden overflow-hidden rounded-lg shadow-lg">
                 <div className="relative bg-white p-3">
                   <Link
-                    to="/blog/news"
+                    to="/"
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -54,12 +54,12 @@ export default function Blog() {
                     </div>
                     <div className="ml-4">
                       <p className="text-md font-semibold text-gray-900">
-                        News
+                        Code Review
                       </p>
                     </div>
                   </Link>
                   <Link
-                    to="/blog/programming-language"
+                    to="/"
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -67,7 +67,33 @@ export default function Blog() {
                     </div>
                     <div className="ml-4">
                       <p className="text-md font-semibold text-gray-900">
-                        Programming Language
+                        Code Optimizer
+                      </p>
+                    </div>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                  >
+                    <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
+                      <FontAwesomeIcon icon={faCode} />
+                    </div>
+                    <div className="ml-4">
+                      <p className="text-md font-semibold text-gray-900">
+                        Code IDE
+                      </p>
+                    </div>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                  >
+                    <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
+                      <FontAwesomeIcon icon={faCode} />
+                    </div>
+                    <div className="ml-4">
+                      <p className="text-md font-semibold text-gray-900">
+                      NoteDigitizer
                       </p>
                     </div>
                   </Link>
