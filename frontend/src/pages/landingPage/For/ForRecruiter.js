@@ -3,6 +3,8 @@ import Banner from "components/Banner";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import companies from "assets/images/companies1.png";
+import virtual_interview from "../../../assets/virtual_interview.png"
+import Resume_Summarizer from "../../../assets/Resume_Summarizer.png"
 
 import {
   faCopy,
@@ -14,15 +16,19 @@ import { userType } from "libs/isAuth";
 
 export default function ForRecruiter() {
   const type = userType();
-
+  const containerStyle = {
+    width: "100%",
+    height: "100%",
+    backgroundImage: "repeating-radial-gradient(#ffa35b 87%, #ffe08c 90%)",
+    backgroundSize: "50px 50px",};
   return (
     <>
-      <div className="bg-light pt-40 pb-8">
+      <div className="pt-40 pb-8" style={containerStyle}>
         <div className="md:pt-0 mb-20 md:w-10/12 w-11/12 mx-auto text-center">
-          <h1 className="mx-auto md:text-7xl text-5xl font-bold text-gray-900">
-            Forget expensive headhunters
-          </h1>
-          {/* <p className="text-xl mx-auto md:w-8/12 w-12/12 pt-4 mb-12">
+          <h2 className="mx-auto md:text-7xl text-5xl font-bold text-gray-900">
+          Hello, Interviewers! Help Us to Build the Leaders of Tomorrow
+          </h2>
+          <p className="text-xl mx-auto md:w-8/12 w-12/12 pt-4 mb-12">
             Post jobs for free and only pay when you interview or hire someone.
             Make your recruitment process crowdsourced and remove expensive
             headhunters from the equation.
@@ -41,26 +47,27 @@ export default function ForRecruiter() {
             alt="pricing example chart"
             className="mt-20 w-11/12 mx-auto bg-light"
             src={companies}
-          /> */}
+          />
         </div>
       </div>
-      {/* <div className="pt-28">
+      <div className="pt-28">
         <h1 className="max-w-2xl mx-auto text-center md:text-6xl text-4xl font-bold text-gray-900">
           How it works
         </h1>
 
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-14 md:py-40 md:pb-12 py-12   md:text-left text-center md:w-10/12 w-11/12  mx-auto ">
           <div>
-            <FontAwesomeIcon
+          <img width="100" height="100" src={virtual_interview} alt="video-conference"/>
+            {/* <FontAwesomeIcon
               className="text-5xl mb-6  text-green-500"
               icon={faCopy}
             />
 
             <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
               Step 1:
-            </div>
+            </div> */}
             <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
-              Create a profile
+              Virtual Interview
             </h1>
             <p className="text-xl font-light">
               Promote your company to our community of tech people.
@@ -68,16 +75,17 @@ export default function ForRecruiter() {
           </div>
 
           <div>
-            <FontAwesomeIcon
+            <img width="100" height="100" src={Resume_Summarizer} alt="video-conference"/>
+            {/* <FontAwesomeIcon
               className="text-5xl mb-6 text-indigo-500 "
               icon={faIdCard}
             />
 
             <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
               Step 2:
-            </div>
+            </div> */}
             <h1 className="text-3xl text-gray-900 pb-3  font-semibold">
-              Post a job
+              Resume Summarizer
             </h1>
             <p className="text-xl font-light">
               Write a job description, set a hiring reward and interview reward.
@@ -85,13 +93,14 @@ export default function ForRecruiter() {
           </div>
 
           <div>
-            <FontAwesomeIcon
+          <img width="100" height="100" src={virtual_interview} alt="video-conference"/>
+            {/* <FontAwesomeIcon
               className="text-5xl mb-6  text-primary"
               icon={faEnvelopeOpenText}
             />
             <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
               Step 3:
-            </div>
+            </div> */}
             <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
               Applicant apply
             </h1>
@@ -102,13 +111,14 @@ export default function ForRecruiter() {
           </div>
 
           <div>
-            <FontAwesomeIcon
+            <img width="100" height="100" src={virtual_interview} alt="video-conference"/>
+            {/* <FontAwesomeIcon
               className="text-5xl mb-6  text-yellow-400"
               icon={faHandsHelping}
             />
             <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
               Step 4:
-            </div>
+            </div> */}
             <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
               Interview and hire
             </h1>
@@ -118,7 +128,7 @@ export default function ForRecruiter() {
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* <div className="bg-white md:pt-0 mt-32 mb-20 md:w-10/12 w-11/12 mx-auto">
         <div className="grid lg:grid-cols-5 md:gap-6 gap-24 grid-cols-1 md:mt-20 mt-0 mx-auto">
@@ -143,12 +153,12 @@ export default function ForRecruiter() {
           <img
             alt="pricing example chart"
             className="md:col-span-2 col-span-1"
-            src={chart}
+            // src={chart}
           />
         </div>
       </div> */}
 
-      {/* <FAQ
+      <FAQ
         questionOne="What is the hiring reward, interview reward and Greet Fee?"
         answerOne="The hiring reward is what the Greeters will see on the job board and get paid if their referral results in a hiring. The interview reward is what is paid if a referral ends up with an interview. You decide what the hiring- and interview reward should be. The Greet Fee is equal to 20% of your hiring reward."
         questionTwo="When and how much do I pay?"
@@ -162,7 +172,7 @@ export default function ForRecruiter() {
           button="Post a job"
           link="new-recruiter"
         />
-      ) : null} */}
+      ) : null}
     </>
   );
 }
