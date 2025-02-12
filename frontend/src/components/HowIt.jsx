@@ -50,7 +50,7 @@ export default function HowIt() {
                       </div>
                       <div className="ml-4">
                         <p className="text-md font-semibold text-gray-900">
-                          For Applicant
+                          For Student
                         </p>
                       </div>
                     </Link>

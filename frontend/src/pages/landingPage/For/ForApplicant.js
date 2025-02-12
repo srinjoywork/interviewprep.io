@@ -3,7 +3,8 @@ import Banner from "components/Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import icon from "assets/images/help.jpg";
-
+import Cards from "../../../components/Cards/Cards";
+import project_img1 from "../../../assets/CardImages/project_img1.jpeg"
 import {
   faHandPeace,
   faSearch,
@@ -14,15 +15,25 @@ import { userType } from "libs/isAuth";
 export default function ForApplicant() {
   return (
     <>
-      <div className="bg-white md:pt-32 pt-16">
+      <div
+  className="md:pt-32 pt-16"
+  style={{
+    backgroundColor: "transparent",
+    backgroundImage: "radial-gradient(#000000 1px, #e5e5f7 1px)",
+    backgroundSize: "30px 30px",
+    width: "100%",
+    height: "100%",
+  }}
+>
+      {/* <div className="container md:pt-32 pt-16"> */}
         <h1 className="max-w-2xl mx-auto text-center md:text-6xl text-4xl font-bold text-gray-900">
-          Greet for Applicant
+        Welcome, Future Talents—Your Journey Starts Here
         </h1>
-        {/* <div
-          className="grid lg:grid-cols-3 grid-cols-1 gap-14 md:py-32 py-12
+        <div
+          className="grid lg:grid-cols-4 grid-cols-1 gap-14 md:py-32 py-12
           md:text-left text-center md:w-10/12 w-11/12 mx-auto "
         >
-          <div>
+          {/* <div>
             <FontAwesomeIcon
               className="text-5xl mb-6 text-indigo-500"
               icon={faSearch}
@@ -37,8 +48,14 @@ export default function ForApplicant() {
             <p className="text-xl font-light">
               Head over to the job board to find exciting tech jobs.
             </p>
-          </div>
-          <div>
+          </div> */}
+          <Cards github={"https://github.com/Sayanmaity2003"} link={"https://github.com/Sayanmaity2003"} img={`${project_img1}`} title={"Project 1"} desc={"Add a description here"}/>
+          <Cards />
+          <Cards/>
+          <Cards/>
+          <Cards/>
+          <Cards/>
+          {/* <div>
             <FontAwesomeIcon
               className="text-5xl mb-6 text-yellow-400"
               icon={faHandPeace}
@@ -50,8 +67,8 @@ export default function ForApplicant() {
               Apply for job
             </h1>
             <p className="text-xl font-light">Apply for a job you love.</p>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <FontAwesomeIcon
               className="text-5xl mb-6 text-green-500"
               icon={faMoneyBillWave}
@@ -66,8 +83,8 @@ export default function ForApplicant() {
             <p className="text-xl font-light">
               Waiting for your job application to be approved by the employer.
             </p>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
 
       {/* <div className="bg-white md:pt-0 mt-20 mb-20 md:w-10/12 w-11/12 mx-auto">
@@ -97,7 +114,7 @@ export default function ForApplicant() {
             src={icon}
           />
         </div>
-      </div>
+      </div> */}
       <FAQ
         questionOne="Do I have a limitation on the number of job applications?"
         answerOne="You can submit as many applications as you like, but when one is accepted, the others will be canceled."
@@ -111,7 +128,7 @@ export default function ForApplicant() {
         title="Ready to refer someone?"
         button="See available jobs"
         link="/jobs"
-      /> */}
+      />
     </>
   );
 }

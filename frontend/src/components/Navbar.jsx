@@ -108,12 +108,12 @@ export default function Navbar() {
                   Code Collab
                 </Link>
 
-                <Link
+                {/* <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/leaderboard"
                 >
                   Plag Checker
-                </Link>
+                </Link> */}
                 <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/leaderboard"
