@@ -8,11 +8,11 @@ export function Emilian(props) {
   const { actions, mixer } = useAnimations(animations, group);
   console.log("ANIMATIONS", animations);
 
-  useEffect(() => {
-    mixer
-      .clipAction(animations.find((a) => a.name === "IdleV4.2(maya_head)"))
-      .play();
-  }, [mixer, animations]);
+  // useEffect(() => {
+  //   mixer
+  //     .clipAction(animations.find((a) => a.name === "IdleV4.2(maya_head)"))
+  //     .play();
+  // }, [mixer, animations]);
 
   return (
     <group ref={group} {...props} dispose={null}>

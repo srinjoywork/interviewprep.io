@@ -33,7 +33,8 @@ import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import InfoRecruiter from "pages/landingPage/InfoRecruiter";
 import { Dashboard } from "pages/Admin1/Dashboard";
-
+import InterviewHomepage from "pages/interviewmain/InterviewHome";
+import MainPage from "pages/interviewmain/MainPage";
 
 
 export const SetPopupContext = createContext();
@@ -95,6 +96,8 @@ export default function App() {
             element={<VoiceAi/>}
             type={type === "applicant"}
           />
+          <Route exact path="/interview-home" element={<InterviewHomepage />} />
+          <Route exact path="/interviewroom" element={<MainPage/>} />
           <Route exact path="/jobs" element={<Jobs />} />
           <Route exact path="/for-recruiter" element={<ForRecruiter />} />
           <Route exact path="/for-applicant" element={<ForApplicant />} />
