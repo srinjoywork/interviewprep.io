@@ -35,6 +35,7 @@ import InfoRecruiter from "pages/landingPage/InfoRecruiter";
 import { Dashboard } from "pages/Admin1/Dashboard";
 import InterviewHomepage from "pages/interviewmain/InterviewHome";
 import MainPage from "pages/interviewmain/MainPage";
+import RecruiterTools from "pages/RecruiterTools";
 
 
 export const SetPopupContext = createContext();
@@ -103,6 +104,7 @@ export default function App() {
           <Route exact path="/for-applicant" element={<ForApplicant />} />
           
           <Route exact path="/jobs/:id" element={<Job />} />
+          <Route exact path="/recruiter-tools" element={<RecruiterTools />} />
           <Route exact path="/jobs/:id/refer" element={<Refer />} />
           <Route
             exact
