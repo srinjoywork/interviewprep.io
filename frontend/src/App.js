@@ -35,6 +35,7 @@ import InfoRecruiter from "pages/landingPage/InfoRecruiter";
 import { Dashboard } from "pages/Admin1/Dashboard";
 
 import RecruiterTools from "pages/RecruiterTools";
+import ResumeBuilder from "pages/ResumeBuilder";
 
 
 export const SetPopupContext = createContext();
@@ -96,6 +97,7 @@ export default function App() {
             element={<VoiceAi/>}
             type={type === "applicant"}
           />
+          <Route exact path="/buildresume" element={<ResumeBuilder/>} />
           {/* <Route exact path="/interview-home" element={<InterviewHomepage />} />
           <Route exact path="/interviewroom" element={<MainPage/>} /> */}
           <Route exact path="/jobs" element={<Jobs />} />
