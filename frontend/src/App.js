@@ -48,8 +48,12 @@ import { GlobalStyle } from "./style/global";
 import ModalProvider from "./context/ModalContext";
 import PlaygroundProvider from "./context/PlaygroundContext";
 import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
+import InterviewHomepage from "./pages/interviewmain/InterviewHome";
+import MainPage from "./pages/interviewmain/MainPage";
 
 export const SetPopupContext = createContext();
+
+
 
 function AppContent() {
   const location = useLocation();
@@ -128,6 +132,9 @@ function AppContent() {
             <Route path="/code-ide" element={<CodeIdeHome />} />
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
             <Route path="*" element={<ErrorPage />} />
+
+            <Route exact path="/interview-home" element={<InterviewHomepage />} />
+          <Route exact path="/room" element={<MainPage/>} />
           </Routes>
           {shouldShowLayout && <Footer />}
           <ToastContainer limit={2} autoClose={2000} />
