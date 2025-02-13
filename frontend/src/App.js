@@ -121,6 +121,7 @@ function AppContent() {
             <Route exact path="/admin/settings" element={<AdminSettings />} />
             <Route exact path="/logout" element={<Logout />} />
             <Route exact path="/codecollab" element={<CodeCollabHome />} />
+            <Route exact path="/build-resume" element={<ResumeBuilder />} />
             <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
             
             {/* New Routes */}
