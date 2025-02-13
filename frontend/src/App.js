@@ -17,7 +17,6 @@ import SignUp from "pages/landingPage/SignUp/SignUp";
 import Jobs from "pages/landingPage/Jobs";
 import ForRecruiter from "pages/landingPage/For/ForRecruiter";
 import ForApplicant from "pages/landingPage/For/ForApplicant";
-
 import ResetPassword from "pages/landingPage/SignIn/ResetPassword";
 import { userType } from "libs/isAuth";
 import Referrals from "pages/home/Referrals";
@@ -41,6 +40,14 @@ import ResumeBuilder from "pages/ResumeBuilder";
 // CodeCollab Pages
 import CodeCollabHome from "pages/CollabHome/CodeCollabHome";
 import CollabEditorPage from "pages/CollabHome/CollabEditorPage";
+
+// Additional Imports
+import Playground from "pages/Playground";
+import ErrorPage from "./pages/Error404/ErrorPage";
+import { GlobalStyle } from "./style/global";
+import ModalProvider from "./context/ModalContext";
+import PlaygroundProvider from "./context/PlaygroundContext";
+import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
 
 export const SetPopupContext = createContext();
 
@@ -73,57 +80,58 @@ function AppContent() {
     }
   }, [popup]);
 
-  // Define pages where Navbar, InfoBar, and Footer should NOT be shown
-  const excludeLayoutPaths = ["/editor/:roomId" , "/codecollab" ];
-  
-
-  // Check if the current path matches any of the excluded routes
+  const excludeLayoutPaths = ["/editor/:roomId", "/codecollab","/code-ide","/playground/:folderId/:playgroundId"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
 
   return (
     <SetPopupContext.Provider value={setPopup}>
-      <ScrollToTop />
-      {shouldShowLayout && <InfoBar />}
-      {shouldShowLayout && <Navbar />}
-      <Routes>
-        {/* General Routes */}
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route exact path="/cookie-policy" element={<CookiePolicy />} />
-        <Route exact path="/companies" element={<Companies />} />
-        <Route exact path="/companies/:id" element={<InfoRecruiter />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/sign-up" element={<SignUp />} />
-        <Route exact path="/sign-in" element={<SignIn />} />
-        <Route exact path="/password/reset/:token" element={<Reset />} />
-        <Route exact path="/reset-recovered" element={<Recovered />} />
-        <Route exact path="/jobs" element={<Jobs />} />
-        <Route exact path="/for-recruiter" element={<ForRecruiter />} />
-        <Route exact path="/for-applicant" element={<ForApplicant />} />
-        <Route exact path="/jobs/:id" element={<Job />} />
-
-        <Route exact path="/recruiter-tools" element={<RecruiterTools />} />
-        <Route exact path="/jobs/:id/refer" element={<Refer />} />
-        <Route exact path="/sign-in/forgot-password" element={<ResetPassword />} />
-
-        {/* Role-Specific Routes */}
-        <Route exact path="/dashboard/*" element={<Dashboard />} type={type} />
-        <Route exact path="/admin" element={<AdminJobs />} type={type === "recruiter"} />
-        <Route exact path="/admin/:id" element={<AdminJob />} type={type === "recruiter"} />
-        <Route exact path="/create-new-job" element={<AdminAddJob />} type={type} />
-        <Route exact path="/talent-pool" element={<TalentPool />} type={type} />
-        <Route exact path="/applicant/settings" element={<Settings />} />
-        <Route exact path="/admin/settings" element={<AdminSettings />} />
-        <Route exact path="/logout" element={<Logout />} />
-
-        {/* CodeCollab Routes (Without Navbar, InfoBar, Footer) */}
-        <Route exact path="/codecollab" element={<CodeCollabHome />} />
-        <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
-      </Routes>
-      {shouldShowLayout && <Footer />}
-      <ToastContainer limit={2} autoClose={2000} />
+      <PlaygroundProvider>
+        <ModalProvider>
+          <ScrollToTop />
+          <GlobalStyle />
+          {shouldShowLayout && <InfoBar />}
+          {shouldShowLayout && <Navbar />}
+          <Routes>
+            {/* Existing Routes */}
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route exact path="/cookie-policy" element={<CookiePolicy />} />
+            <Route exact path="/companies" element={<Companies />} />
+            <Route exact path="/companies/:id" element={<InfoRecruiter />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/sign-up" element={<SignUp />} />
+            <Route exact path="/sign-in" element={<SignIn />} />
+            <Route exact path="/password/reset/:token" element={<Reset />} />
+            <Route exact path="/reset-recovered" element={<Recovered />} />
+            <Route exact path="/jobs" element={<Jobs />} />
+            <Route exact path="/for-recruiter" element={<ForRecruiter />} />
+            <Route exact path="/for-applicant" element={<ForApplicant />} />
+            <Route exact path="/jobs/:id" element={<Job />} />
+            <Route exact path="/recruiter-tools" element={<RecruiterTools />} />
+            <Route exact path="/jobs/:id/refer" element={<Refer />} />
+            <Route exact path="/sign-in/forgot-password" element={<ResetPassword />} />
+            <Route exact path="/dashboard/*" element={<Dashboard />} type={type} />
+            <Route exact path="/admin" element={<AdminJobs />} type={type === "recruiter"} />
+            <Route exact path="/admin/:id" element={<AdminJob />} type={type === "recruiter"} />
+            <Route exact path="/create-new-job" element={<AdminAddJob />} type={type} />
+            <Route exact path="/talent-pool" element={<TalentPool />} type={type} />
+            <Route exact path="/applicant/settings" element={<Settings />} />
+            <Route exact path="/admin/settings" element={<AdminSettings />} />
+            <Route exact path="/logout" element={<Logout />} />
+            <Route exact path="/codecollab" element={<CodeCollabHome />} />
+            <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
+            
+            {/* New Routes */}
+            <Route path="/code-ide" element={<CodeIdeHome />} />
+            <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+          {shouldShowLayout && <Footer />}
+          <ToastContainer limit={2} autoClose={2000} />
+        </ModalProvider>
+      </PlaygroundProvider>
     </SetPopupContext.Provider>
   );
 }
@@ -135,6 +143,7 @@ export default function App() {
     </Router>
   );
 }
+
 
 
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
