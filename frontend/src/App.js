@@ -48,14 +48,14 @@ import { GlobalStyle } from "./style/global";
 import ModalProvider from "./context/ModalContext";
 import PlaygroundProvider from "./context/PlaygroundContext";
 import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
-<<<<<<< HEAD
+
 import InterviewHomepage from "./pages/interviewmain/InterviewHome";
 import MainPage from "./pages/interviewmain/MainPage";
-=======
+
 import InterviewPrepTools from "pages/InterviewPrepTools";
 
 
->>>>>>> 40ab4f04b36cecb0f8e7e01ddaefcb70359b9b6b
+
 
 export const SetPopupContext = createContext();
 
