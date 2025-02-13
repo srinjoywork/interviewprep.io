@@ -1,0 +1,77 @@
+.features-section {
+    width: 100%;
+  height: 100%;
+  /* Add your background pattern here */
+  background-image: repeating-radial-gradient(  #f8f1f1ee 80%,#ffad1f 90%);
+  background-size: 50px 50px;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .features-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .features-title span {
+    color: #4f46e5;
+  }
+  
+  .features-subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  
+  .features-list {
+    margin-top: 30px;
+    text-align: left;
+    display: inline-block;
+    max-width: 600px;
+    margin-left: 250px;
+  }
+  
+  .feature {
+    margin-bottom: 25px;
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .features-title {
+      font-size: 2rem;
+    }
+  
+    .features-subtitle {
+      font-size: 1rem;
+    }
+  
+    .feature-title {
+      font-size: 1.6rem;
+    }
+  
+    .feature-description {
+      font-size: 0.95rem;
+    }
+  }
+  

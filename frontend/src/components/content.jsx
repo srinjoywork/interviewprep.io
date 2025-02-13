@@ -19,6 +19,9 @@ import { userType } from "libs/isAuth";
 import FeatureCard from "./FeatureCard/FeatureCard";
 import Metrices from "./Metrices/Metrices";
 import StayUpdatedSection from "./StayUpdatedSection/StayUpdatedSection";
+import Features from "./FeatureCard/Features/Features";
+import Contact from "./Contact/Contact";
+import RecruiterFeature from "./FeatureCard/RecruiterFeature/RecruiterFeature";
 export default function Jumbotron() {
   let [isOpen, setIsOpen] = useState(false);
   const type = userType();
@@ -63,10 +66,12 @@ export default function Jumbotron() {
               />
             </div>
           </div>
+          <RecruiterFeature/>
+          <Contact/>
         </main>
       ) : type === "applicant" ? (
         <main className="bg-[#f8e5d4] ">
-          <div className="w-11/12 flex flex-wrap mx-auto">
+          {/* <div className="w-11/12 flex flex-wrap mx-auto">
             <div className="md:w-5/12 w-12/12 md:pt-12 md:pl-10 pl-0 pt-0 md:pb-12 pb-20 mx-auto">
               <img
                 className="md:mt-28 mt-0 w-full lg:float-right float-none mx-auto"
@@ -93,7 +98,40 @@ export default function Jumbotron() {
                 </Link>
               </div>
             </div>
+          </div> */}
+          <div className="w-[80%] mx-auto pt-20 pb-32 space-y-16 text-white">
+      {/* Hero Section */}
+      <div className="h-[50vh] relative flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
+        <div className="md:w-1/3 w-full flex justify-center">
+          <img
+            src="/path/to/transparent-image.png"
+            className="w-[50vh] h-[40vh] bg-white bg-opacity-10 p-4 rounded-xl shadow-lg"
+            alt="Transparent"
+          />
+        </div>
+        <div className="md:w-2/3 w-full text-center space-y-6">
+          <h1 className="text-5xl font-extrabold leading-tight">Heading Text</h1>
+        </div>
+      </div>
+
+      {/* Student Features Section */}
+      {/* <div className="bg-gray-900 text-white text-center p-12 rounded-3xl shadow-lg transform transition hover:scale-105"> */}
+      <Features features={[
+    "Access to exclusive internships",
+    "Career guidance and mentorship",
+    "Skill-building workshops",
+    "Networking opportunities",
+    "Job placement assistance"
+  ]} title={"Student Features"}/>
+      {/* </div> */}
+
+      {/* Metrics Section */}
+      <Metrices title={"Our Metrices"} desc={"xxxxxxxxxxxxxxxx"}/>
+
+      {/* Contact Section */}
+      <Contact />
           </div>
+
         </main>
       ) 
       : (
@@ -214,11 +252,11 @@ export default function Jumbotron() {
             </div>
 
             {/* Metrics Section */}
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 py-14 rounded-3xl shadow-2xl text-white transform transition hover:scale-105">
+            {/* <div className="bg-gradient-to-r from-blue-500 to-purple-600 py-14 rounded-3xl shadow-2xl text-white transform transition hover:scale-105"> */}
             {/* <h2 className="text-4xl font-bold">Our Impact</h2>
             <p className="mt-4 text-xl opacity-90">Trusted by 50,000+ users & 1,000+ companies worldwide.</p> */}
+            {/* </div> */}
               <Metrices title={"Our Impact"} desc={"Trusted by 50,000+ users & 1,000+ companies worldwide."}/>
-            </div>
 
             {/* News Subscription Section */}
             <StayUpdatedSection
@@ -234,7 +272,7 @@ export default function Jumbotron() {
       )
       }
 
-      {type === "applicant" ? (
+      {/* {type === "applicant" ? (
         <Transition appear show={isOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -431,7 +469,7 @@ export default function Jumbotron() {
             </div>
           </Dialog>
         </Transition>
-      )}
+      )} */}
     </>
   );
 }

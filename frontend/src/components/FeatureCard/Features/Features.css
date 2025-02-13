@@ -1,0 +1,34 @@
+.features-container {
+    background-color: #1a202c; /* bg-gray-900 */
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: transition 0.3s ease-in-out;
+  }
+  
+  .features-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .features-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: bold;
+  }
+  
+  .features-list {
+    margin-top: 1rem;
+    list-style-type: none;
+  }
+  
+  .feature-item {
+    font-size: 1.125rem; /* text-lg */
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .feature-item:hover {
+    opacity: 1;
+  }
+  
