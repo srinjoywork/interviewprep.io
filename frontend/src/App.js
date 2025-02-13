@@ -1,7 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import About from "pages/landingPage/AboutUs/About";
-import Home from "pages/landingPage/Home";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { React, createContext, useEffect, useState } from "react";
+import { Slide, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// Import components and pages
+import Home from "pages/landingPage/Home";
+import About from "pages/landingPage/AboutUs/About";
 import PrivacyPolicy from "pages/landingPage/AboutUs/PrivacyPolicy";
 import Navbar from "components/Navbar";
 import InfoBar from "components/InfoBar";
@@ -29,20 +33,21 @@ import AdminSettings from "pages/admin/AdminSettings";
 import CookiePolicy from "pages/landingPage/AboutUs/CookiePolicy";
 import AdminJob from "pages/admin/AdminJob";
 import TalentPool from "pages/admin/TalentPool";
-import { Slide, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import InfoRecruiter from "pages/landingPage/InfoRecruiter";
 import { Dashboard } from "pages/Admin1/Dashboard";
-
 import RecruiterTools from "pages/RecruiterTools";
 import ResumeBuilder from "pages/ResumeBuilder";
 
+// CodeCollab Pages
+import CodeCollabHome from "pages/CollabHome/CodeCollabHome";
+import CollabEditorPage from "pages/CollabHome/CollabEditorPage";
 
 export const SetPopupContext = createContext();
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
   const type = userType();
-  console.log("type: " + type);
+
   const [popup, setPopup] = useState({
     open: false,
     icon: "",
@@ -66,95 +71,70 @@ export default function App() {
         open: false,
       });
     }
-  }, [popup.open, popup.icon, popup.message, popup]);
+  }, [popup]);
+
+  // Define pages where Navbar, InfoBar, and Footer should NOT be shown
+  const excludeLayoutPaths = ["/editor/:roomId" , "/codecollab"];
+  
+
+  // Check if the current path matches any of the excluded routes
+  const shouldShowLayout = !excludeLayoutPaths.some((path) =>
+    new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
+  );
 
   return (
     <SetPopupContext.Provider value={setPopup}>
-      <Router>
-        <ScrollToTop />
-        <InfoBar />
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route exact path="/cookie-policy" element={<CookiePolicy />} />
-          <Route exact path="/companies" element={<Companies />} />
-          <Route exact path="/companies/:id" element={<InfoRecruiter />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/sign-up" element={<SignUp />} />
-          <Route exact path="/sign-in" element={<SignIn />} />
-          <Route exact path="/password/reset/:token" element={<Reset />} />
-          <Route exact path="/reset-recovered" element={<Recovered />} />
-          <Route
-            exact
-            path="/referrals"
-            element={<Referrals />}
-            type={type === "applicant"}
-          />
-          <Route
-            exact
-            path="/voiceai"
-            element={<VoiceAi/>}
-            type={type === "applicant"}
-          />
-          <Route exact path="/buildresume" element={<ResumeBuilder/>} />
-          {/* <Route exact path="/interview-home" element={<InterviewHomepage />} />
-          <Route exact path="/interviewroom" element={<MainPage/>} /> */}
-          <Route exact path="/jobs" element={<Jobs />} />
-          <Route exact path="/for-recruiter" element={<ForRecruiter />} />
-          <Route exact path="/for-applicant" element={<ForApplicant />} />
-          
-          <Route exact path="/jobs/:id" element={<Job />} />
-          <Route exact path="/recruiter-tools" element={<RecruiterTools />} />
-          <Route exact path="/jobs/:id/refer" element={<Refer />} />
-          <Route
-            exact
-            path="/sign-in/forgot-password"
-            element={<ResetPassword />}
-          />
-          <Route
-            exact
-            path="/dashboard/*"
-            element={<Dashboard />}
-            type={type}
-          />
-          <Route
-            exact
-            path="/admin"
-            element={<AdminJobs />}
-            type={type === "recruiter"}
-          />
-          <Route
-            exact
-            path="/admin/:id"
-            element={<AdminJob />}
-            type={type === "recruiter"}
-          />
-          <Route
-            exact
-            path="/create-new-job"
-            element={<AdminAddJob />}
-            type={type}
-          />
-          <Route
-            exact
-            path="/talent-pool"
-            element={<TalentPool />}
-            type={type}
-          />
+      <ScrollToTop />
+      {shouldShowLayout && <InfoBar />}
+      {shouldShowLayout && <Navbar />}
+      <Routes>
+        {/* General Routes */}
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route exact path="/cookie-policy" element={<CookiePolicy />} />
+        <Route exact path="/companies" element={<Companies />} />
+        <Route exact path="/companies/:id" element={<InfoRecruiter />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/sign-up" element={<SignUp />} />
+        <Route exact path="/sign-in" element={<SignIn />} />
+        <Route exact path="/password/reset/:token" element={<Reset />} />
+        <Route exact path="/reset-recovered" element={<Recovered />} />
+        <Route exact path="/jobs" element={<Jobs />} />
+        <Route exact path="/for-recruiter" element={<ForRecruiter />} />
+        <Route exact path="/for-applicant" element={<ForApplicant />} />
+        <Route exact path="/jobs/:id" element={<Job />} />
+        <Route exact path="/recruiter-tools" element={<RecruiterTools />} />
+        <Route exact path="/jobs/:id/refer" element={<Refer />} />
+        <Route exact path="/sign-in/forgot-password" element={<ResetPassword />} />
 
-          <Route exact path="/applicant/settings" element={<Settings />} />
-          <Route exact path="/admin/settings" element={<AdminSettings />} />
-          <Route exact path="/logout" element={<Logout />} />
+        {/* Role-Specific Routes */}
+        <Route exact path="/dashboard/*" element={<Dashboard />} type={type} />
+        <Route exact path="/admin" element={<AdminJobs />} type={type === "recruiter"} />
+        <Route exact path="/admin/:id" element={<AdminJob />} type={type === "recruiter"} />
+        <Route exact path="/create-new-job" element={<AdminAddJob />} type={type} />
+        <Route exact path="/talent-pool" element={<TalentPool />} type={type} />
+        <Route exact path="/applicant/settings" element={<Settings />} />
+        <Route exact path="/admin/settings" element={<AdminSettings />} />
+        <Route exact path="/logout" element={<Logout />} />
 
-          
-        </Routes>
-        <Footer />
-      </Router>
+        {/* CodeCollab Routes (Without Navbar, InfoBar, Footer) */}
+        <Route exact path="/codecollab" element={<CodeCollabHome />} />
+        <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
+      </Routes>
+      {shouldShowLayout && <Footer />}
       <ToastContainer limit={2} autoClose={2000} />
     </SetPopupContext.Provider>
   );
 }
+
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
 
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import About from "pages/landingPage/AboutUs/About";

@@ -16,7 +16,7 @@ import {
 
 import { Dialog, Transition } from "@headlessui/react";
 import { userType } from "libs/isAuth";
-import FeatureCard from "./FeatureCard/FeatureCard";
+import FeatureCard from "../components/FeatureCard/FeatureCard";
 import Metrices from "./Metrices/Metrices";
 import StayUpdatedSection from "./StayUpdatedSection/StayUpdatedSection";
 export default function Jumbotron() {
