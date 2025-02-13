@@ -17,7 +17,7 @@ import SignUp from "pages/landingPage/SignUp/SignUp";
 import Jobs from "pages/landingPage/Jobs";
 import ForRecruiter from "pages/landingPage/For/ForRecruiter";
 import ForApplicant from "pages/landingPage/For/ForApplicant";
-import VoiceAi from "pages/VoiceAgent/VoiceAi";
+
 import ResetPassword from "pages/landingPage/SignIn/ResetPassword";
 import { userType } from "libs/isAuth";
 import Referrals from "pages/home/Referrals";
@@ -74,7 +74,7 @@ function AppContent() {
   }, [popup]);
 
   // Define pages where Navbar, InfoBar, and Footer should NOT be shown
-  const excludeLayoutPaths = ["/editor/:roomId" , "/codecollab"];
+  const excludeLayoutPaths = ["/editor/:roomId" , "/codecollab" ];
   
 
   // Check if the current path matches any of the excluded routes
@@ -103,6 +103,7 @@ function AppContent() {
         <Route exact path="/for-recruiter" element={<ForRecruiter />} />
         <Route exact path="/for-applicant" element={<ForApplicant />} />
         <Route exact path="/jobs/:id" element={<Job />} />
+
         <Route exact path="/recruiter-tools" element={<RecruiterTools />} />
         <Route exact path="/jobs/:id/refer" element={<Refer />} />
         <Route exact path="/sign-in/forgot-password" element={<ResetPassword />} />
