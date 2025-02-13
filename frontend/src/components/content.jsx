@@ -16,7 +16,9 @@ import {
 
 import { Dialog, Transition } from "@headlessui/react";
 import { userType } from "libs/isAuth";
-
+import FeatureCard from "./FeatureCard/FeatureCard";
+import Metrices from "./Metrices/Metrices";
+import StayUpdatedSection from "./StayUpdatedSection/StayUpdatedSection";
 export default function Jumbotron() {
   let [isOpen, setIsOpen] = useState(false);
   const type = userType();
@@ -30,7 +32,7 @@ export default function Jumbotron() {
 
   return (
     <>
-      {/* {type === "recruiter" ? (
+      {type === "recruiter" ? (
         <main className="bg-[#f8e5d4] ">
           <div className="w-11/12 flex flex-wrap mx-auto">
             <div className="lg:text-left text-center lg:w-7/12 w-12/12 lg:pt-24 pt-12 lg:pb-40 pb-16 mx-auto">
@@ -93,9 +95,10 @@ export default function Jumbotron() {
             </div>
           </div>
         </main>
-      ) : (
+      ) 
+      : (
         <main className="bg-[#f8e5d4]">
-          <div className="text-center lg:w-7/12 w-12/12 ld:pt-52 md:pt-40 pt-32 pb-52 mx-auto h-2/3">
+          {/* <div className="text-center lg:w-7/12 w-12/12 ld:pt-52 md:pt-40 pt-32 pb-52 mx-auto h-2/3">
             <div className="relative w-full bg-light h-2/3 md:block hidden ">
               <img
                 src={billThree}
@@ -146,9 +149,90 @@ export default function Jumbotron() {
 
               <img src={billFour} className="w-32 absolute right-6" />
             </div>
+          </div> */}
+          
+          <div className="text-center w-[90%] pt-32 pb-52 mx-auto space-y-20">
+            {/* Hero Section */}
+            <div className="relative w-full flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
+              <div className="md:w-1/2 w-full text-left space-y-6">
+                <h1 className="text-5xl font-extrabold leading-tight">Your Career, Your Future</h1>
+                <p className="text-lg opacity-90">
+                  Unlock the best job opportunities with personalized recommendations and expert insights.
+                </p>
+                <div className="mt-6 flex gap-4">
+                  <button className="bg-yellow-400 text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500 transform transition hover:-translate-y-1">
+                    Explore Jobs
+                  </button>
+                  <button className="border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-black transform transition hover:-translate-y-1">
+                    Sign Up Free
+                  </button>
+                </div>
+            </div>
+          <div className="md:w-1/2 w-full flex justify-center mt-6 md:mt-0">
+            <img src={billThree} className="w-80 rounded-2xl shadow-xl" alt="Carousel" />
           </div>
+            </div>
+
+            {/* Features Section */}
+            {/* <div className="bg-gray-100 py-16 rounded-3xl shadow-lg">
+              <h2 className="text-gray-800 text-4xl font-bold mb-8">Features</h2>
+              <div className="flex flex-col md:flex-row justify-center gap-10">
+                <div className="p-8 bg-white rounded-2xl shadow-xl w-72 transform transition hover:scale-105">
+                  <h3 className="text-2xl font-semibold">For Students 🎓</h3>
+                  <p className="text-gray-600 mt-3">Internships, career advice, and skill-building to boost your career.</p>
+                </div>
+                <div className="p-8 bg-white rounded-2xl shadow-xl w-72 transform transition hover:scale-105">
+                  <h3 className="text-2xl font-semibold">For Companies 🏢</h3>
+                  <p className="text-gray-600 mt-3">Find top talent effortlessly with our smart hiring solutions.</p>
+                </div>
+              </div>
+            </div> */}
+            <div className="bg-gray-100 py-16 rounded-3xl shadow-lg">
+              <h2 className="text-gray-800 text-4xl font-bold mb-8">Features</h2>
+              <div className="flex flex-col md:flex-row justify-center gap-[16rem]">
+                <FeatureCard
+                  title="For Students"
+                  features={[
+                  "Internships to kickstart your career.",
+                  "Career advice tailored to your goals.",
+                  "Skill-building workshops and events.",
+                  ]}
+                  bgColor="bg-blue-100"
+                  icon="🎓"
+                />
+                <FeatureCard
+                  title="For Companies"
+                  features={[
+                    "Access to top talent from diverse fields.",
+                    "Smart recruitment solutions to simplify hiring.",
+                    "Streamlined candidate matching process.",
+                  ]}
+                  bgColor="bg-green-100"
+                  icon="🏢"
+                />
+              </div>
+            </div>
+
+            {/* Metrics Section */}
+            <div className="bg-gradient-to-r from-blue-500 to-purple-600 py-14 rounded-3xl shadow-2xl text-white transform transition hover:scale-105">
+            {/* <h2 className="text-4xl font-bold">Our Impact</h2>
+            <p className="mt-4 text-xl opacity-90">Trusted by 50,000+ users & 1,000+ companies worldwide.</p> */}
+              <Metrices title={"Our Impact"} desc={"Trusted by 50,000+ users & 1,000+ companies worldwide."}/>
+            </div>
+
+            {/* News Subscription Section */}
+            <StayUpdatedSection
+            title="Stay Updated 📩"
+            description="Subscribe for exclusive job alerts and career tips."
+            buttonText="Subscribe"
+            bgColor="bg-gray-900"
+            />
+
+          </div>
+
         </main>
-      )}
+      )
+      }
 
       {type === "applicant" ? (
         <Transition appear show={isOpen} as={Fragment}>
@@ -347,7 +431,7 @@ export default function Jumbotron() {
             </div>
           </Dialog>
         </Transition>
-      )} */}
+      )}
     </>
   );
 }
