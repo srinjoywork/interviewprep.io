@@ -48,6 +48,9 @@ import { GlobalStyle } from "./style/global";
 import ModalProvider from "./context/ModalContext";
 import PlaygroundProvider from "./context/PlaygroundContext";
 import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
+import InterviewPrepTools from "pages/InterviewPrepTools";
+
+
 
 export const SetPopupContext = createContext();
 
@@ -80,7 +83,7 @@ function AppContent() {
     }
   }, [popup]);
 
-  const excludeLayoutPaths = ["/editor/:roomId", "/codecollab","/code-ide","/playground/:folderId/:playgroundId"];
+  const excludeLayoutPaths = ["/editor/:roomId","/code-ide","/playground/:folderId/:playgroundId"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
@@ -123,7 +126,7 @@ function AppContent() {
             <Route exact path="/codecollab" element={<CodeCollabHome />} />
             <Route exact path="/build-resume" element={<ResumeBuilder />} />
             <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
-            
+            <Route exact path="/interviewpreptools" element={<InterviewPrepTools/>} />
             {/* New Routes */}
             <Route path="/code-ide" element={<CodeIdeHome />} />
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
