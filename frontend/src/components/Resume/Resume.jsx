@@ -11,7 +11,7 @@ import {
 
 import styles from "./Resume.module.css";
 
-const Resume= forwardRef((props, ref) => {
+const Resume = forwardRef((props, ref) => {
   const information = props.information;
   const sections = props.sections;
   const containerRef = useRef();
