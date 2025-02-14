@@ -200,7 +200,7 @@ export default function TalentPool() {
                                   </span>
                                 </p>
                               </div>
-                              <div className="space-y-2">
+                              {/* <div className="space-y-2">
                                 <label className="text-sm">Birthday</label>
                                 {selectedUser.dateOfBirth ? (
                                   <p>
@@ -217,7 +217,7 @@ export default function TalentPool() {
                                     </span>
                                   </p>
                                 )}
-                              </div>
+                              </div> */}
                               <div className="space-y-2">
                                 <label className="text-sm">Skills</label>
                                 <div className="flex flex-row gap-1">

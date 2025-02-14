@@ -31,8 +31,8 @@ export default function SignUp() {
     email: "",
     password: "",
     name: "",
-    // education: [],
-    // skills: [],
+    education: [],
+    skills: [],
     dateOfBirth: new Date(),
     resume: "",
     profile: "",
@@ -41,13 +41,13 @@ export default function SignUp() {
     contactNumber: "",
   });
 
-  // const [education, setEducation] = useState([
-  //   {
-  //     institutionName: "",
-  //     startYear: "",
-  //     endYear: "",
-  //   },
-  // ]);
+  const [education, setEducation] = useState([
+    {
+      institutionName: "",
+      startYear: "",
+      endYear: "",
+    },
+  ]);
 
   const handleChange = (event) => {
     console.log(event.target.value);
@@ -76,18 +76,18 @@ export default function SignUp() {
       error: false,
       message: "",
     },
-    // education: {
-    //   untouched: true,
-    //   required: true,
-    //   error: false,
-    //   message: "",
-    // },
-    // skills: {
-    //   untouched: true,
-    //   required: true,
-    //   error: false,
-    //   message: "",
-    // },
+    education: {
+      untouched: true,
+      required: true,
+      error: false,
+      message: "",
+    },
+    skills: {
+      untouched: true,
+      required: true,
+      error: false,
+      message: "",
+    },
     bio: {
       untouched: true,
       required: true,
@@ -409,7 +409,7 @@ export default function SignUp() {
         />
         {signupDetails.type === "applicant" ? (
           <>
-            {/* {education.map((edu, index) => (
+            {education.map((edu, index) => (
               <div
                 className="mb-2"
                 onBlur={(e) => {
@@ -483,7 +483,7 @@ export default function SignUp() {
               >
                 Add another institution details
               </button>
-            </div> */}
+            </div>
 
             
           </>
@@ -581,8 +581,8 @@ export default function SignUp() {
           </div>
         </div>
 
-                {/* Check Box button */}
-        {/* <label className="block text-black text-sm font-medium mt-8 focus:outline-none outline-none">
+                Check Box button
+        <label className="block text-black text-sm font-medium mt-8 focus:outline-none outline-none">
           <input
             className="mr-2 leading-tight text-primary"
             type="checkbox"
@@ -598,7 +598,7 @@ export default function SignUp() {
             Keep me up-to-date on exclusive Greet updates and new job posts! You
             can opt-out at any time.
           </span>
-        </label> */}
+        </label>
 
         <button
           className={`mt-2 w-full font-semibold px-4 py-3 rounded-lg text-sm ${

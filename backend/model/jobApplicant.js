@@ -56,9 +56,9 @@ let schema = new mongoose.Schema(
     profile: {
       type: String,
     },
-    dateOfBirth: {
-      type: Date,
-    },
+    // dateOfBirth: {
+    //   type: Date,
+    // },
   },
   { collation: { locale: "en" } }
 );

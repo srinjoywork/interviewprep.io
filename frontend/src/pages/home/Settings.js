@@ -33,7 +33,7 @@ export default function Settings() {
         endYear: "",
       },
     ],
-    dateOfBirth: new Date(),
+    // dateOfBirth: new Date(),
   });
 
   useEffect(() => {
