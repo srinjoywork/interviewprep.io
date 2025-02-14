@@ -20,7 +20,7 @@ export default function Blog() {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            <Link to="/">
+            <Link to="/interviewpreptools">
               <span>Interview Prep Tools</span>
             </Link>
             <FontAwesomeIcon
@@ -46,7 +46,7 @@ export default function Blog() {
               <div className="lg:block hidden overflow-hidden rounded-lg shadow-lg">
                 <div className="relative bg-white p-3">
                   <Link
-                    to="/"
+                    to="https://codebuddy-ai.netlify.app/"
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -59,7 +59,7 @@ export default function Blog() {
                     </div>
                   </Link>
                   <Link
-                    to="/"
+                    to="https://ai-code-converter-live.vercel.app/"
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -85,7 +85,7 @@ export default function Blog() {
                     </div>
                   </Link>
                   <Link
-                    to="/"
+                    to="https://resume-parser-pdqm.onrender.com"
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -93,7 +93,7 @@ export default function Blog() {
                     </div>
                     <div className="ml-4">
                       <p className="text-md font-semibold text-gray-900">
-                      NoteDigitizer
+                        NoteDigitizer
                       </p>
                     </div>
                   </Link>
