@@ -234,7 +234,7 @@ export default function Applicant() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-2">
+                {/* <div className="mt-2">
                   <span>Date of birth: </span>
                   {applicant.dateOfBirth ? (
                     <span className="font-semibold">
@@ -245,7 +245,7 @@ export default function Applicant() {
                       Not updated
                     </span>
                   )}
-                </div>
+                </div> */}
                 <hr className="my-8 border-gray-300" />
               </div>
               <div className="px-6 py-4 whitespace-nowrap flex justify-center items-center text-sm text-gray-500 flex-1 w-2">

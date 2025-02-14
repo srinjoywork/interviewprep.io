@@ -168,9 +168,9 @@ const updateUser = async (req, res) => {
           if (data.profile) {
             jobApplicant.profile = data.profile;
           }
-          if (data.dateOfBirth) {
-            jobApplicant.dateOfBirth = data.dateOfBirth;
-          }
+          // if (data.dateOfBirth) {
+          //   jobApplicant.dateOfBirth = data.dateOfBirth;
+          // }
 
           return jobApplicant.save();
         })
