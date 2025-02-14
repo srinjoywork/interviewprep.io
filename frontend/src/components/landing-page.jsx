@@ -6,7 +6,7 @@ export function LandingPage() {
    const navigate = useNavigate();
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
+      {/* <header className="px-4 lg:px-6 h-14 flex items-center">
         <a className="flex items-center justify-center" href="#">
           <MountainIcon className="h-6 w-6" />
           <span className="text-black font-bold text-2xl pl-2">CodeAlong</span>
@@ -39,7 +39,7 @@ export function LandingPage() {
             Create/Join Room
           </Button>
         </nav>
-      </header>
+      </header> */}
       <main className="flex-1">
         <section className="w-full pt-12 md:pt-24 lg:pt-32 border-y">
           <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
@@ -86,7 +86,7 @@ export function LandingPage() {
         <section className="w-full py-12 md:py-24 lg:py-32" id="features">
           <div className="container space-y-12 px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
                   New Features
                 </div>
@@ -99,7 +99,7 @@ export function LandingPage() {
                   all in one powerful platform. Collaborate seamlessly with your
                   team and take your coding projects to the next level.
                 </p>
-              </div>
+              </div> */}
             </div>
             <div className="mx-auto grid max-w-4xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
               <div className="grid gap-1">
@@ -153,29 +153,17 @@ export function LandingPage() {
               className="flex justify-center flex-col sm:flex-row items-start gap-4"
               id="contact"
             >
-              <a
+              {/* <a
                 className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events_none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
                 href="mailto:shubhambogharajobs@email.com"
               >
                 Contact us
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          © 2024 CodeAlong Inc. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </a>
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </a>
-        </nav>
-      </footer>
+      
     </div>
   );
 }
