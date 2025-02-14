@@ -152,7 +152,7 @@
 
 import React, { Component } from "react";
 import ReconnectingWebSocket from "reconnecting-websocket";
-import VideoChatComponent from "../Components/VideoChat/videoChatComponent";
+import VideoChatComponent from "../../components/VideoChat/videoChatComponent";
 import VideoHelper from "./VideoHelper";
 
 const websocketURL = process.env.REACT_APP_WEB_SOCKET_URL || "ws://localhost:8080";
@@ -219,15 +219,16 @@ class VideoChat extends Component {
         if (data.offerMade) {
             console.log("Offer received");
             pc.setRemoteDescription(new RTCSessionDescription(data.offerMade.offer))
-                .then(() => VideoHelper.createAnswer())
+                .then(() => VideoHelper.createAnswer(pc))  // Pass the correct peer connection
                 .catch(console.error);
-        } else if (data.answerMade) {
+        }
+        else if (data.answerMade) {
             console.log("Answer received");
             pc.setRemoteDescription(new RTCSessionDescription(data.answerMade.answer))
                 .then(() => this.setState({ peerConnected: true }))
                 .catch(console.error);
         } else if (data.candidate) {
-            console.log("Adding ICE Candidate");
+            console.log("Adding ICE Candidate:", data.candidate);
             pc.addIceCandidate(new RTCIceCandidate(data.candidate)).catch(console.error);
         }
     };

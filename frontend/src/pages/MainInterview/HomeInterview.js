@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import { v4 } from 'uuid';
+import React, { useCallback } from "react";
+import { v4 as uuidv4 } from "uuid";
 import HomeComponent from '../../components/InterviewHome/HomeComponent';
 
-class HomeInterview extends Component {
-    createId = () => {
-        return v4();
-    }
-
-    render() {
-        return (
-            <HomeComponent
-                createId={this.createId}
-            />
-        );
-    }
-}
-
-export default HomeInterview;
+const HomeInterview = () => {
+    const createId = useCallback(() => uuidv4(), []);
+  
+    return <HomeComponent createId={createId} />;
+  };
+  
+  export default HomeInterview;
