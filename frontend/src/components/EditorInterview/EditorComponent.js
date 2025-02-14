@@ -1,35 +1,40 @@
-import React from "react";
+import React ,{useCallback , useEffect} from "react";
 import MonacoEditor from "react-monaco-editor";
 import { Row, Col } from "antd";
 import styles from "./main.module.css";
 import SideDrawer from "../SideDrawer/SideDrawer";
-import VideoChat from "../../components/VideoChat/videoChatComponent";
+import VideoChat from "../../pages/MainInterview/VideoChat";
 
-const EditorComponent = (props) => {
-  const {
-    videoChat,
-    lang,
-    code,
-    input,
-    output,
-    runCodeDisabled,
-    videoSocket,
-    readOnly,
-    handleVideoChat,
-    editorDidMount,
-    editorOnChange,
-    handleLang,
-    handleRun,
-    handleInput,
-    handleVideoSocket,
-  } = props;
+const EditorComponent = ({
+  videoChat,
+  lang,
+  code,
+  input,
+  output,
+  runCodeDisabled,
+  videoSocket,
+  readOnly,
+  handleVideoChat,
+  editorOnChange,
+  handleLang,
+  handleRun,
+  handleInput,
+  handleVideoSocket,
+}) => {
   const options = {
-    selectOnLineNumbers: true, // Select line by clicking on line number
-    minimap: {
-      enabled: false, // Minimap gives an overview of code(present on right side in vscode)
-    },
+    selectOnLineNumbers: true,
+    minimap: { enabled: false },
     readOnly,
   };
+
+  const handleEditorMount = useCallback((editor, monaco) => {
+    console.log("Monaco Editor Mounted");
+  }, []);
+
+  useEffect(() => {
+    console.log("EditorComponent Mounted");
+  }, []);
+
   return (
     <Row gutter={0}>
       <Col lg={20} sm={16}>
@@ -43,14 +48,11 @@ const EditorComponent = (props) => {
         )}
         <div className={styles.editor}>
           <MonacoEditor
-            // width="600"
-            // height="400"
-            automaticLayout={true}
             language={lang}
             theme="vs-dark"
             value={code}
             options={options}
-            editorDidMount={editorDidMount}
+            onMount={handleEditorMount}
             onChange={editorOnChange}
           />
         </div>

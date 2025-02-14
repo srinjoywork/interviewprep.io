@@ -140,8 +140,8 @@ function AppContent() {
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
             <Route path="*" element={<ErrorPage />} />
 
-            
-
+            <Route path="/interview-home" element={<HomeInterview/>}/>
+            <Route path="/interview-home/:id" element={<InterviewEditor/>}/>
  
           </Routes>
           {shouldShowLayout && <Footer />}
