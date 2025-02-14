@@ -52,6 +52,8 @@ import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
 
 
 import InterviewPrepTools from "pages/InterviewPrepTools";
+import HomeInterview from "pages/MainInterview/HomeInterview";
+import InterviewEditor from "pages/MainInterview/InterviewEditor";
 
 
 
@@ -89,7 +91,7 @@ function AppContent() {
     }
   }, [popup]);
 
-  const excludeLayoutPaths = ["/editor/:roomId","/code-ide","/playground/:folderId/:playgroundId"];
+  const excludeLayoutPaths = ["/editor/:roomId","/code-ide","/playground/:folderId/:playgroundId" ,"/interview-home/:id"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
@@ -137,6 +139,8 @@ function AppContent() {
             <Route path="/code-ide" element={<CodeIdeHome />} />
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
             <Route path="*" element={<ErrorPage />} />
+
+            
 
  
           </Routes>
