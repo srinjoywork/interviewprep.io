@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import { React, createContext, useEffect, useState } from "react";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RecoilRoot } from "recoil";
 
 // Import components and pages
 import Home from "pages/landingPage/Home";
@@ -48,19 +49,12 @@ import { GlobalStyle } from "./style/global";
 import ModalProvider from "./context/ModalContext";
 import PlaygroundProvider from "./context/PlaygroundContext";
 import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
-
-
-
 import InterviewPrepTools from "pages/InterviewPrepTools";
-import HomeInterview from "pages/MainInterview/HomeInterview";
-import InterviewEditor from "pages/MainInterview/InterviewEditor";
-
-
-
+import InterviewLanding from "pages/liveInterview/InterviewLanding";
+import InterviewHome from "pages/liveInterview/InterviewHome";
+import EditorPage from "pages/liveInterview/EditorPage";
 
 export const SetPopupContext = createContext();
-
-
 
 function AppContent() {
   const location = useLocation();
@@ -91,7 +85,7 @@ function AppContent() {
     }
   }, [popup]);
 
-  const excludeLayoutPaths = ["/editor/:roomId","/code-ide","/playground/:folderId/:playgroundId" ,"/interview-home/:id"];
+  const excludeLayoutPaths = ["/editor/:roomId", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
@@ -104,6 +98,7 @@ function AppContent() {
           <GlobalStyle />
           {shouldShowLayout && <InfoBar />}
           {shouldShowLayout && <Navbar />}
+          <RecoilRoot>
           <Routes>
             {/* Existing Routes */}
             <Route exact path="/" element={<Home />} />
@@ -134,16 +129,16 @@ function AppContent() {
             <Route exact path="/codecollab" element={<CodeCollabHome />} />
             <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
             <Route exact path="/build-resume" element={<ResumeBuilder />} />
-            <Route exact path="/interviewpreptools" element={<InterviewPrepTools/>} />
+            <Route exact path="/interviewpreptools" element={<InterviewPrepTools />} />
             {/* New Routes */}
             <Route path="/code-ide" element={<CodeIdeHome />} />
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
             <Route path="*" element={<ErrorPage />} />
-
-            <Route path="/interview-home" element={<HomeInterview/>}/>
-            <Route path="/interview-home/:id" element={<InterviewEditor/>}/>
- 
+            <Route path="/interviewhome" element={<InterviewLanding />} />
+            <Route path="/join-interview" element={<InterviewHome />} />
+            <Route path="/editor-room/:roomID" element={<EditorPage />} />
           </Routes>
+          </RecoilRoot>
           {shouldShowLayout && <Footer />}
           <ToastContainer limit={2} autoClose={2000} />
         </ModalProvider>
@@ -154,11 +149,14 @@ function AppContent() {
 
 export default function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    
+      <Router>
+        <AppContent />
+      </Router>
+   
   );
 }
+
 
 
 
