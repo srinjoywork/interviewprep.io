@@ -20,6 +20,6 @@
     },
     "strict": true
   },
-  "include": ["src"],
+  "include": ["src", "Resume.js"],
   "exclude": ["node_modules"]
 }

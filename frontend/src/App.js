@@ -49,8 +49,7 @@ import ModalProvider from "./context/ModalContext";
 import PlaygroundProvider from "./context/PlaygroundContext";
 import CodeIdeHome from "pages/CodeIdeHome/CodeIdeHome";
 
-import InterviewHomepage from "./pages/interviewmain/InterviewHome";
-import MainPage from "./pages/interviewmain/MainPage";
+
 
 import InterviewPrepTools from "pages/InterviewPrepTools";
 
@@ -139,8 +138,7 @@ function AppContent() {
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
             <Route path="*" element={<ErrorPage />} />
 
-            <Route exact path="/interview-home" element={<InterviewHomepage />} />
-          <Route exact path="/room" element={<MainPage/>} />
+ 
           </Routes>
           {shouldShowLayout && <Footer />}
           <ToastContainer limit={2} autoClose={2000} />
