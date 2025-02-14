@@ -88,7 +88,7 @@ export default function Navbar() {
               <Link className="flex pt-1" to="/">
                 <img className="md:pl-5 pl-2" src={logo} alt="logo" />
                 <h1 className="md:pl-2 pl-2 text-2xl sm:text-2xl md:text-3xl text-[#F2994A] font-medium hover:opacity-60">
-                InterviewPrep
+                  InterviewPrep
                 </h1>
               </Link>
 
@@ -98,12 +98,12 @@ export default function Navbar() {
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/jobs"
                 >
-                  Interview AI
+                  Jobs
                 </Link>
 
                 <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
-                  to="/companies"
+                  to="/codecollab"
                 >
                   Code Collab
                 </Link>
@@ -114,13 +114,13 @@ export default function Navbar() {
                 >
                   Plag Checker
                 </Link> */}
-                <Link
+                {/* <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/leaderboard"
                 >
                   AI Voice Agent
-                </Link>
-                
+                </Link> */}
+
                 <Blog />
               </div>
             </div>
