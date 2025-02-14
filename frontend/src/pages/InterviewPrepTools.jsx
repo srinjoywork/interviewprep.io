@@ -15,6 +15,7 @@ const InterviewPrepTools = () => {
         image={CodeReview}
         imagePosition="left"
         buttonText="Learn More"
+        link="https://codebuddy-ai.netlify.app/"
       />
 
       {/* Section 2: Code Optimizer */}
@@ -24,6 +25,7 @@ const InterviewPrepTools = () => {
         image={CodeOptimizer}
         imagePosition="right"
         buttonText="Learn More"
+        link="https://ai-code-converter-live.vercel.app/"
       />
 
       {/* Section 3: Code IDE */}
@@ -33,6 +35,7 @@ const InterviewPrepTools = () => {
         image={CodeIDE}
         imagePosition="left"
         buttonText="Learn More"
+        link="http://localhost:4000/code-ide"
       />
 
       {/* Section 4: Note Digitalization */}
@@ -42,11 +45,20 @@ const InterviewPrepTools = () => {
         image={NoteDigitalizer}
         imagePosition="right"
         buttonText="Learn More"
+        link="https://resume-parser-pdqm.onrender.com"
       />
     </div>
   );
 };
-const Section = ({ title, description, image, imagePosition, buttonText }) => {
+
+const Section = ({
+  title,
+  description,
+  image,
+  imagePosition,
+  buttonText,
+  link,
+}) => {
   return (
     <section
       className={`section ${
@@ -59,7 +71,12 @@ const Section = ({ title, description, image, imagePosition, buttonText }) => {
       <div className="section-content">
         <h2 className="section-title">{title}</h2>
         <p className="section-description">{description}</p>
-        <a href="#" className="section-button">
+        <a
+          href={link}
+          className="section-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {buttonText}
         </a>
       </div>
