@@ -101,6 +101,7 @@ export default function App() {
 
   return (
     <SetPopupContext.Provider value={setPopup}>
+
         <PlaygroundProvider>
           <ModalProvider>
             <ScrollToTop />
@@ -108,6 +109,7 @@ export default function App() {
             {shouldShowLayout && <InfoBar />}
             {shouldShowLayout && <Navbar />}
             <RecoilRoot>
+
             <Routes>
               {/* Existing Routes */}
               <Route exact path="/" element={<Home />} />
@@ -188,16 +190,18 @@ export default function App() {
               />
               <Route path="*" element={<ErrorPage />} />
               <Route path="/PricingReact" element={<PricingReact />} />
+
               <Route exact path="/leaderboard" element={<Leaderboard />} />
               <Route path="/interviewhome" element={<InterviewLanding />} />
               <Route path="/join-interview" element={<InterviewHome />} />
               <Route path="/editor-room/:roomID" element={<EditorPage />} />
 
+          
+                
               <Route path="/021245" element={<Thankyou />}>
                 <Route path="codecollab" element={<CodeCollabHome />} />
-                <Route path="interviewhome" element={<InterviewLanding />} />
-                <Route path="join-interview" element={<InterviewHome />} />
-                <Route path="editor-room/:roomID" element={<EditorPage />} />
+
+
               </Route>
 
               {/* DSA Routes */}
@@ -206,15 +210,18 @@ export default function App() {
 
               <Route path="/PricingReact" element={<PricingReact />} />
             </Routes>
+
             </RecoilRoot>
             {shouldShowLayout && <Footer />}
             <ToastContainer limit={2} autoClose={2000} />
           </ModalProvider>
         </PlaygroundProvider>
-      
+
+
     </SetPopupContext.Provider>
   );
 }
+
 
 
 

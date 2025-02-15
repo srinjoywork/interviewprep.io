@@ -4,6 +4,7 @@ import CodeReview from "../assets/CodeReview.jpg";
 import CodeOptimizer from "../assets/CodeOptimizer.jpg";
 import CodeIDE from "../assets/CodeIDE.jpg";
 import NoteDigitalizer from "../assets/NoteDigitalization.jpg";
+import DSATracker from "../assets/dsa.jpg";
 
 const InterviewPrepTools = () => {
   return (
@@ -46,6 +47,16 @@ const InterviewPrepTools = () => {
         imagePosition="right"
         buttonText="Learn More"
         link="https://resume-parser-pdqm.onrender.com"
+      />
+
+      {/* Section 5: DSA Tracker */}
+      <Section
+        title="DSA Tracker"
+        description="DSA Tracker helps you track your progress in Data Structures and Algorithms. It provides categorized problems, difficulty levels, and progress monitoring to improve your problem-solving skills efficiently."
+        image={DSATracker}
+        imagePosition="left"
+        buttonText="Start Tracking"
+        link="http://localhost:4000/dsa-basics"
       />
     </div>
   );

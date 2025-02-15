@@ -22,6 +22,8 @@ import StayUpdatedSection from "./StayUpdatedSection/StayUpdatedSection";
 import Features from "./FeatureCard/Features/Features";
 import Contact from "./Contact/Contact";
 import RecruiterFeature from "./FeatureCard/RecruiterFeature/RecruiterFeature";
+import MainHomePage from "../components/MainHomePage/MainHomePage"
+
 export default function Jumbotron() {
   let [isOpen, setIsOpen] = useState(false);
   const type = userType();
@@ -66,8 +68,8 @@ export default function Jumbotron() {
               />
             </div>
           </div>
-          <RecruiterFeature/>
-          <Contact/>
+          <RecruiterFeature />
+          <Contact />
         </main>
       ) : type === "applicant" ? (
         <main className="bg-[#f8e5d4] ">
@@ -100,41 +102,44 @@ export default function Jumbotron() {
             </div>
           </div> */}
           <div className="w-[80%] mx-auto pt-20 pb-32 space-y-16 text-white">
-      {/* Hero Section */}
-      <div className="h-[50vh] relative flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
-        <div className="md:w-1/3 w-full flex justify-center">
-          <img
-            src="/path/to/transparent-image.png"
-            className="w-[50vh] h-[40vh] bg-white bg-opacity-10 p-4 rounded-xl shadow-lg"
-            alt="Transparent"
-          />
-        </div>
-        <div className="md:w-2/3 w-full text-center space-y-6">
-          <h1 className="text-5xl font-extrabold leading-tight">Heading Text</h1>
-        </div>
-      </div>
+            {/* Hero Section */}
+            <div className="h-[50vh] relative flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
+              <div className="md:w-1/3 w-full flex justify-center">
+                <img
+                  src="/path/to/transparent-image.png"
+                  className="w-[50vh] h-[40vh] bg-white bg-opacity-10 p-4 rounded-xl shadow-lg"
+                  alt="Transparent"
+                />
+              </div>
+              <div className="md:w-2/3 w-full text-center space-y-6">
+                <h1 className="text-5xl font-extrabold leading-tight">
+                  Heading Text
+                </h1>
+              </div>
+            </div>
 
-      {/* Student Features Section */}
-      {/* <div className="bg-gray-900 text-white text-center p-12 rounded-3xl shadow-lg transform transition hover:scale-105"> */}
-      <Features features={[
-    "Access to exclusive internships",
-    "Career guidance and mentorship",
-    "Skill-building workshops",
-    "Networking opportunities",
-    "Job placement assistance"
-  ]} title={"Student Features"}/>
-      {/* </div> */}
+            {/* Student Features Section */}
+            {/* <div className="bg-gray-900 text-white text-center p-12 rounded-3xl shadow-lg transform transition hover:scale-105"> */}
+            <Features
+              features={[
+                "Access to exclusive internships",
+                "Career guidance and mentorship",
+                "Skill-building workshops",
+                "Networking opportunities",
+                "Job placement assistance",
+              ]}
+              title={"Student Features"}
+            />
+            {/* </div> */}
 
-      {/* Metrics Section */}
-      <Metrices title={"Our Metrices"} desc={"xxxxxxxxxxxxxxxx"}/>
+            {/* Metrics Section */}
+            <Metrices title={"Our Metrices"} desc={"xxxxxxxxxxxxxxxx"} />
 
-      {/* Contact Section */}
-      <Contact />
+            {/* Contact Section */}
+            <Contact />
           </div>
-
         </main>
-      ) 
-      : (
+      ) : (
         <main className="bg-[#f8e5d4]">
           {/* <div className="text-center lg:w-7/12 w-12/12 ld:pt-52 md:pt-40 pt-32 pb-52 mx-auto h-2/3">
             <div className="relative w-full bg-light h-2/3 md:block hidden ">
@@ -188,14 +193,17 @@ export default function Jumbotron() {
               <img src={billFour} className="w-32 absolute right-6" />
             </div>
           </div> */}
-          
-          <div className="text-center w-[90%] pt-32 pb-52 mx-auto space-y-20">
+
+          <div className="text-center w-[90%] pt-32 pb-52 mx-auto space-y-20 flex flex-col items-center">
             {/* Hero Section */}
-            <div className="relative w-full flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
+            <div className="relative w-[80%] flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
               <div className="md:w-1/2 w-full text-left space-y-6">
-                <h1 className="text-5xl font-extrabold leading-tight">Your Career, Your Future</h1>
+                <h1 className="text-5xl font-extrabold leading-tight" style={{color:"pink"}}>
+                  Your Career, Your Future
+                </h1>
                 <p className="text-lg opacity-90">
-                  Unlock the best job opportunities with personalized recommendations and expert insights.
+                  Unlock the best job opportunities with personalized
+                  recommendations and expert insights.
                 </p>
                 <div className="mt-6 flex gap-4">
                   <button className="bg-yellow-400 text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500 transform transition hover:-translate-y-1">
@@ -205,10 +213,14 @@ export default function Jumbotron() {
                     Sign Up Free
                   </button>
                 </div>
-            </div>
-          <div className="md:w-1/2 w-full flex justify-center mt-6 md:mt-0">
-            <img src={billThree} className="w-80 rounded-2xl shadow-xl" alt="Carousel" />
-          </div>
+              </div>
+              <div className="md:w-1/2 w-full flex justify-center mt-6 md:mt-0">
+                <img
+                  src={billThree}
+                  className="w-80 rounded-2xl shadow-xl"
+                  alt="Carousel"
+                />
+              </div>
             </div>
 
             {/* Features Section */}
@@ -225,15 +237,18 @@ export default function Jumbotron() {
                 </div>
               </div>
             </div> */}
-            <div className="bg-gray-100 py-16 rounded-3xl shadow-lg">
-              <h2 className="text-gray-800 text-4xl font-bold mb-8">Features</h2>
+            {/* ------------------------------------------------------------------------------------------------------------------- */}
+            {/* <div className="bg-gray-100 py-16 rounded-3xl shadow-lg">
+              <h2 className="text-gray-800 text-4xl font-bold mb-8">
+                Features
+              </h2>
               <div className="flex flex-col md:flex-row justify-center gap-[16rem]">
                 <FeatureCard
                   title="For Students"
                   features={[
-                  "Internships to kickstart your career.",
-                  "Career advice tailored to your goals.",
-                  "Skill-building workshops and events.",
+                    "Internships to kickstart your career.",
+                    "Career advice tailored to your goals.",
+                    "Skill-building workshops and events.",
                   ]}
                   bgColor="bg-blue-100"
                   icon="🎓"
@@ -249,28 +264,34 @@ export default function Jumbotron() {
                   icon="🏢"
                 />
               </div>
-            </div>
-
+            </div> */}
+              {/* ------------------------------------------------------------------------------------------------------------------------ */}
             {/* Metrics Section */}
             {/* <div className="bg-gradient-to-r from-blue-500 to-purple-600 py-14 rounded-3xl shadow-2xl text-white transform transition hover:scale-105"> */}
             {/* <h2 className="text-4xl font-bold">Our Impact</h2>
             <p className="mt-4 text-xl opacity-90">Trusted by 50,000+ users & 1,000+ companies worldwide.</p> */}
             {/* </div> */}
-              <Metrices title={"Our Impact"} desc={"Trusted by 50,000+ users & 1,000+ companies worldwide."}/>
+            {/* ----------------------------------------------------------------------------------------------------------------------- */}
+            {/* <Metrices
+              title={"Our Impact"}
+              desc={"Trusted by 50,000+ users & 1,000+ companies worldwide."}
+            /> */}
+            {/* --------------------------------------------------------------------------------------------------------------------------- */}
 
+              {/* ----------------------------------------------------------------------------------------------------------------------- */}
             {/* News Subscription Section */}
-            <StayUpdatedSection
-            title="Stay Updated 📩"
-            description="Subscribe for exclusive job alerts and career tips."
-            buttonText="Subscribe"
-            bgColor="bg-gray-900"
-            />
+            {/* <StayUpdatedSection
+              title="Stay Updated 📩"
+              description="Subscribe for exclusive job alerts and career tips."
+              buttonText="Subscribe"
+              bgColor="bg-gray-900"
+            /> */}
+            {/* -------------------------------------------------------------------------------------------------------------- */}
+              <MainHomePage/>
 
           </div>
-
         </main>
-      )
-      }
+      )}
 
       {/* {type === "applicant" ? (
         <Transition appear show={isOpen} as={Fragment}>
