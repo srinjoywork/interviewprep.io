@@ -311,28 +311,29 @@ import "../../App.css";
 import { useLocation, useNavigate, Navigate, useParams } from "react-router-dom";
 
 const CollabEditorPage = () => {
-    const socketRef = useRef(null);
+    const socketRef = useRef(null); // Stores the socket instance
     const codeRef = useRef(""); // Store latest code
-    const location = useLocation();
-    const { roomId } = useParams();
-    const navigate = useNavigate();
-    const [clients, setClients] = useState([]);
-    const [selectedTab, setSelectedTab] = useState("chat");
-    const [isEditorFullScreen, setIsEditorFullScreen] = useState(false);
+    const location = useLocation(); // Gets the current URL location
+    const { roomId } = useParams(); // Extracts the roomId from URL params
+    const navigate = useNavigate(); // Allows navigation to different routes
+    const [clients, setClients] = useState([]); // Stores list of connected users
+    const [selectedTab, setSelectedTab] = useState("chat"); // Manages the active UI tab
+    const [isEditorFullScreen, setIsEditorFullScreen] = useState(false); // Manages fullscreen state
+    const [code, setCode] = useState("");
 
     useEffect(() => {
         const init = async () => {
             if (!location.state?.username) {
-                navigate("/codecollab");
+                navigate("/codecollab"); // Redirects if no username is provided
                 return;
             }
 
-            if (socketRef.current) return; // Prevent multiple initializations
+            if (socketRef.current) return; // Prevent multiple socket connections
 
             try {
-                socketRef.current = await initSocket();
+                socketRef.current = await initSocket(); // Initialize WebSocket
 
-                socketRef.current.on("connect", () => {
+                socketRef.current.on("connect", () => { 
                     console.log("Connected to server:", socketRef.current.id);
                 });
 
@@ -352,38 +353,58 @@ const CollabEditorPage = () => {
                         if (socketRef.current) socketRef.current.connect();
                     }, 5000);
                 }
-
+                
+                // Emit JOIN event to server
                 socketRef.current.emit(ACTIONS.JOIN, {
                     roomId,
                     username: location.state.username,
-                });
+                }); 
 
+                // Handle new user joining
                 socketRef.current.on(ACTIONS.JOINED, ({ clients, username, socketId }) => {
                     if (username !== location.state.username) {
+                        console.log(`${username} joined the room.`);
                         toast.success(`${username} joined the room.`);
                     }
-
+                    
+                    console.log("This is client: ",clients);
                     setClients(clients);
 
-                    if (socketId !== socketRef.current.id) {
+                    // if (socketId !== socketRef.current.id) {
                         console.log("Syncing code to new user...");
                         socketRef.current.emit(ACTIONS.SYNC_CODE, {
-                            code: codeRef.current,
+                            // code: codeRef.current,
+                            code: codeRef.current || "",
                             socketId,
-                        });
-                    }
+                        // });
+                        // socketRef.current.on(ACTIONS.SYNC_CODE, ({ code }) => {
+                        //     console.log("Received synced code:", code);
+                        //     codeRef.current = code;
+                        // });
+                    });
                 });
 
                 socketRef.current.on(ACTIONS.SYNC_CODE, ({ code }) => {
                     console.log("Received synced code:", code);
-                    codeRef.current = code;
-                });
-
-                socketRef.current.on(ACTIONS.CODE_CHANGE, ({ code }) => {
                     if (codeRef.current !== code) {
-                        console.log("Code updated by another user:", code);
-                        codeRef.current = code;
+                    codeRef.current = code;
+                    setCode(code);
                     }
+                });
+                
+                socketRef.current.on(ACTIONS.CODE_CHANGE, ({ code }) => {
+                    // if (codeRef.current !== code) {
+                    //     console.log("Code updated by another user:", code);
+                    //     codeRef.current = code;
+                    //     setCode(code);
+                    // }
+                    setCode((prevCode) => {
+                        if (prevCode !== code) {
+                            console.log("Code updated by another user:", code);
+                            codeRef.current = code;
+                        }
+                        return code;
+                    });
                 });
 
                 socketRef.current.on(ACTIONS.DISCONNECTED, ({ socketId, username }) => {
@@ -451,11 +472,19 @@ const CollabEditorPage = () => {
                 <Editor
                     socketRef={socketRef}
                     roomId={roomId}
-                    onCodeChange={(code) => {
-                        if (codeRef.current !== code) {
-                            codeRef.current = code;
-                            socketRef.current.emit(ACTIONS.CODE_CHANGE, { roomId, code });
-                        }
+                    onCodeChange={(newCode) => {
+                        // if (codeRef.current !== code) {
+                        //     codeRef.current = code;
+                        //     socketRef.current.emit(ACTIONS.CODE_CHANGE, { roomId, code });
+                        // }
+                        setCode((prevCode) => {
+                            if (prevCode !== newCode) {
+                                codeRef.current = newCode;
+                                socketRef.current.emit(ACTIONS.CODE_CHANGE, { roomId, code: newCode });
+                                return newCode;
+                            }
+                            return newCode;
+                        });
                     }}
                 />
                 <button className="fullscreen-btn" onClick={() => setIsEditorFullScreen(!isEditorFullScreen)}>

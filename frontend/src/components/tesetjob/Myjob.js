@@ -241,6 +241,17 @@ const Myjob = ({ job }, index) => {
             </span>
           </span>
         </p>
+        <div>
+          <FontAwesomeIcon
+            icon={faHand}
+            className="text-xl text-red-500 mr-2"
+          />
+          {/* <FontAwesomeIcon icon="fa-solid fa-clipboard" /> */}
+                <span className="text-base font-semibold tracking-wide">
+                  Description:{" "}
+                </span>
+                <span>{job.description.replace(/<\/?[^>]+(>|$)/g, "")}</span> 
+              </div>
         <div className="flex items-baseline flex-wrap">
           {job.skillsets && job.skillsets.length >= 0 ? (
             <>
@@ -263,6 +274,8 @@ const Myjob = ({ job }, index) => {
                     ))
                   : null}
               </div>
+              
+
             </>
           ) : null}
         </div>
