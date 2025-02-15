@@ -2,7 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 // import robot from "assets/robot.jpg";
 // import resumeImage from "assets/resume.jpg";
-
+import RecruiterToolLeft from "../components/RecruiterTools/RecruiterToolLeft/RecruiterToolLeft"
+import RecruiterToolRight from "../components/RecruiterTools/RecruiterToolRight/RecruiterToolRight"
+import Resume_Summarizer from "../assets/RecruiterTools/Resume_Summarizer.jpg"
 const RecruiterTools = () => {
   const navigate = useNavigate();
 
@@ -11,9 +13,25 @@ const RecruiterTools = () => {
   };
 
   return (
-    <>
+    <div className="conatiner" style={{ width: "100%",
+      height: "100%",
+      backgroundColor: "#ffffff",
+      backgroundImage: "radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)",
+      backgroundSize: "30px 30px",
+      backgroundPosition: "-5px -5px"}}>
+
+    
+      {/* Resume Summarizer */}
+      <RecruiterToolLeft redirectLink={"/ai"}  title={"Resume Summarizer"} desc={"An AI-powered tool that extracts key details from resumes, providing concise summaries of candidates' skills, experience, and qualifications to streamline the recruitment process"} img={Resume_Summarizer}/>
+
+      {/* Note Digitalizer */}
+      <RecruiterToolRight redirectLink={"/ai"} title={"Note Digitalizer"} desc={"a smart tool that converts handwritten or typed notes into digital format, making them easily searchable, editable, and shareable. It enhances productivity by organizing notes efficiently"} img={Resume_Summarizer}/>
+
+      {/* AI Question Generator */}
+      <RecruiterToolLeft redirectLink={"/ai"} title={"Question Generator"} desc={"an AI-powered tool that creates relevant and diverse questions based on given topics or content. It helps in exam preparation, interviews, and quizzes by generating insightful and structured questions efficiently."} img={Resume_Summarizer}/>
+
       {/* AI Voice Section */}
-      <div
+      {/* <div
         style={{
           display: "flex",
           alignItems: "center",
@@ -62,16 +80,16 @@ const RecruiterTools = () => {
           </button>
         </div>
         <div style={{ flex: 1, textAlign: "right", paddingLeft: "50px" }}>
-          {/* <img
+          <img
             src={robot}
             alt="AI Voice"
             style={{ maxWidth: "50%", height: "auto", borderRadius: "10px" }}
-          /> */}
+          />
         </div>
-      </div>
+      </div> */}
 
       {/* Resume Summarizer Section */}
-      <div
+      {/* <div
         style={{
           display: "flex",
           alignItems: "center",
@@ -80,11 +98,11 @@ const RecruiterTools = () => {
         }}
       >
         <div style={{ flex: 1, textAlign: "left", paddingRight: "50px" }}>
-          {/* <img
+          <img
             src={resumeImage}
             alt="Resume Summarizer"
             style={{ maxWidth: "50%", height: "auto", borderRadius: "10px" }}
-          /> */}
+          />
         </div>
         <div
           style={{
@@ -125,8 +143,8 @@ const RecruiterTools = () => {
             Try Resume Summarizer
           </button>
         </div>
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 };
 
