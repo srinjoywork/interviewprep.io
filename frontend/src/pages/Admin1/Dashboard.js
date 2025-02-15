@@ -12,6 +12,7 @@ import Recruiter from "./recruiter";
 import Job from "./Job";
 
 export function Dashboard() {
+  const setPopup = useContext(SetPopupContext);
   const type = userType();
   let [active, setActive] = useState(0);
   const { id } = useParams();

@@ -18,7 +18,7 @@ const EditorNavbar = () => {
     <>
       <nav className="flex items-center justify-between">
         <div className="pl-3">
-          <Button>CodeAlong</Button>
+          <Button>Interiew-Room</Button>
         </div>
 
         <div className="flex p-2">
