@@ -375,61 +375,73 @@ const MonacoEditor = ({
   };
   useEffect(() => {
     if (!editorRef.current) {
-      // Initialize editor only once
+      // Initialize CodeMirror editor
       editorRef.current = Codemirror.fromTextArea(
         document.getElementById("realtimeEditor"),
         {
+          mode: lang, // Set the initial language mode
+          theme: them, // Set the initial theme
+          lineNumbers: true,
           autoCloseTags: true,
           autoCloseBrackets: true,
-          lineNumbers: true,
-          autocorrect: true,
-          cursorHeight: 1,
-          indentWithTabs: true,
           matchBrackets: true,
-          search: true,
+          indentWithTabs: true,
           tabSize: 4,
+          cursorHeight: 1,
           spellcheck: true,
+          autocorrect: true,
           showCursorWhenSelecting: true,
           scrollbarStyle: "overlay",
           cursorScrollMargin: 2,
           lintOnChange: true,
         }
       );
-
+  
+      // Handle changes in the editor
       editorRef.current.on("change", (instance, changes) => {
         const { origin } = changes;
         if (origin !== "setValue") {
           const newCode = instance.getValue();
-          setCode(newCode); // Update the code state
-          onCodeChange(newCode);
-          socketRef.current.emit(ACTIONS.CODE_CHANGE, {
-            roomID,
-            code: newCode,
-          });
+          setCode(newCode); // Update local state
+          onCodeChange(newCode); // Propagate change to parent or other handlers
+  
+          // Emit code change to the server
+          if (socketRef.current && roomID) {
+            socketRef.current.emit(ACTIONS.CODE_CHANGE, {
+              roomID,
+              code: newCode,
+            });
+          }
         }
       });
+    } else {
+      // Update editor options if lang or theme changes
+      editorRef.current.setOption("mode", lang);
+      editorRef.current.setOption("theme", them);
     }
-
-    // Update editor configuration when language or theme changes
-    editorRef.current.setOption("mode", lang);
-    editorRef.current.setOption("theme", them);
-  }, [lang, them]); // Only re-run this effect when lang or them changes
-
+  }, [lang, them, roomID, onCodeChange]);
+  
   useEffect(() => {
     if (socketRef.current) {
-      socketRef.current.on(ACTIONS.CODE_CHANGE, ({ code }) => {
-        if (code !== null) {
+      // Listen for code changes from the server
+      const handleCodeChange = ({ code }) => {
+        if (code !== editorRef.current.getValue()) {
+          // Prevent cursor from jumping to the beginning
+          const cursor = editorRef.current.getCursor();
           editorRef.current.setValue(code);
+          editorRef.current.setCursor(cursor);
         }
-      });
+      };
+  
+      socketRef.current.on(ACTIONS.CODE_CHANGE, handleCodeChange);
+  
+      return () => {
+        // Clean up the listener on component unmount
+        socketRef.current.off(ACTIONS.CODE_CHANGE, handleCodeChange);
+      };
     }
-
-    return () => {
-      if (socketRef.current) {
-        socketRef.current.off(ACTIONS.CODE_CHANGE);
-      }
-    };
   }, []);
+  
 
   return (
     <>

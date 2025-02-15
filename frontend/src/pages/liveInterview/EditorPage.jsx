@@ -101,60 +101,69 @@ const EditorPage = () => {
   //   };
   // }, []);
   useEffect(() => {
-    const init = async () => {
-        socketRef.current = io("https://interviewroombackend.onrender.com"); // Your backend URL
-        socketRef.current.on("connect_error", (err) => handleErrors(err));
-        socketRef.current.on("connect_failed", (err) => handleErrors(err));
-
-        function handleErrors(e) {
-            console.log("socket error:", e);
-            toast.error("Socket connection failed, try again later.");
-            reactNavigator("/");
-        }
-
+    const initSocket = async () => {
+      try {
+        socketRef.current = io("https://interviewroombackend.onrender.com");
+  
+        socketRef.current.on("connect", () => {
+          console.log("Connected to socket server");
+        });
+  
+        socketRef.current.on("connect_error", (err) => {
+          console.error("Connection error:", err.message);
+          toast.error("Socket connection failed, try again later.");
+          reactNavigator("/interviewhome");
+        });
+  
+        socketRef.current.on("disconnect", (reason) => {
+          console.warn(`Disconnected: ${reason}`);
+          if (reason === "io server disconnect") {
+            // The server disconnected us, attempt to reconnect
+            socketRef.current.connect();
+          }
+        });
+  
+        // Join the room
         socketRef.current.emit(ACTIONS.JOIN, {
-            roomID,
-            username: location.state?.username,
+          roomID,
+          username: location.state?.username,
         });
-
-        // Listening to JOINED Event
+  
+        // Handle joined event
         socketRef.current.on(ACTIONS.JOINED, ({ clients, username, socketId }) => {
-            console.log("Action Joined");
-            console.log({ clients, username, socketId });
-            if (
-                username !== location.state?.username &&
-                username !== "undefined"
-            ) {
-                toast.success(`${username} has joined the room.`);
-            }
-            setClients(clients);
-            socketRef.current.emit(ACTIONS.SYNC_CODE, {
-                code: codeRef.current,
-                socketId,
-            });
+          if (username !== location.state?.username) {
+            toast.success(`${username} has joined the room.`);
+          }
+          setClients(clients);
+          socketRef.current.emit(ACTIONS.SYNC_CODE, {
+            code: codeRef.current,
+            socketId,
+          });
         });
-
-        // Listening for DISCONNECTED Event
+  
+        // Handle disconnected event
         socketRef.current.on(ACTIONS.DISCONNECTED, ({ socketId, username }) => {
-            console.log("Action Disconnected");
-            console.log({ socketId, username });
-            toast.error(`${username} left the room.`);
-            setClients((prev) => {
-                return prev.filter((client) => client.socketId !== socketId);
-            });
+          toast.error(`${username} left the room.`);
+          setClients((prev) => prev.filter((client) => client.socketId !== socketId));
         });
+      } catch (error) {
+        console.error("Socket initialization failed:", error);
+        toast.error("Failed to initialize socket.");
+        reactNavigator("/interviewhome");
+      }
     };
-
-    init();
-
+  
+    initSocket();
+  
     return () => {
-        if (socketRef.current) {
-            socketRef.current.off(ACTIONS.JOINED);
-            socketRef.current.off(ACTIONS.DISCONNECTED);
-            socketRef.current.disconnect();
-        }
+      if (socketRef.current) {
+        socketRef.current.off(ACTIONS.JOINED);
+        socketRef.current.off(ACTIONS.DISCONNECTED);
+        socketRef.current.disconnect();
+      }
     };
-}, [roomID, location.state?.username, reactNavigator]);
+  }, [roomID, location.state?.username, reactNavigator]);
+  
 
 
 
