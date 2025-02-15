@@ -1,6 +1,6 @@
 import LeaderboardCard from "components/LeaderboardCard";
 import LeaderboardTable from "components/tables/LeaderboardTable";
-import useLeaderboard from "hooks/";
+import useLeaderboard from "hooks/useLeaderboard";
 
 export default function Leaderboard() {
   const user = useLeaderboard();
