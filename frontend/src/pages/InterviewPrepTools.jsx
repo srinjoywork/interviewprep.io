@@ -1,4 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import isAuth from "libs/isAuth";
+import { userType } from "libs/isAuth";
 import "./InterviewPrepTools.css";
 import CodeReview from "../assets/CodeReview.jpg";
 import CodeOptimizer from "../assets/CodeOptimizer.jpg";
@@ -9,7 +12,7 @@ import DSATracker from "../assets/dsa.jpg";
 const InterviewPrepTools = () => {
   return (
     <div className="InterviewPrepTools">
-      {/* Section 1: Code Review */}
+      {/* Sections remain the same */}
       <Section
         title="Code Review"
         description="Code Review is the process of examining and improving code quality. It ensures that the code is clean, efficient, and adheres to best practices. Peer reviews and automated tools are often used in this process."
@@ -70,6 +73,24 @@ const Section = ({
   buttonText,
   link,
 }) => {
+  const navigate = useNavigate();
+  const authenticated = isAuth();
+  const type = userType();
+  const isApplicant = authenticated && type === "applicant";
+  const isExternal = link.startsWith("http");
+
+  const handleClick = (e) => {
+    if (!isApplicant) {
+      e.preventDefault();
+      navigate("/sign-in");
+    } else {
+      if (!isExternal) {
+        e.preventDefault();
+        navigate(link);
+      }
+    }
+  };
+
   return (
     <section
       className={`section ${
@@ -83,10 +104,11 @@ const Section = ({
         <h2 className="section-title">{title}</h2>
         <p className="section-description">{description}</p>
         <a
-          href={link}
+          href={isApplicant ? link : "#"}
+          onClick={handleClick}
+          target={isExternal && isApplicant ? "_blank" : undefined}
+          rel={isExternal && isApplicant ? "noopener noreferrer" : undefined}
           className="section-button"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           {buttonText}
         </a>

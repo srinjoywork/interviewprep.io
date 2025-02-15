@@ -7,9 +7,14 @@ import {
   faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import isAuth from "libs/isAuth";
+import { userType } from "libs/isAuth";
 
 export default function Blog() {
   const [isOpen, setIsOpen] = useState(false);
+  const authenticated = isAuth();
+  const type = userType();
+  const isApplicant = authenticated && type === "applicant";
 
   return (
     <div className="px-4">
@@ -46,7 +51,11 @@ export default function Blog() {
               <div className="lg:block hidden overflow-hidden rounded-lg shadow-lg">
                 <div className="relative bg-white p-3">
                   <Link
-                    to="https://codebuddy-ai.netlify.app/"
+                    to={
+                      isApplicant
+                        ? "https://codebuddy-ai.netlify.app/"
+                        : "/sign-in"
+                    }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -59,7 +68,11 @@ export default function Blog() {
                     </div>
                   </Link>
                   <Link
-                    to="https://ai-code-converter-live.vercel.app/"
+                    to={
+                      isApplicant
+                        ? "https://ai-code-converter-live.vercel.app/"
+                        : "/sign-in"
+                    }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -72,7 +85,7 @@ export default function Blog() {
                     </div>
                   </Link>
                   <Link
-                    to="/code-ide"
+                    to={isApplicant ? "/code-ide" : "/sign-in"}
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -85,7 +98,11 @@ export default function Blog() {
                     </div>
                   </Link>
                   <Link
-                    to="https://resume-parser-pdqm.onrender.com"
+                    to={
+                      isApplicant
+                        ? "https://resume-parser-pdqm.onrender.com"
+                        : "/sign-in"
+                    }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
@@ -98,7 +115,11 @@ export default function Blog() {
                     </div>
                   </Link>
                   <Link
-                    to="http://localhost:4000/dsa-basics"
+                    to={
+                      isApplicant
+                        ? "http://localhost:4000/dsa-basics"
+                        : "/sign-in"
+                    }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                   >
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
