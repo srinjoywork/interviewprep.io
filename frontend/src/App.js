@@ -62,11 +62,8 @@ import Blind75List from "./pages/DSA/Blind75List.jsx"
 
 
 import PricingReact from "../src/pages/subscription"
-<<<<<<< HEAD
 import Thankyou from "pages/Thankyou";
-=======
 
->>>>>>> 9e14f4d034a1a3ca9f9bf85ba968bd61cea82d47
 export const SetPopupContext = createContext();
 
 function AppContent() {
