@@ -85,7 +85,7 @@ function AppContent() {
     }
   }, [popup]);
 
-  const excludeLayoutPaths = ["/editor/:roomId","PricingReact", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
+  const excludeLayoutPaths = ["/editor/:roomId", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
