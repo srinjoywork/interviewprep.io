@@ -6,14 +6,15 @@ import SocialMedia from "components/SocialMedia";
 import JobBoard from "components/tesetjob/JobBoard";
 import { userType } from "libs/isAuth";
 import { CompanyBanner } from "components/CompanyBanner";
-
+import Contact from "../../components/Contact/Contact";
 function Home() {
   return (
     <div>
       <Content />
       
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <JobBoard title={false} />
+      
       <CompanyBanner type={userType} />
       <SocialMedia />
       <Banner
@@ -22,6 +23,7 @@ function Home() {
         link="/jobs"
         type={userType}
       />
+      {/* <Contact/> */}
     </div>
   );
 }
