@@ -102,7 +102,7 @@ const EditorPage = () => {
   // }, []);
   useEffect(() => {
     const init = async () => {
-        socketRef.current = io("http://localhost:3000"); // Your backend URL
+        socketRef.current = io("https://interviewroombackend.onrender.com"); // Your backend URL
         socketRef.current.on("connect_error", (err) => handleErrors(err));
         socketRef.current.on("connect_failed", (err) => handleErrors(err));
 
