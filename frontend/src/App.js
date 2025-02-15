@@ -53,7 +53,7 @@ import InterviewPrepTools from "pages/InterviewPrepTools";
 import InterviewLanding from "pages/liveInterview/InterviewLanding";
 import InterviewHome from "pages/liveInterview/InterviewHome";
 import EditorPage from "pages/liveInterview/EditorPage";
-
+import PricingReact from "../src/pages/subscription"
 export const SetPopupContext = createContext();
 
 function AppContent() {
@@ -85,7 +85,7 @@ function AppContent() {
     }
   }, [popup]);
 
-  const excludeLayoutPaths = ["/editor/:roomId", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
+  const excludeLayoutPaths = ["/editor/:roomId","PricingReact", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
@@ -137,6 +137,7 @@ function AppContent() {
             <Route path="/interviewhome" element={<InterviewLanding />} />
             <Route path="/join-interview" element={<InterviewHome />} />
             <Route path="/editor-room/:roomID" element={<EditorPage />} />
+            <Route path="/PricingReact" element={<PricingReact />} />
           </Routes>
           </RecoilRoot>
           {shouldShowLayout && <Footer />}
