@@ -54,8 +54,19 @@ import InterviewPrepTools from "pages/InterviewPrepTools";
 import InterviewLanding from "pages/liveInterview/InterviewLanding";
 import InterviewHome from "pages/liveInterview/InterviewHome";
 import EditorPage from "pages/liveInterview/EditorPage";
+
+
+//DSA Imports
+import DSAbasics from "./pages/DSA/DSAbasics"
+import Blind75List from "./pages/DSA/Blind75List.jsx"
+
+
 import PricingReact from "../src/pages/subscription"
+<<<<<<< HEAD
 import Thankyou from "pages/Thankyou";
+=======
+
+>>>>>>> 9e14f4d034a1a3ca9f9bf85ba968bd61cea82d47
 export const SetPopupContext = createContext();
 
 function AppContent() {
@@ -87,7 +98,7 @@ function AppContent() {
     }
   }, [popup]);
 
-  const excludeLayoutPaths = ["/editor/:roomId","PricingReact", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
+  const excludeLayoutPaths = ["/editor/:roomId", "/code-ide", "/playground/:folderId/:playgroundId", "/interview-home/:id"];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
   );
@@ -142,6 +153,7 @@ function AppContent() {
             <Route path="/join-interview" element={<InterviewHome />} />
             <Route path="/editor-room/:roomID" element={<EditorPage />} />
 
+
             <Route path="/021245" element={<Thankyou/>}>
             <Route path="codecollab" element={<CodeCollabHome />} />
     {/* <Route path="interviewhome" element={<InterviewLanding />} />
@@ -149,6 +161,13 @@ function AppContent() {
     <Route path="editor-room/:roomID" element={<EditorPage />} /> */}
               </Route>
             
+             {/* DSA Routes */}
+            <Route path="/dsa-basics" element={<DSAbasics />} />
+            <Route path="/blind75" element={<Blind75List />} />
+
+            <Route path="/PricingReact" element={<PricingReact />} />
+
+
           </Routes>
           </RecoilRoot>
           {shouldShowLayout && <Footer />}
