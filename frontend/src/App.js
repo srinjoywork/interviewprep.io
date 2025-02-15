@@ -38,6 +38,7 @@ import { Dashboard } from "pages/Admin1/Dashboard";
 import RecruiterTools from "pages/RecruiterTools";
 import ResumeBuilder from "pages/ResumeBuilder";
 
+
 // CodeCollab Pages
 import CodeCollabHome from "pages/CollabHome/CodeCollabHome";
 import CollabEditorPage from "pages/CollabHome/CollabEditorPage";
@@ -54,6 +55,7 @@ import InterviewLanding from "pages/liveInterview/InterviewLanding";
 import InterviewHome from "pages/liveInterview/InterviewHome";
 import EditorPage from "pages/liveInterview/EditorPage";
 import PricingReact from "../src/pages/subscription"
+import Thankyou from "pages/Thankyou";
 export const SetPopupContext = createContext();
 
 function AppContent() {
@@ -126,7 +128,7 @@ function AppContent() {
             <Route exact path="/applicant/settings" element={<Settings />} />
             <Route exact path="/admin/settings" element={<AdminSettings />} />
             <Route exact path="/logout" element={<Logout />} />
-            <Route exact path="/codecollab" element={<CodeCollabHome />} />
+            {/* <Route exact path="/codecollab" element={<CodeCollabHome />} /> */}
             <Route exact path="/editor/:roomId" element={<CollabEditorPage />} />
             <Route exact path="/build-resume" element={<ResumeBuilder />} />
             <Route exact path="/interviewpreptools" element={<InterviewPrepTools />} />
@@ -134,10 +136,19 @@ function AppContent() {
             <Route path="/code-ide" element={<CodeIdeHome />} />
             <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path="/PricingReact" element={<PricingReact />} />
+
             <Route path="/interviewhome" element={<InterviewLanding />} />
             <Route path="/join-interview" element={<InterviewHome />} />
             <Route path="/editor-room/:roomID" element={<EditorPage />} />
-            <Route path="/PricingReact" element={<PricingReact />} />
+
+            <Route path="/021245" element={<Thankyou/>}>
+            <Route path="codecollab" element={<CodeCollabHome />} />
+    {/* <Route path="interviewhome" element={<InterviewLanding />} />
+    <Route path="join-interview" element={<InterviewHome />} />
+    <Route path="editor-room/:roomID" element={<EditorPage />} /> */}
+              </Route>
+            
           </Routes>
           </RecoilRoot>
           {shouldShowLayout && <Footer />}
