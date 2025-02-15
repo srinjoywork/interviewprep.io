@@ -149,7 +149,7 @@ const TemplateReact = () => {
   const [showMenu, setShowMenu] = useState(false);
   const showMenuItems = () => {
     if (!showMenu) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";                     
     } else {
       document.body.style.overflow = "auto";
     }
@@ -160,9 +160,9 @@ const TemplateReact = () => {
       <div className="mx-auto ">
         <div className="flex flex-col gap-20 items-center">
           <div className="max-w-screen-xl w-full relative">
-            <div className="absolute">
+            {/* <div className="absolute">
               <img src="/img/nft/infytoken/gradiant.svg" />
-            </div>
+            </div> */}
             {/* <div className="sm:px-20 px-8 py-9 flex justify-between">
               <div className="flex items-center gap-2 cursor-pointer z-10">
                 <img src="/img/nft/infytoken/logo.svg" alt="logo" />
@@ -282,7 +282,7 @@ const TemplateReact = () => {
           </div>
           <div className="sm:px-20 px-8 flex gap-2 max-w-screen-xl w-full">
             <div className="flex flex-col gap-10">
-              <span className="text-4xl text-[#233047] font-extrabold">
+              <span className="text-4xl text-[#9517AF] font-extrabold">
                 About US
               </span>
               <div className="flex flex-col gap-7">
@@ -315,7 +315,7 @@ const TemplateReact = () => {
           </div>
           <div className="flex flex-col gap-10 sm:px-20 px-8 max-w-screen-xl w-full">
             <div className="flex flex-col gap-7 items-center">
-              <span className="font-semibold text-4xl text-[#233047] text-center">
+              <span className="font-semibold text-4xl text-[#9517AF] text-center">
                 Key Features Of InfyToken Ecosystem
               </span>
               <span className="text-center text-2xl font-normal max-w-xl">
@@ -334,7 +334,7 @@ const TemplateReact = () => {
                       <div className="h-6 w-6">
                         <img src={data?.icon} alt={data?.name} />
                       </div>
-                      <span className="text-lg sm:text-2xl font-semibold text-[#233047]">
+                      <span className="text-lg sm:text-2xl font-semibold text-[#9517AF]">
                         {data?.title}
                       </span>
                       <span className="text-md sm:text-xl font-normal text-[#233047]">
@@ -500,7 +500,7 @@ const TemplateReact = () => {
               ))}
             </div>
           </div> */}
-          <div className="bg-gradient-to-b from-[#D6D6D6] from-[0.4%] via-transparent via-[60%] to-[#D6D6D6] to-100% sm:px-20 px-8 py-11 our-projects">
+          <div className="">
               <div className="flex max-w-5xl mx-auto justify-between flex-col md:flex-row gap-10 ">
                 {result?.map((data, index) => {
                   return (
@@ -521,7 +521,7 @@ const TemplateReact = () => {
             </div>
           <div className="sm:px-20 px-8  flex flex-col gap-9 max-w-screen-xl w-full">
             <div className="flex flex-col gap-7 items-center">
-              <span className="text-2xl sm:text-4xl text-[#233047] font-semibold">
+              <span className="text-2xl sm:text-4xl text-[#9517AF] font-semibold">
                 Download Document
               </span>
               <span className="text-xl sm:text-2xl text-[#233047] font-normal text-center max-w-xl">
