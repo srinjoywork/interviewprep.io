@@ -54,9 +54,13 @@ import InterviewLanding from "pages/liveInterview/InterviewLanding";
 import InterviewHome from "pages/liveInterview/InterviewHome";
 import EditorPage from "pages/liveInterview/EditorPage";
 
+
 //DSA Imports
 import DSAbasics from "./pages/DSA/DSAbasics"
 import Blind75List from "./pages/DSA/Blind75List.jsx"
+
+
+import PricingReact from "../src/pages/subscription"
 
 export const SetPopupContext = createContext();
 
@@ -141,9 +145,13 @@ function AppContent() {
             <Route path="/interviewhome" element={<InterviewLanding />} />
             <Route path="/join-interview" element={<InterviewHome />} />
             <Route path="/editor-room/:roomID" element={<EditorPage />} />
+
              {/* DSA Routes */}
             <Route path="/dsa-basics" element={<DSAbasics />} />
             <Route path="/blind75" element={<Blind75List />} />
+
+            <Route path="/PricingReact" element={<PricingReact />} />
+
           </Routes>
           </RecoilRoot>
           {shouldShowLayout && <Footer />}
