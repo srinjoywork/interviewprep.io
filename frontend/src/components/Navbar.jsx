@@ -44,15 +44,21 @@ export default function Navbar() {
               <>
                 <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/interview-room"
+                  to="/interviewhome"
                 >
                   Interview Room
                 </Link>
                 <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/build-resume"
+                  to="/recruiter-tools"
                 >
                   Resume Summarizer
+                </Link>
+                <Link
+                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
+                  to="/recruiter-tools"
+                >
+                  AutoQuest
                 </Link>
 
                 <Link

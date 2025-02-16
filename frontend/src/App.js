@@ -94,6 +94,8 @@ export default function App() {
     "/code-ide",
     "/playground/:folderId/:playgroundId",
     "/interview-home/:id",
+       
+
   ];
   const shouldShowLayout = !excludeLayoutPaths.some((path) =>
     new RegExp(`^${path.replace(/:[^/]+/, "[^/]+")}$`).test(location.pathname)
