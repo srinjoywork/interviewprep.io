@@ -15,72 +15,55 @@ export default function Navbar() {
 
   return (
     <Disclosure as="nav" className="bg-[#d4f1f7] w-full">
-      <div className="flex justify-between h-24 py-6 md:w-10/12 w-11/12 mx-auto">
-        <div className="flex">
+      <div className="flex justify-between items-center h-16 py-3 px-4 md:px-6 lg:px-12 mx-auto max-w-[1400px]">
+        {/* Logo Section */}
+        <div className="flex items-center">
           <Link
-            className="flex pt-1 hover:no-underline"
+            className="flex items-center hover:no-underline"
             to={linkUrl.pathname.startsWith("/blog") ? "/blog" : "/"}
           >
-            <img className="md:pl-5 pl-2" src={logo} alt="logo" />
-            <h1 className="md:pl-2 pl-2 text-6xl sm:text-3xl md:text-4xl text-[#8f5bfd] font-medium hover:opacity-60 hover:no-underline">
-              CODEHIREX{linkUrl.pathname.startsWith("/blog") && ".io"}
-            </h1>
+            <img className="h-8 w-auto md:h-10" src={logo} alt="logo" />
+            <h1 className="ml-2 text-lg md:text-xl lg:text-2xl text-[#8f5bfd] font-semibold hover:opacity-60 hover:no-underline font-[JetBrains+Mono]">
+  CODE-HIRE-X{linkUrl.pathname.startsWith("/blog") && ".io"}
+</h1>
+
+
+
             {linkUrl.pathname.startsWith("/blog") && (
-              <FontAwesomeIcon icon={faBlog} />
+              <FontAwesomeIcon icon={faBlog} className="ml-2 text-lg" />
             )}
           </Link>
         </div>
 
-        <div className="flex pt-0.5 pl-8">
+        {/* Navigation Links */}
+        <div className="hidden lg:flex items-center space-x-4">
           <HowIt />
-          <Link
-            className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-            to="/jobs"
-          >
+          <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline " to="/jobs">
             Jobs
           </Link>
+
           {isAuth() ? (
             userType() === "recruiter" ? (
               <>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/interviewhome"
-                >
+                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/interviewhome">
                   Interview Room
                 </Link>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/recruiter-tools"
-                >
+                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/recruiter-tools">
                   Resume Summarizer
                 </Link>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/recruiter-tools"
-                >
+                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/recruiter-tools">
                   QGenAi
                 </Link>
-
-                <Link
-                  to="/create-new-job"
-                  className="hidden sm:flex hover:opacity-80 cursor-pointer items-center font-semibold text-sm justify-center px-6 bg-black rounded-lg mr-8 text-white hover:no-underline"
-                >
-                  <FontAwesomeIcon icon={faPlus} className="mr-3" />
-                  Create new job
+                <Link to="/create-new-job" className="flex items-center font-semibold text-xs md:text-sm bg-black text-white px-3 py-1 rounded-lg hover:opacity-80">
+                  <FontAwesomeIcon icon={faPlus} className="mr-2" /> Create job
                 </Link>
               </>
             ) : userType() === "applicant" ? (
               <>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/codecollab"
-                >
+                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/codecollab">
                   Code Collaborators
                 </Link>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                  to="/build-resume"
-                >
+                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/build-resume">
                   Resume Builder
                 </Link>
                 <Blog />
@@ -88,22 +71,13 @@ export default function Navbar() {
             ) : null
           ) : (
             <>
-              <Link
-                className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                to="/sign-in"
-              >
+              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/sign-in">
                 Code Collaborators
               </Link>
-              <Link
-                className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                to="/sign-in"
-              >
+              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/sign-in">
                 Interview Room
               </Link>
-              <Link
-                className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
-                to="/build-resume"
-              >
+              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/build-resume">
                 Resume Builder
               </Link>
               <Blog />
@@ -111,26 +85,25 @@ export default function Navbar() {
           )}
         </div>
 
-        <div className="flex">
-          <MobileMenu />
+        {/* Profile or Authentication Links */}
+        <div className="hidden lg:flex items-center space-x-3">
           {isAuth() ? (
             <ProfileMenu type={userType} />
           ) : (
             <>
-              <Link
-                className="lg:block hidden text-black text-lg font-semibold pr-6 py-2 hover:opacity-60 hover:no-underline"
-                to="/sign-in"
-              >
+              <Link className="text-black text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/sign-in">
                 Sign in
               </Link>
-              <Link
-                className="lg:block hidden hover:no-underline text-center text-lg font-semibold text-white bg-[#8f5bfd] hover:bg-[#e08a42] px-6 py-3 rounded-full transform ease-in duration-100 hover:scale-105 hover:shadow-lg"
-                to="/sign-up"
-              >
+              <Link className="bg-[#8f5bfd] text-white text-sm md:text-base font-semibold px-4 py-2 rounded-full hover:bg-[#9b2ab8] hover:scale-105 transition-transform hover:no-underline" to="/sign-up">
                 Sign up
               </Link>
             </>
           )}
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="lg:hidden">
+          <MobileMenu />
         </div>
       </div>
     </Disclosure>

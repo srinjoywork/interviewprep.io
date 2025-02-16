@@ -25,7 +25,7 @@ export default function Blog() {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            <Link to="/interviewpreptools">
+            <Link to="/interviewpreptools" className="hover:no-underline">
               <span>Interview Prep Tools</span>
             </Link>
             <FontAwesomeIcon
@@ -48,8 +48,8 @@ export default function Blog() {
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
-              <div className="lg:block hidden overflow-hidden rounded-lg shadow-lg">
-                <div className="relative bg-white p-3">
+              <div className="lg:block hidden overflow-hidden rounded-lg shadow-lg ">
+                <div className="relative bg-white p-3 ">
                   <Link
                     to={
                       isApplicant
@@ -62,7 +62,7 @@ export default function Blog() {
                       <FontAwesomeIcon icon={faNewspaper} />
                     </div>
                     <div className="ml-4">
-                      <p className="text-md font-semibold text-gray-900">
+                      <p className="text-md font-semibold text-gray-900  hover:no-underline">
                         Code Review
                       </p>
                     </div>
@@ -79,7 +79,7 @@ export default function Blog() {
                       <FontAwesomeIcon icon={faCode} />
                     </div>
                     <div className="ml-4">
-                      <p className="text-md font-semibold text-gray-900">
+                      <p className="text-md font-semibold text-gray-900  hover:no-underline">
                         Code Optimizer
                       </p>
                     </div>
@@ -92,7 +92,7 @@ export default function Blog() {
                       <FontAwesomeIcon icon={faCode} />
                     </div>
                     <div className="ml-4">
-                      <p className="text-md font-semibold text-gray-900">
+                      <p className="text-md font-semibold text-gray-900  hover:no-underline">
                         Code IDE
                       </p>
                     </div>
@@ -109,7 +109,7 @@ export default function Blog() {
                       <FontAwesomeIcon icon={faCode} />
                     </div>
                     <div className="ml-4">
-                      <p className="text-md font-semibold text-gray-900">
+                      <p className="text-md font-semibold text-gray-900  hover:no-underline">
                         NoteDigitizer
                       </p>
                     </div>
@@ -125,8 +125,8 @@ export default function Blog() {
                     <div className="flex items-center text-2xl justify-center flex-shrink-0 w-10 h-10 text-secondary bg-primary rounded-lg sm:h-12 sm:w-12">
                       <FontAwesomeIcon icon={faCode} />
                     </div>
-                    <div className="ml-4">
-                      <p className="text-md font-semibold text-gray-900">
+                    <div className="ml-4 hover:no-underline" >
+                      <p className="text-md font-semibold text-gray-900  hover:no-underline">
                         Dsa Tracker
                       </p>
                     </div>

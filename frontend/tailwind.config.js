@@ -18,6 +18,11 @@ module.exports = {
       backgroundColor: {
         "overlay-70": "rgba(0,0,0,0.7)",
       },
+      fontFamily: {
+        orbitron: ["Orbitron", "sans-serif"],
+        bebas: ["Bebas Neue", "cursive"],
+        jetbrains: ["JetBrains Mono", "monospace"],
+      },
     },
   },
   plugins: [],
