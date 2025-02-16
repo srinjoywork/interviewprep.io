@@ -198,11 +198,11 @@ export default function App() {
               <Route path="/interviewhome" element={<InterviewLanding />} />
               <Route path="/join-interview" element={<InterviewHome />} />
               <Route path="/editor-room/:roomID" element={<EditorPage />} />
-
+              <Route path="/codecollab" element={<CodeCollabHome />} />
           
                 
               <Route path="/021245" element={<Thankyou />}>
-                <Route path="codecollab" element={<CodeCollabHome />} />
+                
 
 
               </Route>

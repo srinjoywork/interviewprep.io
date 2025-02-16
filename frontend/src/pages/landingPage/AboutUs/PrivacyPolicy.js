@@ -9,118 +9,59 @@ export default function PrivacyPolicy() {
         </h1>
 
         <p className="text-xl font-medium mb-10">
-          Last updated: 18 December, 2023
+          Last updated: 16 February, 2025
         </p>
         <p>
-          JobPortal is responsible for the personal information about you that
-          is processed on our website ( ). The following policy applies when you
-          use our website. We are constantly working on improving our services
-          therefore this policy can be changed in the future. The purpose of
-          this policy is to let our users know how we handle their personal
-          information, what we use it for, who gets access to it and what rights
-          our users have in regards to personal data.
+          CodeHireX is responsible for the personal information that is
+          processed on our platform. This privacy policy outlines how we
+          handle user data, ensuring transparency and compliance with data
+          protection laws. By using our platform, you agree to the terms
+          outlined below.
         </p>
 
-        <h2 className="text-3xl mb-4 mt-10">
-          When and why do we process personal data
-        </h2>
-
-        <h3 className="text-2xl mb-2 mt-3">From you:</h3>
+        <h2 className="text-3xl mb-4 mt-10">Data Collection and Usage</h2>
+        <h3 className="text-2xl mb-2 mt-3">User-Provided Information</h3>
         <p>
-          When you refer someone you tell us about yourself to make your
-          referral more credible. We collect your name, current job title, email
-          and link to your LinkedIn profile. You also have the option to add a
-          motivation to your referral in free-form text boxes. If you do, we
-          collect this motivation as well. We also collect info when you email
-          or contact us. When you send information we will store your IP address
-          and information about the device you use. We also collect data when
-          you use our services through Cookies. See our cookies policy for more
-          information ().
+          When you register on CodeHireX, apply for jobs, or use our tools
+          (such as Code Collaboration, Resume Builder, Code Optimizer, Code
+          Reviewer, and QGenAI), we collect information including your name,
+          email, resume, job preferences, and coding activity.
+        </p>
+        
+        <h3 className="text-2xl mb-2 mt-3">Automatic Data Collection</h3>
+        <p>
+          We collect technical data such as your IP address, device
+          information, and browsing activity to improve our services.
         </p>
 
-        <h3 className="text-2xl mb-2 mt-3">From third parties</h3>
+        <h2 className="text-3xl mb-4 mt-10">Data Sharing</h2>
         <p>
-          When someone refers you to a job we collect this information. We also
-          collect information from social media. For example when you link to
-          your or your friends LinkedIn profile to add credibility to your
-          referral.{" "}
+          Your data may be shared with prospective employers if you apply for
+          jobs. We do not sell your personal information to third parties. We
+          may share anonymized data with research partners for service
+          improvements.
         </p>
 
-        <h3 className="text-2xl mb-2 mt-3">
-          Retention period for users who refer their friends
-        </h3>
+        <h2 className="text-3xl mb-4 mt-10">Security and Retention</h2>
         <p>
-          If you have not used the service for more than two (2) years, your
-          data will be deleted.
+          We implement strong security measures to protect user data.
+          Personal data is retained only as long as necessary. Unused
+          accounts and associated data will be deleted after two years of
+          inactivity.
         </p>
 
-        <h3 className="text-2xl mb-2 mt-3">
-          Retention period for users who got referred by someone
-        </h3>
-        <p>
-          If you get referred by someone, we will contact you and ask for your
-          approval. If you do not approve or answer to this message, the
-          personal data that someone submitted when they referred you will be
-          deleted.
-        </p>
-
-        <h2 className="text-3xl mb-4 mt-10">
-          With whom do we share personal data?
-        </h2>
-        <p>
-          The company that someone got referred to will get access to the data
-          if the person who referred someone and the one who got referred if
-          both accept it. In other words, if the person who got referred accepts
-          the referral.
-          <br /> <br />
-          We host our website through Netlify, handle email submissions through
-          EmailJS and store data on Firebase. Read more about their policies on{" "}
-          <a
-            rel="noreferrer"
-            className="text-blue-400"
-            href="https://vercel.com/"
-            target="_blank"
-          >
-            https://vercel.com/
-          </a>{" "}
-          and{" "}
-          <a
-            rel="noreferrer"
-            className="text-blue-400"
-            href="https://www.mongodb.com/"
-            target="_blank"
-          >
-            https://www.mongodb.com/
-          </a>
-          <br /> <br />
-        </p>
-
-        <h2 className="text-3xl mb-4 mt-10">Your rights</h2>
-        <p>
-          When we process your personal data you have the right to at any time
-          contact us regarding any of the rights mentioned below. See contact
-          information below.
-        </p>
+        <h2 className="text-3xl mb-4 mt-10">User Rights</h2>
         <ul className="list-disc ml-5">
-          <li>Access to your personal data</li>
-          <li>Rectification of incorrect or inadequate personal data</li>
-          <li>Object to certain processing</li>
-          <li>Erasure of your personal data</li>
-          <li>Restriction of the processing of your personal data</li>
-          <li>Data portability</li>
+          <li>Access and modify your data</li>
+          <li>Request data deletion</li>
+          <li>Restrict data processing</li>
+          <li>Opt-out of marketing communications</li>
         </ul>
 
-        <h2 className="text-3xl mb-4 mt-10">Information security</h2>
+        <h2 className="text-3xl mb-4 mt-10">Contact Information</h2>
         <p>
-          We will ensure that the access to your data is secured by applying
-          appropriate safeguards.
-        </p>
-
-        <h2 className="text-3xl mb-4 mt-10">Contact information</h2>
-        <p>
-          If you have any questions, please contact{" "}
-          <span className="font-bold">Ricky(Kha)</span> by email at{" "}
-          <span className="font-bold">nhatkha06299@gmail.com</span>
+          For privacy-related inquiries, please contact us at:
+          <span className="font-bold"> support@codehirex.com</span>
         </p>
       </div>
     </div>

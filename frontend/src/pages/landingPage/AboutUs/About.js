@@ -3,32 +3,30 @@ function About() {
     <div className="bg-[#f8e5d4]">
       <div className="md:py-44 py-16 max-w-4xl mx-auto px-3 text-center">
         <h1 className="mx-auto md:text-7xl text-4xl font-bold text-gray-900 pb-4">
-          Welcome to our Job Portal
+          Welcome to <span className="text-[#0077b6]">InterviewPrep.AI</span>
         </h1>
 
         <p className="text-xl font-medium">
           <p>
-            We take pride in being an efficient platform that bridges the gap
-            between job seekers and businesses seeking talent. With the goal of
-            creating career opportunities and fostering positive employment
-            relationships, we provide a diverse space where candidates can
-            explore and apply for enticing job positions. 🥂{""}
+            <strong>InterviewPrep.AI</strong> is your all-in-one solution for interview preparation and job applications. 
+            Whether you're a student looking to sharpen your skills or a recruiter streamlining the hiring process, 
+            our platform is designed to enhance every step of the journey.
           </p>
           <p>
-            We are committed to ensuring a user-friendly experience through an
-            intuitive interface and advanced search functionalities. Leveraging
-            cutting-edge technology, we assist candidates in seizing suitable
-            career opportunities and help businesses find talented workforce
-            resources.
+            🚀 <strong>For Students:</strong> Access a real-time collaborative <strong>Code Editor</strong> to code with friends, 
+            use our <strong>Resume Builder</strong> to craft a professional resume, and optimize your code with our <strong>Code Optimizer & Reviewer</strong>. 
+            Need structured practice? Our <strong>DSA Sheet</strong> provides curated problems to enhance your problem-solving skills. 
+            You can also apply for jobs and digitize handwritten notes or code using our <strong>Note Digitizer</strong>.
           </p>
           <p>
-            Whether you're a job seeker exploring new opportunities or a
-            business expanding your workforce, we aspire to accompany you on the
-            journey to success. Join us in building the future career you dream
-            of, or in finding the talented individuals your business needs!
+            🎯 <strong>For Interviewers & Recruiters:</strong> Conduct live interviews with our integrated <strong>Online Code Editor</strong>, 
+            use the <strong>Resume Summarizer</strong> for quick candidate insights, and leverage <strong>QGen AI</strong> to generate 
+            intelligent questions based on resume skills. You can also post job listings, review applicants, and shortlist candidates effortlessly.
           </p>
-          <br />
-          <br />
+          <p>
+            Join <strong>InterviewPrep.AI</strong> and take your interview experience to the next level. Whether you’re preparing for 
+            your dream job or hiring top talent, we provide the tools to help you succeed. 💡
+          </p>
         </p>
       </div>
     </div>

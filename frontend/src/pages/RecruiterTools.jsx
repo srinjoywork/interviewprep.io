@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 // import resumeImage from "assets/resume.jpg";
 import RecruiterToolLeft from "../components/RecruiterTools/RecruiterToolLeft/RecruiterToolLeft"
 import RecruiterToolRight from "../components/RecruiterTools/RecruiterToolRight/RecruiterToolRight"
-import Resume_Summarizer from "../assets/RecruiterTools/Resume_Summarizer.jpg"
+import Resume_Summarizer from "../assets/resumesummary.png"
+import notedigitizer from "../assets/notedigitizer.png"
+import questiongenai from "../assets/questiongenai.png"
+
+
+
 const RecruiterTools = () => {
   const navigate = useNavigate();
 
@@ -14,10 +19,11 @@ const RecruiterTools = () => {
 
   return (
     <div className="conatiner" style={{ width: "100%",
-      height: "100%",
-      backgroundColor: "#ffffff",
+      height: "110%",
+    //  marginBottom: "20px", // Added margin bottom
+      paddingBottom:"40px",
+      background: "linear-gradient(135deg, #0A192F, #004D40)", // Deep blue to green gradient
       backgroundImage: "radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0)",
-      backgroundSize: "30px 30px",
       backgroundPosition: "-5px -5px"}}>
 
     
@@ -25,10 +31,10 @@ const RecruiterTools = () => {
       <RecruiterToolLeft redirectLink={"/ai"}  title={"Resume Summarizer"} desc={"An AI-powered tool that extracts key details from resumes, providing concise summaries of candidates' skills, experience, and qualifications to streamline the recruitment process"} img={Resume_Summarizer}/>
 
       {/* Note Digitalizer */}
-      <RecruiterToolRight redirectLink={"/ai"} title={"Note Digitalizer"} desc={"a smart tool that converts handwritten or typed notes into digital format, making them easily searchable, editable, and shareable. It enhances productivity by organizing notes efficiently"} img={Resume_Summarizer}/>
+      <RecruiterToolRight redirectLink={"/ai"} title={"Note Digitalizer"} desc={"a smart tool that converts handwritten or typed notes into digital format, making them easily searchable, editable, and shareable. It enhances productivity by organizing notes efficiently"} img={notedigitizer}/>
 
       {/* AI Question Generator */}
-      <RecruiterToolLeft redirectLink={"/ai"} title={"Question Generator"} desc={"an AI-powered tool that creates relevant and diverse questions based on given topics or content. It helps in exam preparation, interviews, and quizzes by generating insightful and structured questions efficiently."} img={Resume_Summarizer}/>
+      <RecruiterToolLeft redirectLink={"/ai"} title={"Question Generator"} desc={"an AI-powered tool that creates relevant and diverse questions based on given topics or content. It helps in exam preparation, interviews, and quizzes by generating insightful and structured questions efficiently."} img={questiongenai}/>
 
       {/* AI Voice Section */}
       {/* <div
