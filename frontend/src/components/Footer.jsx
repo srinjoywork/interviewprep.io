@@ -25,7 +25,7 @@ export default function Footer() {
 
             <a
               className="w-[220px] text-lg font-medium border-b-2 border-black hover:opacity-60"
-              href="mailto:codex@gmail.com"
+              href="mailto:codehirex@gmail.com"
             >
               codehirex@gmail.com
             </a>

@@ -100,7 +100,7 @@ export default function Blog() {
                   <Link
                     to={
                       isApplicant
-                        ? "https://resume-parser-pdqm.onrender.com"
+                        ? "https://handwritten-digitalization-ocmct9vcwiwrrued5pdaqx.streamlit.app/"
                         : "/sign-in"
                     }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"

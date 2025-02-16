@@ -254,29 +254,42 @@ const forgotPassword = async (req, res) => {
   const resetToken = user.createPasswordChangedToken();
   await user.save();
   const html = `
-    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: 500; font-size: 14px">
-      Bạn nhận được email này vì bạn hoặc ai đó đã yêu cầu lấy lại mật khẩu
+  <div style="font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; background-color: #f9f9f9; text-align: center;">
+    
+    <h2 style="color: #1E90FF;">🔒 Reset Your Password</h2>
+
+    <p style="font-weight: 500; font-size: 14px; color: #333;">
+      You are receiving this email because you (or someone else) requested to reset your password for your <strong>CodeHireX</strong> account.
     </p>
-    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: 500; font-size: 14px">
-      Chọn vào đây để lấy lại mật khẩu, yêu cầu này sẽ mất hiệu lực sau 15 phút:
+
+    <p style="font-weight: 500; font-size: 14px; color: #333;">
+      Click the button below to reset your password. This request will expire in <strong>15 minutes</strong>:
     </p>
-    <button style="padding: 14px; background-color: #1E90FF; border-radius: 5px; border-style: none; cursor: pointer">
-      <a href=${process.env.CLIENT_URL}/password/reset/${resetToken}
-        style="color:white; text-decoration-line: none; font-size: 14px; font-weight: 700">
-          Reset Password
-      </a>
-    </button>
-    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: 500; font-size: 14px">Nếu bạn không yêu cầu đặt lại mật khẩu, 
-    thì có thể bỏ qua email này</p>
-    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: 900; font-size: 14px">Cảm ơn bạn, </p>
-    <p style="font-family: Arial, Helvetica, sans-serif; font-weight: 900; font-size: 14px">JobPortal Support Team!</p>
-    <img src="https://res.cloudinary.com/dkmkutpxp/image/upload/v1703743129/a4qjcagbhc7juqqjlpir.jpg" style="width: 20rem" alt="thumbnail">
-  `;
+
+    <a href="${process.env.CLIENT_URL}/password/reset/${resetToken}" 
+       style="display: inline-block; padding: 12px 20px; background-color: #1E90FF; color: white; font-size: 14px; font-weight: 700; border-radius: 5px; text-decoration: none;">
+       Reset Password
+    </a>
+
+    <p style="font-weight: 500; font-size: 14px; color: #333; margin-top: 20px;">
+      If you did not request a password reset, you can safely ignore this email.
+    </p>
+
+    <p style="font-weight: 900; font-size: 14px; color: #333;">Best Regards,</p>
+    <p style="font-weight: 900; font-size: 14px; color: #333;">The CodeHireX Team</p>
+
+    <img src="https://res.cloudinary.com/dew7xrthw/image/upload/v1739705761/fxzb5hauqaw6btarts2f.jpg" 
+         style="width: 200px; margin-top: 20px;" 
+         alt="CodeHireX Logo">
+
+  </div>
+`;
+
 
   const data = {
     email,
     html,
-    subject: "[JobPortal] Password Reset E-Mail",
+    subject: "CodeHireX Password Reset E-Mail",
   };
 
   const result = await sendMail(data);
