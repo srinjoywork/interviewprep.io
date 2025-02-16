@@ -1,56 +1,53 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-
-
+import { useEffect } from "react";
+import codecollaboration from "../assets/codecollaboration.jpg";
 export function LandingPage() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.classList.add("dark");
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-[100dvh]">
-      {/* <header className="px-4 lg:px-6 h-14 flex items-center">
+    <div className="flex flex-col min-h-[100dvh] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      {/* <header className="px-4 lg:px-6 h-14 flex items-center backdrop-blur-md bg-gray-900/80 sticky top-0 z-50">
         <a className="flex items-center justify-center" href="#">
-          <MountainIcon className="h-6 w-6" />
-          <span className="text-black font-bold text-2xl pl-2">CodeAlong</span>
+          <MountainIcon className="h-6 w-6 text-emerald-400" />
+          <span className="text-emerald-400 font-bold text-2xl pl-2 hover:text-emerald-300 transition-colors">
+            CodeAlong
+          </span>
         </a>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <a
-            className="pt-1 text-xl font-medium hover:underline underline-offset-4"
-            href="#features"
-          >
-            Features
-          </a>
-          <a
-            className="pt-1 text-xl font-medium hover:underline underline-offset-4"
-            href="#about"
-          >
-            About
-          </a>
-          <a
-            className="pt-1 text-xl font-medium hover:underline underline-offset-4"
-            href="#contact"
-          >
-            Contact
-          </a>
+          {["Features", "About", "Contact"].map((item) => (
+            <a
+              key={item}
+              className="pt-1 text-lg font-medium text-gray-300 hover:text-emerald-400 transition-all hover:underline underline-offset-4"
+              href={`#${item.toLowerCase()}`}
+            >
+              {item}
+            </a>
+          ))}
           <Button
-            className="btn btn-accent bg-green-700 hover:bg-green-800"
-            onClick={() => {
-              navigate("/join-interview");
-            }}
+            className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white hover:scale-105 transition-transform shadow-lg shadow-emerald-900/30"
+            onClick={() => navigate("/join-interview")}
           >
             Create/Join Room
           </Button>
         </nav>
       </header> */}
+
       <main className="flex-1">
-        <section className="w-full pt-12 md:pt-24 lg:pt-32 border-y">
+        <section className="w-full pt-12 md:pt-24 lg:pt-32">
           <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
             <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-              <div>
-                <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+              <div className="animate-fadeInUp">
+                <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
                   Collaborative Coding Interviews Redefined
                 </h1>
               </div>
               <div className="flex flex-col items-start space-y-4">
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
                   CodeAlong revolutionizes the way teams collaborate on coding
                   projects. Seamlessly share code in real-time, communicate
                   through video and voice calls, chat, and execute code with
@@ -58,120 +55,207 @@ export function LandingPage() {
                 </p>
                 <div className="space-x-4">
                   <Button
-                    className="btn btn-accent bg-green-700 hover:bg-green-800"
-                    onClick={() => {
-                      navigate("/join-interview");
-                    }}
+                    className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white hover:scale-105 transition-transform shadow-lg shadow-emerald-900/30"
+                    onClick={() => navigate("/join-interview")}
                   >
                     Create/Join Room
                   </Button>
-                  {/* <a
-                    className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                    href="#"
-                  >
-                    Learn More
-                  </a> */}
                 </div>
               </div>
             </div>
             <img
               alt="Hero"
-              className="mx-auto overflow-hidden rounded-xl object-cover"
-              height="600"
-              src="/user1.PNG"
-              width="1200"
+              className="mx-auto overflow-hidden rounded-xl object-cover animate-float shadow-2xl shadow-emerald-900/30 border-2 border-emerald-900/50 max-w-[90%] h-auto"
+              height="450"
+              src={codecollaboration}
+              width="900"
             />
           </div>
         </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32" id="features">
-          <div className="container space-y-12 px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              {/* <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  New Features
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Collaborative Coding Made Easy
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  CodeAlong brings real-time code sharing, video and voice
-                  calls, chat functionality, and code execution with Judge0 -
-                  all in one powerful platform. Collaborate seamlessly with your
-                  team and take your coding projects to the next level.
-                </p>
-              </div> */}
-            </div>
+          <div
+            className="container space-y-12 px-4 md:px-6"
+            style={{ backgroundColor: "#18202f" }}
+          >
             <div className="mx-auto grid max-w-4xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-              <div className="grid gap-1">
-                <h3 className="text-lg font-bold">Real-time Code Sharing</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Work together on the same codefile in real-time, with
-                  simultaneous editing and instant updates for all
-                  collaborators.
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-lg font-bold">Video and Voice Calls</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Enhance your collaboration with face-to-face communication
-                  through seamless video and voice calls.
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-lg font-bold">Integrated Chat</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Keep your team aligned with a built-in chat feature, ensuring
-                  quick and efficient communication during coding sessions.
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-lg font-bold">
-                  Code Execution with Judge0
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Test and run your code in real-time with Judge0 integration,
-                  providing instant feedback and streamlining the interview
-                  process.
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-lg font-bold">Collaborative Editing</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Collaborate seamlessly with your team by editing code
-                  together, with simultaneous updates.
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-lg font-bold">Secure and Scalable</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  CodeAlong is built with security and scalability in mind,
-                  ensuring your code and data remain safe and accessible.
-                </p>
-              </div>
-            </div>
-            <div
-              className="flex justify-center flex-col sm:flex-row items-start gap-4"
-              id="contact"
-            >
-              {/* <a
-                className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events_none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="mailto:shubhambogharajobs@email.com"
-              >
-                Contact us
-              </a> */}
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="p-6 rounded-xl bg-gradient-to-br from-gray-950 to-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-gray-800 cursor-pointer"
+                >
+                  <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-pink-600 to-red-600 flex items-center justify-center group-hover:from-pink-500 group-hover:to-red-500 transition-all duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
       </main>
-      
+
+      <style jsx global>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
 
+const features = [
+  {
+    title: "Real-time Code Sharing",
+    description:
+      "Work together on the same codefile in real-time, with simultaneous editing and instant updates.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Video and Voice Calls",
+    description:
+      "Enhance collaboration with face-to-face communication through seamless video and voice.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Integrated Chat",
+    description:
+      "Built-in chat feature ensuring quick communication during coding sessions.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Code Execution",
+    description:
+      "Real-time code execution with Judge0 integration for instant feedback.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Collaborative Editing",
+    description: "Seamless team collaboration with simultaneous code updates.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Secure & Scalable",
+    description: "Enterprise-grade security and scalability for your projects.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+        />
+      </svg>
+    ),
+  },
+];
 
 function MountainIcon(props) {
   return (
-    (<svg
+    <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -181,8 +265,9 @@ function MountainIcon(props) {
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
-      strokeLinejoin="round">
+      strokeLinejoin="round"
+    >
       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>)
+    </svg>
   );
 }
