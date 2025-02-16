@@ -125,7 +125,7 @@ const CodeCollabHome = () => {
 
   const [editorId, setEditorId] = useState("");
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
 
   // ✅ Create a new Editor ID and update state correctly
   const createNewEditor = (e) => {
@@ -137,16 +137,20 @@ const CodeCollabHome = () => {
 
   // ✅ Validate user inputs and navigate
   const joinEditor = () => {
-    if (!editorId.trim() || !username.trim() || !email.trim()) {
-      toast.error("Editor ID, Username, and Email are required.");
+    if (!editorId.trim() || !username.trim()) {
+      toast.error("Editor ID and Username are required.");
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
+    // if (!editorId.trim() || !username.trim() || !email.trim()) {
+    //   toast.error("Editor ID, Username, and Email are required.");
+    //   return;
+    // }
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!emailRegex.test(email)) {
+    //   toast.error("Please enter a valid email address.");
+    //   return;
+    // }
 
     console.log("Navigating to:", `/editor/${editorId}`, { username }); // Debugging
     navigate(`/editor/${editorId}`, { state: { username } });
@@ -193,14 +197,14 @@ const CodeCollabHome = () => {
                 value={username}
                 onKeyDown={handleInputEnter}
               />
-              <input
+              {/* <input
                 type="email"
                 className="inputBox"
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 onKeyDown={handleInputEnter}
-              />
+              /> */}
               <button className="btn joinBtn" onClick={joinEditor}>
                 Join
               </button>
