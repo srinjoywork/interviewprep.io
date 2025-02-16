@@ -1,6 +1,6 @@
 import { faAward, faMedal, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Rating } from "@material-tailwind/react";
+// import { Rating } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 export default function LeaderboardTable({ user }) {
@@ -76,13 +76,13 @@ export default function LeaderboardTable({ user }) {
                     </Link>
                   </td>
 
-                  <td className="px-6 py-4 whitespace-nowrap cursor-default text-sm text-gray-500">
+                  {/* <td className="px-6 py-4 whitespace-nowrap cursor-default text-sm text-gray-500">
                     <Rating
                       className="cursor-default"
                       value={User.rating !== -1 ? User.rating : null}
                       readonly
                     />{" "}
-                  </td>
+                  </td> */}
                 </tr>
               ))
           ) : (

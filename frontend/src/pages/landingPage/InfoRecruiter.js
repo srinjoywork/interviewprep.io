@@ -16,7 +16,7 @@ import {
 import icon from "assets/icon.jpg";
 import axios from "axios";
 import apiList from "../../libs/apiList";
-import { Rating } from "@material-tailwind/react";
+// import { Rating } from "@material-tailwind/react";
 import { userType } from "libs/isAuth";
 import { SetPopupContext } from "App";
 
@@ -218,11 +218,11 @@ export default function InfoRecruiter() {
                         </div>
                       </div>
                       <div className="pl-1 pb-1 flex gap-2">
-                        <Rating
+                        {/* <Rating
                           className="text-yellow-400"
                           value={job.rating !== -1 ? job.rating : null}
                           readonly
-                        />
+                        /> */}
                         <span className="font-semibold">-</span>
                         <h6 className="md:text-xl text-lg font-bold text-gray-500">
                           {job.rating}

@@ -1,6 +1,6 @@
 import { faAward, faMedal, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Rating } from "@material-tailwind/react";
+// import { Rating } from "@material-tailwind/react";
 
 export default function LeaderboardCard({ user }) {
   function generateIcon(index) {
@@ -52,11 +52,11 @@ export default function LeaderboardCard({ user }) {
                   {User.title}
                 </div>
                 <div className="text-sm text-gray-500">
-                  <Rating
+                  {/* <Rating
                     className="cursor-default"
                     value={User.rating !== -1 ? User.rating : null}
                     readonly
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="ml-auto">

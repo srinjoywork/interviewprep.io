@@ -255,24 +255,24 @@ export default function JobAd({ job, tags, about, edit }) {
                   />
                 </span>
               </div>
-              <div className="flex justify-start md:mt-10 mt-10 mb-3 gap-2 text-bold font-semibold text-gray-500">
-                {/* {" "} */}
-                {/* <Rating
+              {/* <div className="flex justify-start md:mt-10 mt-10 mb-3 gap-2 text-bold font-semibold text-gray-500">
+                {" "}
+                <Rating
                   value={about.rating !== -1 ? about.rating : 0}
                   className="text-yellow-300"
                   readonly
-                /> */}
-                {/* <Rating name="size-small" defaultValue={2} size="small" /> */}
-                {/* <Rating name="half-rating" defaultValue={2.5} precision={0.5} /> */}
+                />
+                <Rating name="size-small" defaultValue={2} size="small" />
+                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                 <span className="font-semibold">-</span>
                 Rating:{" "}
                 <h6 className="md:text-xl text-lg font-bold text-gray-500">
                   {about.rating !== -1 ? about.rating : 0}
                 </h6>
-              </div>
-              <div className="flex gap-3">
+              </div> */}
+              <div className="flex gap-3 mt-5">
                 <div className="text-bold font-semibold text-gray-500">
-                  Skill:{" "}
+                  Skills Required:{" "}
                 </div>
                 <div className="flex flex-row-reverse gap-1">
                   {about.skillsets.map((tag, index) => (
