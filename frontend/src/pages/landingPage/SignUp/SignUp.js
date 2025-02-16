@@ -297,8 +297,8 @@ export default function SignUp() {
       let formData = new FormData();
       for (let i of files) {
         formData.append("file", i);
-        formData.append("upload_preset", "jobportal");
-        formData.append("folder", "jobportal");
+        formData.append("upload_preset", "CodeHirex");
+        formData.append("folder", "CodeHirex");
         let response = await toast.promise(apiUploadImages(formData), {
           pending: "Uploading images...",
           success: "Images uploaded successfully 👌",
