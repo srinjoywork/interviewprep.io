@@ -1,4 +1,4 @@
-import { Typography } from "@material-tailwind/react";
+// import { Typography } from "@material-tailwind/react";
 import { SetPopupContext } from "App";
 import axios from "axios";
 import apiList from "libs/apiList";
@@ -58,7 +58,7 @@ export default function Recruiter() {
             </div>
             <div className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex-1 w-[30rem]">
               <div>
-                <Typography variant="h5">{recruiter.name}</Typography>
+                <h1 variant="h5">{recruiter.name}</h1>
               </div>
               <div>
                 bio :{" "}

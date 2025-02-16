@@ -1,7 +1,7 @@
 import { faInfo, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Transition } from "@headlessui/react";
-import { Typography } from "@material-tailwind/react";
+// import { Typography } from "@material-tailwind/react";
 import { SetPopupContext } from "App";
 import axios from "axios";
 import { Button } from "flowbite-react";
@@ -189,7 +189,7 @@ export default function Applicant() {
               </div>
               <div className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex-1 w-[30rem]">
                 <div>
-                  <Typography variant="h5">{applicant.name}</Typography>
+                  <h1 variant="h5">{applicant.name}</h1>
                 </div>
                 <div>
                   Education:{" "}

@@ -69,7 +69,7 @@ export default function Jumbotron() {
             </div>
           </div>
           <RecruiterFeature />
-          <Contact />
+          {/* <Contact /> */}
         </main>
       ) : type === "applicant" ? (
         <main className="bg-gradient-to-br from-[#191714] to-[#2234AE] ">

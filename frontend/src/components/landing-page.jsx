@@ -47,12 +47,14 @@ export function LandingPage() {
                 </h1>
               </div>
               <div className="flex flex-col items-start space-y-4">
-                <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                  CodeAlong revolutionizes the way teams collaborate on coding
-                  projects. Seamlessly share code in real-time, communicate
-                  through video and voice calls, chat, and execute code with
-                  Judge0 integration - all in one powerful platform.
-                </p>
+              <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
+  CodeHireX is the ultimate platform for conducting technical interviews with ease. 
+  Enable real-time code collaboration, integrated video and voice communication, and 
+  seamless execution with Judge0 integration. Simplify hiring by assessing candidates’ 
+  coding skills in a dynamic, interactive environment designed for efficient and fair evaluations.
+</p>
+
+
                 <div className="space-x-4">
                   <Button
                     className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white hover:scale-105 transition-transform shadow-lg shadow-emerald-900/30"
@@ -75,14 +77,14 @@ export function LandingPage() {
 
         <section className="w-full py-12 md:py-24 lg:py-32" id="features">
           <div
-            className="container space-y-12 px-4 md:px-6"
-            style={{ backgroundColor: "#18202f" }}
+            className=" space-y-12 px-4 md:px-6"
+            style={{ backgroundColor: "transparent" }}
           >
             <div className="mx-auto grid max-w-4xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="p-6 rounded-xl bg-gradient-to-br from-gray-950 to-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-gray-800 cursor-pointer"
+                  className="p-6 rounded-xl bg-gradient-to-br from-gray-500 to-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-gray-800 cursor-pointer"
                 >
                   <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-to-br from-pink-600 to-red-600 flex items-center justify-center group-hover:from-pink-500 group-hover:to-red-500 transition-all duration-300">
                     {feature.icon}

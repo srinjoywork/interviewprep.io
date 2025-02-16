@@ -1,9 +1,11 @@
-/* App Container */
+App Container
 .InterviewPrepTools {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background: linear-gradient(to bottom right, #191714, #2234AE);
 }
+
 
 /* Section Styles */
 .section {

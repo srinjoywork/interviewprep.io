@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Typography } from "@material-tailwind/react";
+// import { Typography } from "@material-tailwind/react";
 import { SetPopupContext } from "App";
 import axios from "axios";
 import apiList from "libs/apiList";
@@ -34,7 +34,7 @@ export function Dashboard() {
           </button>
 
           <button
-            className={`${
+            className={`{
               active === 1 ? "border-b-2 border-money text-money" : ""
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(1)}
@@ -42,7 +42,7 @@ export function Dashboard() {
             Recruiter
           </button>
           <button
-            className={`${
+            className={`{
               active === 2 ? "border-b-2 border-money text-money" : ""
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(2)}
