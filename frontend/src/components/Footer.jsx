@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import logo from "assets/images/logo.png";
+import logo from "assets/inter1.png";
 import LinkedIn from "assets/LinkedIn.png";
 import instagram from "assets/Instagram.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,21 +16,21 @@ export default function Footer() {
             <Link className="flex pt-1" to="/">
               <img className="h-12 pb-2 " src={logo} alt="logo" />
               <h1 className="md:pl-2 pl-2 text-4xl text-black font-medium hover:opacity-60">
-                InterviewPrep
+                CodeHireX
               </h1>
             </Link>
             <p className="md:w-80 w-full text-lg font-medium -mt-2 ">
-              Ai SAAS
+              Ai SAAS Interview Preparation
             </p>
 
             <a
               className="w-[220px] text-lg font-medium border-b-2 border-black hover:opacity-60"
               href="mailto:codex@gmail.com"
             >
-              codex@gmail.com
+              codehirex@gmail.com
             </a>
             <span className="font-light">
-              Copyright © 2025 <span className="font-normal"> Team CodeX</span>{" "}
+              Copyright © 2025 <span className="font-normal">CodeHireX</span>{" "}
               Design.
             </span>
           </div>
@@ -121,12 +121,12 @@ export default function Footer() {
               Privacy policy
             </Link>
 
-            <Link
+            {/* <Link
               className="opacity-60 hover:opacity-100 font-semibold text-lg"
               to="/cookie-policy"
             >
               Cookie policy
-            </Link>
+            </Link> */}
           </div>
 
           <div className="w-full sm:w-1/5 md:w-2/5 flex flex-col space-y-2 pb-6">

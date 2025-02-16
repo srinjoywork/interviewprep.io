@@ -23,7 +23,7 @@ export default function Navbar() {
           >
             <img className="md:pl-5 pl-2" src={logo} alt="logo" />
             <h1 className="md:pl-2 pl-2 text-6xl sm:text-3xl md:text-4xl text-[#F2994A] font-medium hover:opacity-60 hover:no-underline">
-              InterviewPrep{linkUrl.pathname.startsWith("/blog") && ".io"}
+              CODEHIREX{linkUrl.pathname.startsWith("/blog") && ".io"}
             </h1>
             {linkUrl.pathname.startsWith("/blog") && (
               <FontAwesomeIcon icon={faBlog} />
@@ -58,7 +58,7 @@ export default function Navbar() {
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
                   to="/recruiter-tools"
                 >
-                  AutoQuest
+                  QGenAi
                 </Link>
 
                 <Link
@@ -99,6 +99,12 @@ export default function Navbar() {
                 to="/sign-in"
               >
                 Interview Room
+              </Link>
+              <Link
+                className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60 hover:no-underline"
+                to="/build-resume"
+              >
+                Resume Builder
               </Link>
               <Blog />
             </>
