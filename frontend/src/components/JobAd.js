@@ -101,14 +101,15 @@ export default function JobAd({ job, tags, about, edit }) {
               <tr>
                 <td className="text-bold">Skills</td>
                 <td className="text-right">
-                  <div className="flex flex-row-reverse gap-1">
+                  <div className="flex flex-wrap gap-2 justify-end">
                     {tags.map((tag, index) => (
                       <div
                         key={index}
-                        className="relative grid select-none items-center whitespace-nowrap rounded-lg 
-                          bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white"
+                        className="relative grid select-none items-center whitespace-nowrap rounded-full 
+                          bg-gradient-to-r from-blue-500 to-purple-600 py-1.5 px-4 font-sans text-xs font-bold 
+                          uppercase text-white shadow-sm hover:shadow-md transition-shadow duration-200"
                       >
-                        <span className="">{tag}</span>
+                        <span>{tag}</span>
                       </div>
                     ))}
                   </div>
@@ -171,20 +172,21 @@ export default function JobAd({ job, tags, about, edit }) {
               <tr>
                 <td className="text-bold">Skills</td>
                 <td className="text-right">
-                  {edit.skillsets && (
-                    <div className="flex flex-row-reverse gap-1">
-                      {edit.skillsets.map((tag, index) => (
-                        <div
-                          key={index}
-                          className="relative grid select-none items-center whitespace-nowrap rounded-lg 
-                          bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white"
-                        >
-                          <span className="">{tag}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </td>
+            {edit.skillsets && (
+              <div className="flex flex-wrap gap-2 justify-end">
+                {edit.skillsets.map((tag, index) => (
+                  <div
+                    key={index}
+                    className="relative grid select-none items-center whitespace-nowrap rounded-full 
+                      bg-gradient-to-r from-green-500 to-cyan-600 py-1.5 px-4 font-sans text-xs font-bold 
+                      uppercase text-white shadow-sm hover:shadow-md transition-shadow duration-200"
+                  >
+                    <span>{tag}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </td>
               </tr>
               <tr>
                 <td className="text-bold">duration</td>
@@ -270,18 +272,19 @@ export default function JobAd({ job, tags, about, edit }) {
                   {about.rating !== -1 ? about.rating : 0}
                 </h6>
               </div> */}
-              <div className="flex gap-3 mt-5">
+              <div className="flex gap-3 mt-5 flex-wrap">
                 <div className="text-bold font-semibold text-gray-500">
                   Skills Required:{" "}
                 </div>
-                <div className="flex flex-row-reverse gap-1">
+                <div className="flex flex-wrap gap-2">
                   {about.skillsets.map((tag, index) => (
                     <div
                       key={index}
-                      className="relative grid select-none items-center whitespace-nowrap rounded-lg 
-                          bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white"
+                      className="relative grid select-none items-center whitespace-nowrap rounded-full 
+                        bg-gradient-to-r from-orange-400 to-pink-500 py-1.5 px-4 font-sans text-xs font-bold 
+                        uppercase text-white shadow-sm hover:shadow-md transition-shadow duration-200"
                     >
-                      <span className="">{tag}</span>
+                      <span>{tag}</span>
                     </div>
                   ))}
                 </div>

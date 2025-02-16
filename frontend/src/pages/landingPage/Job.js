@@ -194,87 +194,95 @@ export default function Job(props) {
 
         {/* RIGHT */}
         <div className="w-full md:w-1/3 2xl:w-2/4 md:mt-20 mt-10 pb-10">
-          <p className="text-gray-500 font-semibold">Similar Job Post</p>
+          <p className="text-gray-500 font-semibold text-xl mb-6">Similar Job Posts</p>
 
-          <div className="w-full flex flex-wrap gap-4">
+          <div className="w-full flex flex-wrap gap-6">
             {currentItems.map(
               (job, index) =>
                 job._id !== id && (
-                  <a href={`/jobs/${job._id}`} key={index}>
+                  <a href={`/jobs/${job._id}`} key={index} className="group">
                     <div
-                      className="w-full h-[30rem] md:w-[20rem] md:h-[18rem] bg-white flex flex-col justify-between shadow-lg 
-                      rounded-md px-3 py-5 text-wrap"
+                      className="w-full h-full md:w-[22rem] bg-white flex flex-col justify-between shadow-lg hover:shadow-xl 
+                      rounded-xl px-4 py-5 text-wrap transition-all duration-300 transform group-hover:-translate-y-2
+                      border-l-4 border-blue-100 group-hover:border-blue-500 relative overflow-hidden"
                     >
-                      <div className="flex gap-3">
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500 transform rotate-45 translate-x-8 -translate-y-4 opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                      
+                      <div className="flex gap-4 items-start">
                         <img
                           src={job?.recruiter.profile}
                           alt={job?.recruiter.name}
-                          className="w-14 h-14"
+                          className="w-14 h-14 rounded-xl border-2 border-blue-50 object-cover"
                         />
 
-                        <div className="">
-                          <p className="text-lg font-semibold truncate">
+                        <div className="flex-1">
+                          <p className="text-lg font-bold text-gray-800 truncate mb-1">
                             {job.title}
                           </p>
-                          <span className="flex gap-2 items-center">
+                          <div className="flex items-center gap-2 text-sm text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                            </svg>
                             {job.location}
-                          </span>
+                          </div>
                         </div>
                       </div>
 
-                      <div className="py-3">
-                        <p className="text-sm">
+                      <div className="py-4 border-t border-b border-gray-100 my-4">
+                        <p className="text-sm text-gray-600 leading-relaxed">
                           {job.recruiter.bio ? (
                             <>
-                              <span>
-                                {" "}
-                                {job.recruiter.bio.slice(0, 150) + "..."}
-                              </span>
+                              {job.recruiter.bio.slice(0, 140) + (job.recruiter.bio.length > 140 ? "..." : "")}
                             </>
                           ) : (
-                            <div className="text-base">No description yet</div>
+                            <div className="text-gray-400">No description provided</div>
                           )}
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-between pb-2">
-                        <p className="bg-[#1d4fd826] text-[#1d4fd8] py-0.5 px-1.5 rounded font-semibold text-sm">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
                           {job.jobType}
-                        </p>
+                        </span>
                         <span className="text-gray-500 text-sm">
-                          {calculateDays(new Date(job.dateOfPosting))}{" "}
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                          </svg>
+                          {calculateDays(new Date(job.dateOfPosting))}
                         </span>
                       </div>
-                      <div>
-                        <div className="flex flex-row gap-1">
-                          {job.skillsets.map((tag, index) => (
-                            <div
-                              key={index}
-                              className="relative grid select-none items-center whitespace-nowrap rounded-lg 
-                          bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white"
-                            >
-                              <span className="">{tag}</span>
-                            </div>
-                          ))}
-                        </div>
+                      
+                      {/* Skills Container */}
+                      <div className="flex flex-wrap gap-2 overflow-hidden">
+                        {job.skillsets.map((tag, index) => (
+                          <div
+                            key={index}
+                            className="px-3 py-1 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full 
+                            text-sm text-blue-800 font-medium border border-blue-200"
+                          >
+                            {tag}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </a>
                 )
             )}
           </div>
-          <div className="mt-4">
+
+          {/* Pagination */}
+          <div className="mt-6 flex justify-center gap-2">
             {Array.from(
               { length: Math.ceil(allJob.length / itemsPerPage) },
               (_, i) => (
                 <button
                   key={i}
                   onClick={() => paginate(i + 1)}
-                  className={`mx-1 px-3 py-1 bg-${
-                    selectedPage === i + 1 ? "yellow" : "white"
-                  } text-black border hover:border-yellow-300 rounded ${
-                    selectedPage === i + 1 ? "bg-yellow-200" : ""
-                  }`}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center
+                    ${selectedPage === i + 1 
+                      ? "bg-blue-600 text-white" 
+                      : "bg-white text-gray-600 border border-gray-200 hover:border-blue-400"}
+                    transition-colors duration-200`}
                 >
                   {i + 1}
                 </button>
@@ -292,7 +300,6 @@ export default function Job(props) {
     </>
   );
 }
-
 
 
 
