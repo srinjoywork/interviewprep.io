@@ -9,6 +9,8 @@ import {
   faHandPeace,
   faSearch,
   faMoneyBillWave,
+  faLaptopCode,
+  faClipboardCheck
 } from "@fortawesome/free-solid-svg-icons";
 import { userType } from "libs/isAuth";
 
@@ -31,44 +33,88 @@ export default function ForApplicant() {
         </h1>
         <div
           className="grid lg:grid-cols-4 grid-cols-1 gap-14 md:py-32 py-12
-          md:text-left text-center md:w-10/12 w-11/12 mx-auto "
+          md:text-center text-center md:w-10/12 w-11/12 mx-auto "
         >
-          {/* <div>
-            <FontAwesomeIcon
-              className="text-5xl mb-6 text-indigo-500"
-              icon={faSearch}
-            />
+          
+          {/* Step 1: Find a Job */}
+      <div className="text-center p-6 shadow-lg rounded-2xl bg-white">
+        <FontAwesomeIcon className="text-5xl mb-6 text-indigo-500" icon={faSearch} />
+        <div className="text-gray-900 text-md uppercase font-semibold">Step 1:</div>
+        <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Find a Job</h1>
+        <p className="text-xl font-light">Explore exciting tech jobs on our job board.</p>
+      </div>
 
-            <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-              Step 1:
-            </div>
-            <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
-              Find a job
-            </h1>
-            <p className="text-xl font-light">
-              Head over to the job board to find exciting tech jobs.
-            </p>
-          </div> */}
-          <Cards github={"https://github.com/Sayanmaity2003"} link={"https://github.com/Sayanmaity2003"} img={`${project_img1}`} title={"Project 1"} desc={"Add a description here"}/>
-          <Cards />
-          <Cards/>
-          <Cards/>
-          <Cards/>
-          <Cards/>
-          {/* <div>
-            <FontAwesomeIcon
-              className="text-5xl mb-6 text-yellow-400"
-              icon={faHandPeace}
-            />
-            <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-              Step 2:
-            </div>
-            <h1 className="text-3xl text-gray-900 pb-3  font-semibold">
-              Apply for job
-            </h1>
-            <p className="text-xl font-light">Apply for a job you love.</p>
-          </div> */}
-          {/* <div>
+      {/* Step 2: Apply for a Job */}
+      <div className="text-center p-6 shadow-lg rounded-2xl bg-white">
+        <FontAwesomeIcon className="text-5xl mb-6 text-yellow-400" icon={faHandPeace} />
+        <div className="text-gray-900 text-md uppercase font-semibold">Step 2:</div>
+        <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Apply with Confidence</h1>
+        <p className="text-xl font-light">Submit applications seamlessly for roles you love.</p>
+      </div>
+
+      {/* Step 3: Prepare & Collaborate */}
+      <div className="text-center p-6 shadow-lg rounded-2xl bg-white">
+        <FontAwesomeIcon className="text-5xl mb-6 text-blue-500" icon={faLaptopCode} />
+        <div className="text-gray-900 text-md uppercase font-semibold">Step 3:</div>
+        <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Prepare & Collaborate</h1>
+        <p className="text-xl font-light">Use tools like Code Collab, DSA Tracker, and more.</p>
+      </div>
+
+      {/* Step 4: Optimize & Succeed */}
+      <div className="text-center p-6 shadow-lg rounded-2xl bg-white">
+        <FontAwesomeIcon className="text-5xl mb-6 text-green-500" icon={faClipboardCheck} />
+        <div className="text-gray-900 text-md uppercase font-semibold">Step 4:</div>
+        <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Optimize & Succeed</h1>
+        <p className="text-xl font-light">Use Resume Builder, Code IDE, and AI Review Assistant.</p>
+      </div>
+
+          
+          
+        </div>
+      </div>
+      <div
+          className="grid lg:grid-cols-4 grid-cols-1 gap-14 md:py-32 py-12
+          md:text-center text-center md:w-10/12 w-11/12 mx-auto  "
+        >
+      <Cards 
+  link={"/apply-job"} 
+  img={`${project_img1}`} 
+  title={"Apply Job"} 
+  desc={"Find and apply for jobs seamlessly with our intuitive job application platform."} 
+/>
+
+<Cards 
+  link={"/code-collab"} 
+  // img={`${project_img2}`} 
+  title={"Code Collaboration"} 
+  desc={"Work together with teammates in real-time using our collaborative coding environment."} 
+/>
+
+<Cards 
+  link={"/code-ide"} 
+  // img={`${project_img3}`} 
+  title={"Code IDE"} 
+  desc={"Write, debug, and execute your code instantly with our feature-rich online IDE."} 
+/>
+
+<Cards 
+  link={"/resume-builder"} 
+  // img={`${project_img4}`} 
+  title={"Resume Builder"} 
+  desc={"Create a professional ATS resume with our easy-to-use resume-building tool."} 
+/>
+
+<Cards 
+  link={"/ai-interview"} 
+  // img={`${project_img5}`} 
+  title={"AI Interview"} 
+  desc={"Practice mock interviews with our AI-powered interview preparation tool."} 
+/>
+
+          </div>
+
+      {/* <div className="bg-white md:pt-0 mt-20 mb-20 md:w-10/12 w-11/12 mx-auto">
+        <div className=<div>
             <FontAwesomeIcon
               className="text-5xl mb-6 text-green-500"
               icon={faMoneyBillWave}
@@ -83,12 +129,7 @@ export default function ForApplicant() {
             <p className="text-xl font-light">
               Waiting for your job application to be approved by the employer.
             </p>
-          </div> */}
-        </div>
-      </div>
-
-      {/* <div className="bg-white md:pt-0 mt-20 mb-20 md:w-10/12 w-11/12 mx-auto">
-        <div className="grid lg:grid-cols-12 md:gap-6 gap-24 grid-cols-1 md:mt-20 mt-0 mx-auto">
+          </div>"grid lg:grid-cols-12 md:gap-6 gap-24 grid-cols-1 md:mt-20 mt-0 mx-auto">
           <div className="md:col-span-6 col-span-1 mt-0 md:text-left text-center">
             <h1 className="mx-auto md:text-left text-center md:text-6xl text-4xl font-bold text-gray-900">
               We will help you find the job you want

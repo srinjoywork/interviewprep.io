@@ -1,5 +1,5 @@
 import { Disclosure } from "@headlessui/react";
-import logo from "assets/images/logo.png";
+import logo from "assets/inter1.png";
 import HowIt from "./HowIt";
 import { Link, useLocation } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
@@ -18,11 +18,11 @@ export default function Navbar() {
       <div className="flex justify-between h-24 py-6 md:w-10/12 w-11/12 mx-auto">
         <div className="flex">
           <Link
-            className="flex pt-1"
+            className="flex pt-1 hover:no-underline"
             to={linkUrl.pathname.startsWith("/blog") ? "/blog" : "/"}
           >
             <img className="md:pl-5 pl-2" src={logo} alt="logo" />
-            <h1 className="md:pl-2 pl-2 text-2xl sm:text-2xl md:text-3xl text-[#F2994A] font-medium hover:opacity-60 hover:no-underline">
+            <h1 className="md:pl-2 pl-2 text-6xl sm:text-3xl md:text-4xl text-[#F2994A] font-medium hover:opacity-60 hover:no-underline">
               InterviewPrep{linkUrl.pathname.startsWith("/blog") && ".io"}
             </h1>
             {linkUrl.pathname.startsWith("/blog") && (
