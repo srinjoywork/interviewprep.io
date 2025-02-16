@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import Secure_and_Transparent from "../../img/nft/infytoken/shield.svg"
 // import Global_Reach from "../../img/nft/infytoken/internet.png"
 // import Seamless_Transactions from "../../img/nft/infytoken/refresh.svg"
- 
+import { useNavigate } from "react-router-dom";
 import "@fontsource/league-gothic";
 const mavigationList = ["Home", "Tokens", "Learn"];
 const result = [
@@ -56,54 +56,64 @@ const card = [
     icon: "/img/nft/infytoken/shield.svg",
     title: "Secure and Transparent",
     description:
-      "Benefit from the security and transparency provided by blockchain technology.",
+      "Benefit from secure and transparent hiring processes with AI-driven assessments and blockchain-backed credentials.",
     name: "shield",
   },
   {
     icon: "/img/nft/infytoken/internet.png",
     title: "Global Reach",
-    description: "Access financing opportunities from anywhere in the world.",
+    description: "Connect with top recruiters and applicants worldwide, breaking geographical barriers in job hiring and interview preparation.",
     name: "internet",
   },
   {
     icon: "/img/nft/infytoken/refresh.svg",
-    title: "Seamless Transactions",
+    title: "Seamless Collaboration",
     description:
-      "Facilitate smooth and efficient financing processes on the Radix platform.",
+      "Conduct smooth and efficient coding interviews with real-time online code collaboration rooms (Interview Room) and AI-powered question generation.",
     name: "refresh",
   },
   {
     icon: "/img/nft/infytoken/coin.png",
     title: "Diverse Asset Coverage",
     description:
-      "Utilize real assets, mortgage securities, and Metaverse assets as collateral.",
+      "• Recruiters can post jobs, evaluate candidates, and conduct interviews efficiently. • Applicants can track DSA progress, review and optimize code, and apply to jobs effortlessly.",
     name: "coin",
   },
 ];
 const aboutUsContent = [
-  "Briefly explain the concept of assets backed financing and its benefits.",
-  "Highlight the unique selling proposition of the InfyToken ecosystem in enabling this type of financing globally and across different asset classes.",
+  "CodeHireX is a cutting-edge interview preparation and hiring platform that bridges the gap between recruiters and applicants through advanced AI-driven tools.",
+  "Whether you're a recruiter looking to hire top talent or an applicant preparing for your dream job, CodeHireX provides a seamless, tech-enabled environment to streamline the hiring process.",
 ];
 const dropDownData = [
   {
-    title: "What is assets backed investing the blocked chain?",
+    title: "How do I apply for jobs on CodeHireX?",
     description:
-      "Facilitate smooth and efficient financing processes on the Radix platform.",
+      "Simply create a profile, browse job listings, and apply using the one-click Job Apply feature.",
   },
   {
-    title: "Why this Tokens?",
+    title: "What is the DSA Tracker, and how does it help?",
     description:
-      "Facilitate smooth and efficient financing processes on the Radix platform.",
+      "The DSA Tracker helps you monitor your progress in Data Structures & Algorithms, ensuring you're ready for coding interviews.",
   },
   {
-    title: "How to buy this tokens?",
+    title: "How does the Code Optimizer work?",
     description:
-      "Facilitate smooth and efficient financing processes on the Radix platform.",
+      "Our Code Optimizer provides instant feedback, suggests improvements, and ensures your code follows best practices.",
   },
   {
-    title: "What is assets backed investing the blocked chain?",
+    title: "Can I create custom coding challenges for applicants?",
     description:
-      "Facilitate smooth and efficient financing processes on the Radix platform.",
+      "Yes! Use our AI-powered Question Generator to design technical challenges tailored to your job requirements.",
+  },
+  {
+    title: "How do I conduct a live coding interview?",
+    description:
+      "Our Online Code Collaborator (Interview Room) allows real-time coding assessments, pair programming, and instant feedback.",
+  },
+  {
+    title: "What makes CodeHireX different from traditional job portals?",
+    description:
+      "We offer real-time collaboration, AI-driven assessments, and automated code reviews, making hiring faster and more efficient.",
   },
 ];
 const graph = [
@@ -146,6 +156,7 @@ const graph = [
 ];
 const download = [1, 2, 3];
 const TemplateReact = () => {
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const showMenuItems = () => {
     if (!showMenu) {
@@ -288,7 +299,7 @@ const TemplateReact = () => {
               <div className="flex flex-col gap-7">
                 <div className="max-w-xl">
                   <span className="text-2xl text-[#233047] font-semibold">
-                    Unlock Global Financing Opportunities with Our Ecosystem
+                  CodeHireX – The Ultimate Interview Preparation & Hiring Platform
                   </span>
                 </div>
                 <div className="max-w-xl flex flex-col gap-5">
@@ -301,7 +312,7 @@ const TemplateReact = () => {
                     </span>
                   ))}
                 </div>
-                <button className="flex py-3 px-5 bg-gradient-to-br from-[#9517AF] to-[#3206D3] text-white rounded-md w-fit text-lg hover:bg-gradient-to-l">
+                <button className="flex py-3 px-5 bg-gradient-to-br from-[#9517AF] to-[#3206D3] text-white rounded-md w-fit text-lg hover:bg-gradient-to-l" onClick={() => navigate("/sign-in")}>
                   Learn More
                 </button>
               </div>
@@ -316,11 +327,10 @@ const TemplateReact = () => {
           <div className="flex flex-col gap-10 sm:px-20 px-8 max-w-screen-xl w-full">
             <div className="flex flex-col gap-7 items-center">
               <span className="font-semibold text-4xl text-[#9517AF] text-center">
-                Key Features Of InfyToken Ecosystem
+                Key Features Of CodeHireX
               </span>
               <span className="text-center text-2xl font-normal max-w-xl">
-                Emphasize the benefits of choosing the Token ecosystem for
-                assets backed financing
+              Empowering Smarter Hiring & Career Growth with CodeHireX
               </span>
             </div>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-7 justify-center">
@@ -522,11 +532,10 @@ const TemplateReact = () => {
           <div className="sm:px-20 px-8  flex flex-col gap-9 max-w-screen-xl w-full">
             <div className="flex flex-col gap-7 items-center">
               <span className="text-2xl sm:text-4xl text-[#9517AF] font-semibold">
-                Download Document
+              Frequently Asked Questions (FAQ) – CodeHireX
               </span>
               <span className="text-xl sm:text-2xl text-[#233047] font-normal text-center max-w-xl">
-                Emphasize the benefits of choosing the Token ecosystem for
-                assets backed financing
+                Emphasize the benefits of choosing CodeHireX for Smarter Hiring & Career Growth
               </span>
             </div>
             {dropDownData.map((acc, index) => {
