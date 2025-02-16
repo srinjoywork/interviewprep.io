@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="bg-[#f8e5d4]">
+    <div className="bg-gradient-to-br from-[#191714] to-[#2234AE]">
       <div className="md:py-44 py-16 max-w-4xl mx-auto px-3 text-center">
         <h1 className="mx-auto md:text-7xl text-4xl font-bold text-gray-900 pb-4">
           Welcome to <span className="text-[#0077b6]">InterviewPrep.AI</span>

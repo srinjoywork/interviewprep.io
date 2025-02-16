@@ -14,7 +14,7 @@ export default function Navbar() {
   const linkUrl = useLocation();
 
   return (
-    <Disclosure as="nav" className="bg-[#FFF5EC] w-full">
+    <Disclosure as="nav" className="bg-[#d4f1f7] w-full">
       <div className="flex justify-between h-24 py-6 md:w-10/12 w-11/12 mx-auto">
         <div className="flex">
           <Link
@@ -22,7 +22,7 @@ export default function Navbar() {
             to={linkUrl.pathname.startsWith("/blog") ? "/blog" : "/"}
           >
             <img className="md:pl-5 pl-2" src={logo} alt="logo" />
-            <h1 className="md:pl-2 pl-2 text-6xl sm:text-3xl md:text-4xl text-[#F2994A] font-medium hover:opacity-60 hover:no-underline">
+            <h1 className="md:pl-2 pl-2 text-6xl sm:text-3xl md:text-4xl text-[#8f5bfd] font-medium hover:opacity-60 hover:no-underline">
               CODEHIREX{linkUrl.pathname.startsWith("/blog") && ".io"}
             </h1>
             {linkUrl.pathname.startsWith("/blog") && (
@@ -124,7 +124,7 @@ export default function Navbar() {
                 Sign in
               </Link>
               <Link
-                className="lg:block hidden hover:no-underline text-center text-lg font-semibold text-white bg-[#F2994A] hover:bg-[#e08a42] px-6 py-3 rounded-full transform ease-in duration-100 hover:scale-105 hover:shadow-lg"
+                className="lg:block hidden hover:no-underline text-center text-lg font-semibold text-white bg-[#8f5bfd] hover:bg-[#e08a42] px-6 py-3 rounded-full transform ease-in duration-100 hover:scale-105 hover:shadow-lg"
                 to="/sign-up"
               >
                 Sign up

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import billOne from "assets/images/billOne.png";
 import billTwo from "assets/images/billTwo.png";
-import billThree from "assets/images/billThree.png";
+import billThree from "assets/darklogo.png";
 import billFour from "assets/images/billFour.png";
 import phones from "assets/images/phones.png";
 import phone from "assets/images/phone.png";
@@ -38,14 +38,14 @@ export default function Jumbotron() {
   return (
     <>
       {type === "recruiter" ? (
-        <main className="bg-[#f8e5d4] ">
+        <main className="bg-gradient-to-br from-[#191714] to-[#2234AE]">
           <div className="w-11/12 flex flex-wrap mx-auto">
             <div className="lg:text-left text-center lg:w-7/12 w-12/12 lg:pt-24 pt-12 lg:pb-40 pb-16 mx-auto">
-              <h1 className="text-black lg:text-6xl text-4xl sm:mt-5 font-bold sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
+              <h1 className="text-white lg:text-6xl text-4xl sm:mt-5 font-bold sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
                 Welcome to Recruiter home
                 <br />
               </h1>
-              <p className="mt-3 text-xl text-black sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
+              <p className="mt-3 text-xl text-white sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
                 With profound knowledge in the IT field and specialized skills,
                 we can assist you in accessing and recruiting the best IT
                 candidates.
@@ -72,7 +72,7 @@ export default function Jumbotron() {
           <Contact />
         </main>
       ) : type === "applicant" ? (
-        <main className="bg-[#f8e5d4] ">
+        <main className="bg-gradient-to-br from-[#191714] to-[#2234AE] ">
           {/* <div className="w-11/12 flex flex-wrap mx-auto">
             <div className="md:w-5/12 w-12/12 md:pt-12 md:pl-10 pl-0 pt-0 md:pb-12 pb-20 mx-auto">
               <img
@@ -140,7 +140,7 @@ export default function Jumbotron() {
           </div>
         </main>
       ) : (
-        <main className="bg-[#f8e5d4]">
+        <main className="bg-gradient-to-br from-[#191714] to-[#2234AE]">
           {/* <div className="text-center lg:w-7/12 w-12/12 ld:pt-52 md:pt-40 pt-32 pb-52 mx-auto h-2/3">
             <div className="relative w-full bg-light h-2/3 md:block hidden ">
               <img
@@ -174,7 +174,7 @@ export default function Jumbotron() {
             <div className="mt-8 sm:mt-12 mx-auto flex gap-3 justify-center">
               <button
                 onClick={() => openModal()}
-                className="transform ease-in duration-100 hover:-translate-y-1 hover:shadow-lg md:mx-0  text-white shadow font-semibold rounded-full items-center justify-center py-3 border border-transparent text-base  bg-[#F2994A] md:py-4 md:text-lg px-8"
+                className="transform ease-in duration-100 hover:-translate-y-1 hover:shadow-lg md:mx-0  text-white shadow font-semibold rounded-full items-center justify-center py-3 border border-transparent text-base  bg-[#8f5bfd] md:py-4 md:text-lg px-8"
               >
                 Search for a favorite job
               </button>
@@ -196,12 +196,12 @@ export default function Jumbotron() {
 
           <div className="text-center w-[90%] pt-32 pb-52 mx-auto space-y-20 flex flex-col items-center">
             {/* Hero Section */}
-            <div className="relative w-[80%] flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
+            <div className="relative w-[80%] flex flex-col md:flex-row items-center bg-gradient-to-r from-[#f7d4d8] via-[#ffffff] to-[#9ae3f4] text-white p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
               <div className="md:w-1/2 w-full text-left space-y-6">
-                <h1 className="text-5xl font-extrabold leading-tight" style={{color:"pink"}}>
+                <h1 className="text-5xl font-extrabold leading-tight text-violet-500" >
                   Your Career, Your Future
                 </h1>
-                <p className="text-lg opacity-90">
+                <p className="text-lg text-black opacity-90">
                   Unlock the best job opportunities with personalized
                   recommendations and expert insights.
                 </p>
@@ -209,7 +209,7 @@ export default function Jumbotron() {
                   <button className="bg-yellow-400 text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500 transform transition hover:-translate-y-1">
                     Explore Jobs
                   </button>
-                  <button className="border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-black transform transition hover:-translate-y-1">
+                  <button className="border-2 border-blue-800 text-black font-semibold py-3 px-6 rounded-full hover:bg-pink-400 hover:text-white transform transition hover:-translate-y-1">
                     Sign Up Free
                   </button>
                 </div>

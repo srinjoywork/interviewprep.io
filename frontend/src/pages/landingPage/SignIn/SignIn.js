@@ -113,7 +113,7 @@ export default function SignIn({ login }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="min-h-screen bg-[#f8e5d4] md:pt-24 pt-12">
+      <div className="min-h-screen bg-gradient-to-br from-[#191714] to-[#2234AE] md:pt-24 pt-12">
         <div className="bg-white rounded-2xl pt-10 md:px-8 px-6 pb-8 text-left md:w-4/12 w-11/12 mx-auto">
           <h2 className="text-4xl font-semibold text-gray-900 leading-none">
             Sign in
@@ -164,7 +164,7 @@ export default function SignIn({ login }) {
             type="submit"
             className={`mt-2 w-full font-semibold px-4 py-3 rounded-lg text-sm ${
               allFieldsChecked
-                ? "bg-primary text-gray-500 hover:bg-[#F2994A] hover:text-black border-yellow-100 cursor-pointer"
+                ? "bg-primary text-gray-500 hover:bg-[#8f5bfd] hover:text-black border-yellow-100 cursor-pointer"
                 : "bg-yellow-100 text-yellow-800 cursor-not-allowed border-yellow-100"
             }`}
           >

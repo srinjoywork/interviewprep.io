@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+    .bg-pattern {
+      --size: 3rem;
+      background: linear-gradient(to right, #e3f2f8 0%, #e3f2f8 100%);
+      background-image: 
+        radial-gradient(#000 5%, #0000 6%),
+        radial-gradient(#000 5%, #0000 6%),
+        linear-gradient(to right, #e3f2f8 0%, #e3f2f8 100%);
+      background-position: 
+        0 0, 
+        calc(var(--size) / 2) calc(var(--size) / 2),
+        0 0;
+      background-size: 
+        var(--size) var(--size),
+        var(--size) var(--size),
+        100% 100%;
+    }
+  }
+  
+  

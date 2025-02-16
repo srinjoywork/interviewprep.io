@@ -9,7 +9,7 @@ import InputField from "./InputField";
 export default function Footer() {
   const linkUrl = useLocation();
   return (
-    <div className="bg-[#FFF5EC] text-whblackite text-left">
+    <div className="bg-[#c3efed] text-whblackite text-left">
       {!linkUrl.pathname.startsWith("/blog") && (
         <div className="w-10/12 mx-auto pt-20 pb-8 flex flex-col md:flex-row sm:flex-row space-y-2 justify-start">
           <div className="w-full sm:w-2/5 md:w-3/5 pr-6 flex flex-col space-y-2 pb-6 cursor-default">

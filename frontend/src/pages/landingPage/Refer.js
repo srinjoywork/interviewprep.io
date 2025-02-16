@@ -101,7 +101,7 @@ export default function Refer() {
   }
 
   return (
-    <div className="bg-[#f8e5d4] md:py-24 py-12">
+    <div className="bg-gradient-to-br from-[#191714] to-[#2234AE] md:py-24 py-12">
       <canvas id="my-canvas" className="absolute z-0"></canvas>
       <div className="bg-white rounded-2xl pt-10 md:px-8 px-6 pb-8 text-left md:w-5/12 w-11/12 mx-auto">
         <ProgressBar value={progress} />

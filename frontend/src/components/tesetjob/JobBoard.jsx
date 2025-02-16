@@ -198,7 +198,7 @@ export default function JobBoard({ title, props }) {
 
   return(
     <>
-      <div className="bg-light">
+      <div className="bg-gray-300">
         <div className="md:w-10/12 w-11/12 mx-auto h-full md:pb-28 pb-12">
           {title === false ? (
             <div className="block pt-4">

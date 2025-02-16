@@ -167,7 +167,7 @@ const TemplateReact = () => {
     setShowMenu(!showMenu);
   };
   return (
-    <div className="w-full min-h-[100vh] font-inter" style={{ backgroundColor: "rgb(248, 229, 212)"}}>
+    <div className="w-full min-h-[100vh] font-inter" style={{ backgroundColor: "transparent"}}>
       <div className="mx-auto ">
         <div className="flex flex-col gap-20 items-center">
           <div className="max-w-screen-xl w-full relative">
@@ -279,7 +279,7 @@ const TemplateReact = () => {
                       key={index}
                       className="flex flex-col gap-4 text-center"
                     >
-                      <span className="text-2xl text-[#9517AF] leading-6 font-semibold">
+                      <span className="text-2xl text-[#dc7bef] leading-6 font-semibold">
                         {data?.value}
                       </span>
                       <span className="text-[#233047] text-xl  leading-5 font-normal">
@@ -293,12 +293,12 @@ const TemplateReact = () => {
           </div>
           <div className="sm:px-20 px-8 flex gap-2 max-w-screen-xl w-full">
             <div className="flex flex-col gap-10">
-              <span className="text-4xl text-[#9517AF] font-extrabold">
+              <span className="text-4xl text-[#dc7bef] font-extrabold">
                 About US
               </span>
               <div className="flex flex-col gap-7">
                 <div className="max-w-xl">
-                  <span className="text-2xl text-[#233047] font-semibold">
+                  <span className="text-2xl text-[#ffffff] font-semibold">
                   CodeHireX – The Ultimate Interview Preparation & Hiring Platform
                   </span>
                 </div>
@@ -306,7 +306,7 @@ const TemplateReact = () => {
                   {aboutUsContent?.map((data, index) => (
                     <span
                       key={index}
-                      className="text-xl text-[#233047] font-normal"
+                      className="text-xl text-[#ffffff] font-normal"
                     >
                       {data}
                     </span>
@@ -326,10 +326,10 @@ const TemplateReact = () => {
           </div>
           <div className="flex flex-col gap-10 sm:px-20 px-8 max-w-screen-xl w-full">
             <div className="flex flex-col gap-7 items-center">
-              <span className="font-semibold text-4xl text-[#9517AF] text-center">
+              <span className="font-semibold text-4xl text-[#dc7bef] text-center">
                 Key Features Of CodeHireX
               </span>
-              <span className="text-center text-2xl font-normal max-w-xl">
+              <span className="text-center text-2xl font-normal max-w-xl text-[#ffffff]">
               Empowering Smarter Hiring & Career Growth with CodeHireX
               </span>
             </div>
@@ -344,7 +344,7 @@ const TemplateReact = () => {
                       <div className="h-6 w-6">
                         <img src={data?.icon} alt={data?.name} />
                       </div>
-                      <span className="text-lg sm:text-2xl font-semibold text-[#9517AF]">
+                      <span className="text-lg sm:text-2xl font-semibold text-[#dc7bef]">
                         {data?.title}
                       </span>
                       <span className="text-md sm:text-xl font-normal text-[#233047]">
@@ -498,7 +498,7 @@ const TemplateReact = () => {
                       </span>
                     </div>
                     <div className="group w-full bg-gradient-to-t from-[#9517AF] to-[#967DE6] p-[1.5px]  group-hover:bg-gradient-to-t  group-hover:from-white rounded-md cursor-pointer">
-                      <div className="h-full w-full bg-[#FBF4FA] rounded-md text-base py-2.5 px-5 group-hover:bg-gradient-to-r group-hover:hover:from-[#9517AF] group-hover:hover:to-[#967DE6] text-[#9517AF] group-hover:text-white">
+                      <div className="h-full w-full bg-[#FBF4FA] rounded-md text-base py-2.5 px-5 group-hover:bg-gradient-to-r group-hover:hover:from-[#9517AF] group-hover:hover:to-[#967DE6] text-[#dc7bef] group-hover:text-white">
                         Download
                       </div>
                     </div>{" "}
@@ -518,10 +518,10 @@ const TemplateReact = () => {
                       key={index}
                       className="flex flex-col gap-4 text-center"
                     >
-                      <span className="text-2xl text-[#9517AF] leading-6 font-semibold">
+                      <span className="text-2xl text-[#dc7bef] leading-6 font-semibold">
                         {data?.value}
                       </span>
-                      <span className="text-[#233047] text-xl  leading-5 font-normal">
+                      <span className="text-[#ffffff] text-xl  leading-5 font-normal">
                         {data?.name}
                       </span>
                     </div>
@@ -531,10 +531,10 @@ const TemplateReact = () => {
             </div>
           <div className="sm:px-20 px-8  flex flex-col gap-9 max-w-screen-xl w-full">
             <div className="flex flex-col gap-7 items-center">
-              <span className="text-2xl sm:text-4xl text-[#9517AF] font-semibold">
+              <span className="text-2xl sm:text-4xl text-[#dc7bef] font-semibold">
               Frequently Asked Questions (FAQ) – CodeHireX
               </span>
-              <span className="text-xl sm:text-2xl text-[#233047] font-normal text-center max-w-xl">
+              <span className="text-xl sm:text-2xl text-[#ffffff] font-normal text-center max-w-xl">
                 Emphasize the benefits of choosing CodeHireX for Smarter Hiring & Career Growth
               </span>
             </div>

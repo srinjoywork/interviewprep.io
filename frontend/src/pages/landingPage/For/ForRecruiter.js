@@ -21,18 +21,89 @@ export default function ForRecruiter() {
   const containerStyle = {
     width: "100%",
     height: "100%",
-    backgroundImage: "repeating-radial-gradient(#ffa35b 87%, #ffe08c 90%)",
-    backgroundSize: "50px 50px",};
+    backgroundColor: "#0f172a",
+    backgroundImage: `
+      linear-gradient(
+        45deg,
+        rgba(59, 130, 246, 0.08) 25%,
+        transparent 25%,
+        transparent 75%,
+        rgba(59, 130, 246, 0.08) 75%
+      ),
+      linear-gradient(
+        -45deg,
+        rgba(59, 130, 246, 0.08) 25%,
+        transparent 25%,
+        transparent 75%,
+        rgba(59, 130, 246, 0.08) 75%
+      ),
+      linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(99, 102, 241, 0.1) 40%,
+        rgba(99, 102, 241, 0.1) 60%,
+        transparent 60%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 40%,
+        rgba(99, 102, 241, 0.1) 40%,
+        rgba(99, 102, 241, 0.1) 60%,
+        transparent 60%
+      ),
+      radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%)
+    `,
+    backgroundSize: `
+      60px 60px,
+      60px 60px,
+      120px 120px,
+      120px 120px,
+      100% 100%
+    `,
+    backgroundPosition: `
+      0 0,
+      30px 30px,
+      0 0,
+      60px 60px,
+      0 0
+    `,
+    position: "relative",
+  };
+  
+  const beforeStyle = {
+    content: '""',
+    position: "absolute",
+    inset: 0,
+    backgroundImage: `
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 10px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 10px
+      )
+    `,
+    backgroundSize: "20px 20px",
+    filter: "blur(0.5px)",
+  };
+  
 
     
   return (
     <>
       <div className="pt-40 pb-8" style={containerStyle}>
         <div className="md:pt-0 mb-20 md:w-10/12 w-11/12 mx-auto text-center">
-          <h2 className="mx-auto md:text-7xl text-5xl font-bold text-gray-900">
+          <h2 className="mx-auto md:text-7xl text-5xl font-bold text-light">
           Hello, Interviewers! Help Us to Build the Leaders of Tomorrow
           </h2>
-          <p className="text-xl mx-auto md:w-8/12 w-12/12 pt-4 mb-12">
+          <p className="text-xl mx-auto md:w-8/12 w-12/12 pt-4 mb-12 text-light">
             Post jobs for free and only pay when you interview or hire someone.
             Make your recruitment process crowdsourced and remove expensive
             headhunters from the equation.
@@ -54,7 +125,7 @@ export default function ForRecruiter() {
           />
         </div>
       </div>
-      <div className="pt-28">
+      <div className="pt-28 bg-gradient-to-r from-[#b0e0e6] to-[#4682b4]">
         <h1 className="max-w-2xl mx-auto text-center md:text-6xl text-4xl font-bold text-gray-900">
           How it works
         </h1>
