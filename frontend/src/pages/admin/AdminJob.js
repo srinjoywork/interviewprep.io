@@ -1,9 +1,9 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import JobEditor from "components/JobEditor";
-import JobSettings from "components/JobSettings";
-import CandidateTable from "components/tables/CandidateTable";
+import JobEditor from "../../components/JobEditor";
+import JobSettings from "../../components/JobSettings";
+import CandidateTable from "../../components/tables/CandidateTable";
 import apiList from "../../libs/apiList";
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
