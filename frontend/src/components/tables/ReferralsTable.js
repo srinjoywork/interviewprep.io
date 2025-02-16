@@ -3,7 +3,7 @@ import axios from "axios";
 import apiList from "../../libs/apiList";
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Rating, Typography } from "@material-tailwind/react";
+// import { Rating, Typography } from "@material-tailwind/react";
 import { Button, Modal, ModalBody } from "flowbite-react";
 import { getId } from "libs/isAuth";
 import { Dialog, Transition } from "@headlessui/react";
@@ -14,7 +14,7 @@ const th = [
   "job type",
   "Status",
   "Day apply and join",
-  "rating",
+  // "rating",
 ];
 
 export default function ReferralsTable(props) {
@@ -160,7 +160,7 @@ export default function ReferralsTable(props) {
                                 rel="noopener noreferrer"
                                 className="hover:text-money hover:underline"
                               >
-                                <Typography>{obj.job.title}</Typography>
+                                <h1>{obj.job.title}</h1>
                               </Link>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -229,7 +229,7 @@ export default function ReferralsTable(props) {
                             </td>
                             <td>
                               {obj.job.rating !== -1 ? (
-                                <Rating value={obj.job.rating} readonly />
+                                <h1 value={obj.job.rating} readonly />
                               ) : (
                                 <span>No Rating</span>
                               )}
@@ -241,9 +241,9 @@ export default function ReferralsTable(props) {
                   })}
                 </>
               ) : (
-                <Typography style={{ textAlign: "center" }}>
+                <h1 style={{ textAlign: "center" }}>
                   No Applications Found
-                </Typography>
+                </h1>
               )}
             </tbody>
           </table>
@@ -342,14 +342,14 @@ export default function ReferralsTable(props) {
                         {selectedReferral?.job?.title}
                       </span>
                     </div>
-                    <Rating
+                    {/* <Rating
                       name="simple-controlled"
                       value={rating === -1 ? null : rating}
                       onChange={(newValue) => {
                         setRating(newValue);
                       }}
                       className="text-yellow-300 mb-[10px]"
-                    />
+                    /> */}
                   </div>
                   <div className="bg-gray-100 flex justify-center rounded-b-2xl pb-6 gap-2">
                     <Button

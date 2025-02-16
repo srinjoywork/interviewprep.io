@@ -177,6 +177,7 @@ export default function App() {
                 element={<CollabEditorPage />}
               />
               <Route exact path="/build-resume" element={<ResumeBuilder />} />
+              <Route exact path="/referrals" element={<Referrals/>} />
               <Route
                 exact
                 path="/interviewpreptools"
