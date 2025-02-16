@@ -1,6 +1,7 @@
 import "editor.css";
 import icon from "assets/icon.jpg";
-import { Rating } from "@material-tailwind/react";
+// import { Rating } from "@material-tailwind/react";
+// import  Rating  from "@mui/material/Rating";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import apiList from "../libs/apiList";
@@ -260,8 +261,10 @@ export default function JobAd({ job, tags, about, edit }) {
                   value={about.rating !== -1 ? about.rating : 0}
                   className="text-yellow-300"
                   readonly
-                />
-                <span className="font-semibold">-</span> */}
+                /> */}
+                {/* <Rating name="size-small" defaultValue={2} size="small" /> */}
+                {/* <Rating name="half-rating" defaultValue={2.5} precision={0.5} /> */}
+                <span className="font-semibold">-</span>
                 Rating:{" "}
                 <h6 className="md:text-xl text-lg font-bold text-gray-500">
                   {about.rating !== -1 ? about.rating : 0}

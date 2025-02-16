@@ -1,9 +1,10 @@
-import { Typography } from "@material-tailwind/react";
+// import { Typography } from "@material-tailwind/react";
+// import { Rating } from "@material-tailwind/react";
 import { SetPopupContext } from "App";
 import axios from "axios";
-import { Modal, Rating } from "flowbite-react";
-import apiList from "libs/apiList";
-import { server } from "libs/apiList";
+import { Modal } from "flowbite-react";
+import apiList from "../../../libs/apiList";
+import { server } from "../../../libs/apiList";
 import { useContext } from "react";
 
 const ApplicationTile = (props) => {
@@ -231,17 +232,18 @@ const ApplicationTile = (props) => {
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex-1 w-[30rem]">
         <div>
-          <Typography variant="h5">{application.jobApplicant.name}</Typography>
+          {/* <Typography variant="h5">{application.jobApplicant.name}</Typography> */}
+          <h1>{application.jobApplicant.name}</h1>
         </div>
         <div>
-          <Rating
+          {/* <Rating
             value={
               application.jobApplicant.rating !== -1
                 ? application.jobApplicant.rating
                 : null
             }
             readOnly
-          />
+          /> */}
         </div>
         <div>
           Applied On:{" "}

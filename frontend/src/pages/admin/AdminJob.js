@@ -167,6 +167,18 @@ export default function AdminJob() {
           </button>
         </div>
 
+        {/* {active === 0 ? (
+          <CandidateTable id={id} referrals={referrals} />
+        ) : active === 1 ? (
+          <JobEditor
+            jobToEdit={jobs}
+            props={{ job: jobs, getData: getData }}
+            id={id}
+          />
+        ) : (
+          <JobSettings props={{ jobs: jobs, getData: getData }} id={id} />
+        )} */}
+
         {active === 0 ? (
           <CandidateTable id={id} referrals={referrals} />
         ) : active === 1 ? (
@@ -179,6 +191,7 @@ export default function AdminJob() {
           <JobSettings props={{ jobs: jobs, getData: getData }} id={id} />
         )}
       </div>
+      {/* {console.log("My jobs: ",jobs)} */}
     </div>
   );
 }

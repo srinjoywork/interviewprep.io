@@ -3,8 +3,9 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import apiList from "../../libs/apiList";
 import { SetPopupContext } from "App";
-import ApplicationTile from "./jobapplication/Application";
-import { Typography } from "@material-tailwind/react";
+// import ApplicationTile from "./jobapplication/Application";
+import ApplicationTile from "../../components/tables/jobapplication/Application";
+// import { Typography } from "@material-tailwind/react";
 import { toast } from "react-toastify";
 
 export default function CandidateTable() {
@@ -148,9 +149,10 @@ export default function CandidateTable() {
             <ApplicationTile key={index} application={obj} getData={getData} />
           ))
         ) : (
-          <Typography style={{ textAlign: "center" }}>
-            No Applications Found
-          </Typography>
+          // <Typography style={{ textAlign: "center" }}>
+          //   No Applications Found
+          // </Typography>
+          <h1>Not found</h1>
         )}
       </tbody>
     </>
