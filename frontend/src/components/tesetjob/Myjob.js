@@ -260,7 +260,7 @@ const Myjob = ({ job }, index) => {
                 className="text-xl text-red-500 mr-3 ml-2"
               />
               <span className="text-base font-semibold tracking-wide">
-                Skill:{" "}
+                Skills:{" "}
               </span>
               <div className="pl-1 flex mt-3 gap-2">
                 {job.skillsets

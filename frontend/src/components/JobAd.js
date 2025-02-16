@@ -3,7 +3,7 @@ import icon from "assets/icon.jpg";
 import { Rating } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import apiList from "libs/apiList";
+import apiList from "../libs/apiList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -215,7 +215,6 @@ export default function JobAd({ job, tags, about, edit }) {
       )}
       {about && (
         <div>
-          {/* LEFT */}
           <div className="rounded-xl bg-slate-50 pd:pt-1 pt-1 shadow-sm">
             <div className="w-11/12 mx-auto mt-10 pb-4">
               <div className="w-full flex items-center justify-between">
@@ -255,16 +254,17 @@ export default function JobAd({ job, tags, about, edit }) {
                   />
                 </span>
               </div>
-              <div className="flex justify-start md:mt-10 mt-10 mb-3 gap-2">
-                {" "}
-                <Rating
-                  value={about.rating !== -1 ? about.rating : null}
+              <div className="flex justify-start md:mt-10 mt-10 mb-3 gap-2 text-bold font-semibold text-gray-500">
+                {/* {" "} */}
+                {/* <Rating
+                  value={about.rating !== -1 ? about.rating : 0}
                   className="text-yellow-300"
                   readonly
                 />
-                <span className="font-semibold">-</span>
+                <span className="font-semibold">-</span> */}
+                Rating:{" "}
                 <h6 className="md:text-xl text-lg font-bold text-gray-500">
-                  {about.rating}
+                  {about.rating !== -1 ? about.rating : 0}
                 </h6>
               </div>
               <div className="flex gap-3">
@@ -360,6 +360,8 @@ export default function JobAd({ job, tags, about, edit }) {
           </div>
         </div>
       )}
+      {console.log(job)}
+
     </>
   );
 }

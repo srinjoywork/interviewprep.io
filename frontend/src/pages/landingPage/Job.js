@@ -1,10 +1,10 @@
 import axios from "axios";
-import JobAd from "components/JobAd";
+import JobAd from "../../components/JobAd";
 import apiList from "../../libs/apiList";
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import Banner from "components/Banner";
-import { userType } from "libs/isAuth";
+import Banner from "../../components/Banner";
+import { userType } from "../../libs/isAuth";
 import { SetPopupContext } from "App";
 
 export default function Job(props) {
@@ -93,7 +93,7 @@ export default function Job(props) {
         );
         setHasAcceptedJob(response.data.hasAcceptedJob);
       } catch (error) {
-        console.error(error);
+        console.error("The error is: ",error);
       }
     };
 
@@ -105,7 +105,7 @@ export default function Job(props) {
       .get(`${apiList.jobs}/${id}`)
       .then((response) => {
         setJob(response.data);
-        console.log(response.data);
+        console.log("Result: ",response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -116,7 +116,7 @@ export default function Job(props) {
     const all = apiList.jobs;
     axios.get(all).then((response) => {
       setAllJob(response.data);
-      console.log(response.data);
+      console.log("Response Data: ",response.data);
     });
   }, []);
 
@@ -154,6 +154,7 @@ export default function Job(props) {
   return (
     <>
       <div className="flex">
+      {console.log("This is job: ", job)}
         {/* LEFT */}
         <div className="lg:w-6/12 w-11/12 h-full ml-44 mr-20 md:mt-20 mt-10 pb-10">
           <JobAd about={job} />
@@ -189,6 +190,8 @@ export default function Job(props) {
             ) : null}
           </div>
         </div>
+
+
         {/* RIGHT */}
         <div className="w-full md:w-1/3 2xl:w-2/4 md:mt-20 mt-10 pb-10">
           <p className="text-gray-500 font-semibold">Similar Job Post</p>
@@ -289,3 +292,8 @@ export default function Job(props) {
     </>
   );
 }
+
+
+
+
+
