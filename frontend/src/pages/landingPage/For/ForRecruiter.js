@@ -1,4 +1,5 @@
 import FAQ from "components/FAQ";
+import { useNavigate } from "react-router-dom";
 import Banner from "components/Banner";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,11 +17,14 @@ import { userType } from "libs/isAuth";
 
 export default function ForRecruiter() {
   const type = userType();
+  const navigate = useNavigate();
   const containerStyle = {
     width: "100%",
     height: "100%",
     backgroundImage: "repeating-radial-gradient(#ffa35b 87%, #ffe08c 90%)",
     backgroundSize: "50px 50px",};
+
+    
   return (
     <>
       <div className="pt-40 pb-8" style={containerStyle}>
@@ -55,79 +59,108 @@ export default function ForRecruiter() {
           How it works
         </h1>
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-14 md:py-40 md:pb-12 py-12   md:text-left text-center md:w-10/12 w-11/12  mx-auto ">
-          <div>
-          <img width="100" height="100" src={virtual_interview} alt="video-conference"/>
-            {/* <FontAwesomeIcon
-              className="text-5xl mb-6  text-green-500"
-              icon={faCopy}
-            />
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-14 md:py-40 md:pb-12 py-12 md:text-left text-center md:w-10/12 w-11/12 mx-auto">
+        {/* Virtual Interview */}
+        <div>
+          <img width="100" height="100" src={virtual_interview} alt="video-conference" />
+          <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Virtual Interview</h1>
+          <p className="text-xl font-light">Promote your company to our community of tech people.</p>
 
-            <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-              Step 1:
-            </div> */}
-            <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
-              Virtual Interview
-            </h1>
-            <p className="text-xl font-light">
-              Promote your company to our community of tech people.
-            </p>
-          </div>
-
-          <div>
-            <img width="100" height="100" src={Resume_Summarizer} alt="video-conference"/>
-            {/* <FontAwesomeIcon
-              className="text-5xl mb-6 text-indigo-500 "
-              icon={faIdCard}
-            />
-
-            <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-              Step 2:
-            </div> */}
-            <h1 className="text-3xl text-gray-900 pb-3  font-semibold">
-              Resume Summarizer
-            </h1>
-            <p className="text-xl font-light">
-              Write a job description, set a hiring reward and interview reward.
-            </p>
-          </div>
-
-          <div>
-          <img width="100" height="100" src={virtual_interview} alt="video-conference"/>
-            {/* <FontAwesomeIcon
-              className="text-5xl mb-6  text-primary"
-              icon={faEnvelopeOpenText}
-            />
-            <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-              Step 3:
-            </div> */}
-            <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
-              Applicant apply
-            </h1>
-            <p className="text-xl font-light">
-              Our JOBPORTAL community allows users to discover and apply for
-              jobs.
-            </p>
-          </div>
-
-          <div>
-            <img width="100" height="100" src={virtual_interview} alt="video-conference"/>
-            {/* <FontAwesomeIcon
-              className="text-5xl mb-6  text-yellow-400"
-              icon={faHandsHelping}
-            />
-            <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-              Step 4:
-            </div> */}
-            <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
-              Interview and hire
-            </h1>
-            <p className="text-xl font-light">
-              If you find an interesting candidate you can interview and hire
-              them.
-            </p>
-          </div>
+          <br/>
+          {type === "recruiter" ? (
+            <Link
+              to="/interviewhome"
+              className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+            >
+              Get Started
+            </Link>
+          ) : (
+            <Link
+              to="/sign-in"
+              className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+            >
+              Get Started
+            </Link>
+          )}
         </div>
+
+        {/* Resume Summarizer */}
+        <div>
+          <img width="100" height="100" src={Resume_Summarizer} alt="resume-summarizer" />
+          <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Resume Summarizer</h1>
+          <p className="text-xl font-light">Write a job description, set a hiring reward and interview reward.</p>
+
+          <br/>
+          {type === "recruiter" ? (
+            <a
+              href="https://resume-parser-pdqm.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+            >
+              Get Started
+            </a>
+          ) : (
+            <Link
+              to="/sign-in"
+              className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+            >
+              Get Started
+            </Link>
+          )}
+        </div>
+
+        {/* Applicant apply */}
+        <div>
+          <img width="100" height="100" src={virtual_interview} alt="applicant-apply" />
+          <h1 className="text-3xl text-gray-900 pb-3 font-semibold">Applicant apply</h1>
+          <p className="text-xl font-light">Our JOBPORTAL community allows users to discover and apply for jobs.</p>
+
+          <br/>
+          {type === "recruiter" ? (
+           <Link
+           to="/admin"
+           className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+         >
+           Get Started
+         </Link>
+          ) : (
+            <Link
+              to="/sign-in"
+              className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+            >
+              Get Started
+            </Link>
+          )}
+        </div>
+
+        {/* Interview and hire */}
+        <div>
+          <img width="100" height="100" src={virtual_interview} alt="interview-hire" />
+          <h1 className="text-3xl text-gray-900 pb-3 font-semibold">QGenAi</h1>
+          <p className="text-xl font-light">If you find an interesting candidate you can interview and hire them.</p>
+
+          <br/>
+          {type === "recruiter" ? (
+            <a
+            href="https://interview-question-ai.onrender.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+          >
+            Get Started
+          </a>
+          ) : (
+            <Link
+              to="/sign-in"
+              className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
+            >
+              Get Started
+            </Link>
+          )}
+        </div>
+      </div>
+
       </div>
 
       {/* <div className="bg-white md:pt-0 mt-32 mb-20 md:w-10/12 w-11/12 mx-auto">
