@@ -527,7 +527,7 @@ export default function SignUp() {
             >
               <div>
                 <PhoneInput
-                  country={"vn"}
+                  country={"in"}
                   value={phone}
                   onChange={(phone) => setPhone(phone)}
                 />
