@@ -137,7 +137,6 @@ const ChatAI = () => {
       }
     }
   };
-
   const generateAnswer = async () => {
     const response = await axios({
       url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyBBdHzR8SfO43bX_4vnwtsisEgfr-rbnOQ",
@@ -159,107 +158,84 @@ const ChatAI = () => {
     );
   };
 
-  // Function to format non-code sections
-  // const formatText = (text) => {
-  //   const lines = text.split("\n");
-  //   const paragraphs = [];
-  //   let paragraph = [];
-
-  //   for (let i = 0; i < lines.length; i++) {
-  //     if (i > 0 && i % 6 === 0) {
-  //       paragraphs.push(paragraph.join(" "));
-  //       paragraph = [];
-  //     }
-  //     paragraph.push(lines[i]);
-  //   }
-
-  //   if (paragraph.length > 0) {
-  //     paragraphs.push(paragraph.join(" "));
-  //   }
-
-  //   return paragraphs.map((paragraph, index) => (
-  //     <p key={index}>{paragraph}</p>
-  //   ));
-  // };
-  // Function to format non-code sections
-const formatText = (text) => {
-  const lines = text.split("\n");
-  const paragraphs = [];
-  let paragraph = [];
-
-  for (let i = 0; i < lines.length; i++) {
-    if (i > 0 && i % 6 === 0) {
-      paragraphs.push(paragraph.join(" "));
-      paragraph = [];
-    }
-    if (lines[i].trim().startsWith("*")) {
-      if (paragraph.length > 0) {
+  const formatText = (text) => {
+    const lines = text.split("\n");
+    const paragraphs = [];
+    let paragraph = [];
+  
+    for (let i = 0; i < lines.length; i++) {
+      if (i > 0 && i % 6 === 0) {
         paragraphs.push(paragraph.join(" "));
         paragraph = [];
       }
-      paragraphs.push(lines[i]);
-    } else {
-      paragraph.push(lines[i]);
+      if (lines[i].trim().startsWith("*")) {
+        if (paragraph.length > 0) {
+          paragraphs.push(paragraph.join(" "));
+          paragraph = [];
+        }
+        paragraphs.push(lines[i]);
+      } else {
+        paragraph.push(lines[i]);
+      }
     }
-  }
-
-  if (paragraph.length > 0) {
-    paragraphs.push(paragraph.join(" "));
-  }
-
-  return paragraphs.map((paragraph, index) => (
-    <p key={index}>{paragraph}</p>
-  ));
-};
-
-
-  // Function to format messages
-  const formatMessage = (message) => {
-    if (message.text.startsWith("```")) {
-      return formatCode(message.text.slice(3, -3));
-    } else {
-      return formatText(message.text);
+  
+    if (paragraph.length > 0) {
+      paragraphs.push(paragraph.join(" "));
     }
+  
+    return paragraphs.map((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    ));
   };
-
-  return (
-    <div className="chat-container">
-      <div className="chat-header">
-        <h1>Chat Section : </h1>
+  
+  
+    // Function to format messages
+    const formatMessage = (message) => {
+      if (message.text.startsWith("```")) {
+        return formatCode(message.text.slice(3, -3));
+      } else {
+        return formatText(message.text);
+      }
+    };
+  
+    return (
+      <div className="chat-container">
+        <div className="chat-header">
+          <h1>Chat Section : </h1>
+        </div>
+        <div className="chat-messages-container">
+          {error ? (
+            <p className="error-message">{error}</p> // Display error message
+          ) : messages.length === 0 ? (
+            <p className="no-messages">Chat with AI</p>
+          ) : (
+            <div className="chat-messages">
+              <ul>
+                {messages.map((message, index) => (
+                  <li key={index} className="chat-message">
+                    <div className="message-info">
+                      <strong>{message.username}</strong> ({message.timestamp}):
+                    </div>
+                    <div className="message-text">
+                      {formatMessage(message)}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+        <div className="chat-input">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+          <button onClick={handleSendMessage}>Send</button>
+        </div>
       </div>
-      <div className="chat-messages-container">
-        {error ? (
-          <p className="error-message">{error}</p> // Display error message
-        ) : messages.length === 0 ? (
-          <p className="no-messages">Chat with AI</p>
-        ) : (
-          <div className="chat-messages">
-            <ul>
-              {messages.map((message, index) => (
-                <li key={index} className="chat-message">
-                  <div className="message-info">
-                    <strong>{message.username}</strong> ({message.timestamp}):
-                  </div>
-                  <div className="message-text">
-                    {formatMessage(message)}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-      <div className="chat-input">
-        <input
-          type="text"
-          placeholder="Type your message..."
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-    </div>
-  );
-};
-
-export default ChatAI;
+    );
+  };
+  
+  export default ChatAI;

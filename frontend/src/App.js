@@ -66,6 +66,8 @@ import Blind75List from "./pages/DSA/Blind75List.jsx";
 
 import PricingReact from "../src/pages/subscription";
 import Thankyou from "pages/Thankyou";
+import Codecollablanding from "pages/Codecollablanding";
+import Interviewlandingbeforesignup from "pages/InterviewLanding";
 
 export const SetPopupContext = createContext();
 
@@ -200,7 +202,9 @@ export default function App() {
               <Route path="/join-interview" element={<InterviewHome />} />
               <Route path="/editor-room/:roomID" element={<EditorPage />} />
               <Route path="/codecollab" element={<CodeCollabHome />} />
-          
+
+              <Route path="/codecollablanding" element={<Codecollablanding />} />
+              <Route path="/interviewlanding" element={<Interviewlandingbeforesignup/>} />
                 
               <Route path="/021245" element={<Thankyou />}>
                 

@@ -43,7 +43,7 @@ const Chat = ({ socketRef, username }) => {
   return (
     <div
       style={{
-        height: "110vh", // Adjusted height
+        height: "120vh", // Adjusted height
         display: "flex",
         flexDirection: "column",
       }}

@@ -146,10 +146,10 @@
   /* Chat container styles */
   .chat-container {
     width: auto; /* Let the width be determined by content */
-    height: 98%; /* Set height to 100% */
-    max-width: 600px;
+    height: 90%; /* Set height to 100% */
+    max-width: 500px;
     margin: 0 auto;
-    background-color: #fff89a;
+    background-color: #97d9e2;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -172,7 +172,7 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #ff91f8;
+    background-color: #e9e14d;
   }
   
   .message-info {
@@ -245,7 +245,7 @@
   
   /* Chat messages container styles */
   .chat-messages-container {
-    height: 82vh; /* Set a fixed height for the chat messages container */
+    height: 70vh; /* Set a fixed height for the chat messages container */
     overflow-y: auto; /* Enable vertical scrolling when content overflows */
     display: flex;
     flex-direction: column;
@@ -305,7 +305,7 @@
     border-radius: 5px;
     font-size: 16px;
     margin-right: 10px;
-    background-color: #ffafe4;
+    background-color: #e6e162;
   }
   
   .chat-input button {

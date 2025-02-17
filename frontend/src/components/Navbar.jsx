@@ -71,10 +71,10 @@ export default function Navbar() {
             ) : null
           ) : (
             <>
-              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/sign-in">
+              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/codecollablanding">
                 Code Collaborators
               </Link>
-              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/sign-in">
+              <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/interviewlanding">
                 Interview Room
               </Link>
               <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/build-resume">

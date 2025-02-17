@@ -318,8 +318,19 @@ const CollabEditorPage = () => {
     const navigate = useNavigate(); // Allows navigation to different routes
     const [clients, setClients] = useState([]); // Stores list of connected users
     const [selectedTab, setSelectedTab] = useState("chat"); // Manages the active UI tab
+    const [isChatVisible, setIsChatVisible] = useState(true);
     const [isEditorFullScreen, setIsEditorFullScreen] = useState(false); // Manages fullscreen state
     const [code, setCode] = useState("");
+    const handleTabChange = (tab) => {
+        setSelectedTab(tab);
+      };
+      const toggleChatVisibility = () => {
+        setIsChatVisible(!isChatVisible);
+      };
+    
+      const toggleEditorFullScreen = () => {
+        setIsEditorFullScreen(!isEditorFullScreen);
+      };
 
     useEffect(() => {
         const init = async () => {
@@ -493,13 +504,20 @@ const CollabEditorPage = () => {
             </div>
 
             <div style={{ display: isEditorFullScreen ? "none" : "block" }}>
-                <div style={{ height: "40vh", width: "60vh", right: "20px" }}>
-                    {selectedTab === "chat" && <Chat socketRef={socketRef} username={location.state?.username} />}
-                    {selectedTab === "fileUpload" && <FileUpload socket={socketRef} />}
-                    {selectedTab === "chatwithai" && <ChatAI socketRef={socketRef} username={location.state?.username} />}
-                    <BottomNavigation onSelectTab={setSelectedTab} selectedTab={selectedTab} />
-                </div>
-            </div>
+            <div style={{ height: "35vh", width: "55vh", right: "20px" }}>
+  <div style={{ display: selectedTab === "chat" ? "block" : "none" }}>
+    <Chat socketRef={socketRef} username={location.state?.username} />
+  </div>
+  <div style={{ display: selectedTab === "fileUpload" ? "block" : "none" }}>
+    <FileUpload socket={socketRef} />
+  </div>
+  <div style={{ display: selectedTab === "chatwithai" ? "block" : "none" }}>
+    <ChatAI socketRef={socketRef} username={location.state?.username} />
+  </div>
+  <BottomNavigation onSelectTab={handleTabChange} selectedTab={selectedTab} />
+</div>
+
+      </div>
         </div>
     );
 };
