@@ -51,7 +51,7 @@ export default function Navbar() {
                 <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/recruiter-tools">
                   Resume Summarizer
                 </Link>
-                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="/recruiter-tools">
+                <Link className="text-[#333] text-sm md:text-base font-semibold hover:opacity-60 hover:no-underline" to="https://code-hire-x-question-generator.onrender.com/">
                   QGenAi
                 </Link>
                 <Link to="/create-new-job" className="flex items-center font-semibold text-xs md:text-sm bg-black text-white px-3 py-1 rounded-lg hover:opacity-80">

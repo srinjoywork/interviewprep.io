@@ -36,17 +36,17 @@ const MainHeading = styled.h1`
 
 const NavbarCodeIde = ({ isFullScreen }) => {
   const navigate = useNavigate()
-  return (
-    <NavbarContainer isFullScreen={isFullScreen}>
-      <NavbarContent onClick={() => {
-        navigate('/code-ide')
-      }}>
-        <Logo src={logo} />
-        <MainHeading>
-          <span>Codefy</span>
-        </MainHeading>
-      </NavbarContent>
-    </NavbarContainer>
+  return ( <></>
+    // <NavbarContainer isFullScreen={isFullScreen}>
+    //   <NavbarContent onClick={() => {
+    //     navigate('/code-ide')
+    //   }}>
+    //     <Logo src={logo} />
+    //     <MainHeading>
+    //       <span>Codefy</span>
+    //     </MainHeading>
+    //   </NavbarContent>
+    // </NavbarContainer>
   )
 }
 

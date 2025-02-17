@@ -160,7 +160,7 @@ export default function JobCreator({ jobToEdit }) {
           className="mt-8 hover:border-black"
           type="text"
           label="Job type"
-          placeholder="25 000"
+          placeholder="Full Time / Part Time"
           value={job.jobType}
           onChange={(e) => {
             setJob({
@@ -173,7 +173,7 @@ export default function JobCreator({ jobToEdit }) {
           className="mt-8 hover:border-black"
           type="text"
           label="duration"
-          placeholder="25 000"
+          placeholder="6 month"
           value={job.duration}
           onChange={(e) => {
             setJob({
@@ -212,7 +212,7 @@ export default function JobCreator({ jobToEdit }) {
           className="mt-8 hover:border-black"
           type="text"
           label="location"
-          placeholder="25 000"
+          placeholder="Bangalore"
           value={job.location}
           onChange={(e) => {
             setJob({

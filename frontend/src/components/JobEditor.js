@@ -221,7 +221,7 @@ export default function JobEditor({ jobToEdit, props }) {
               className="mt-8 hover:border-black"
               type="text"
               label="Job type"
-              placeholder="25 000"
+              placeholder="Full Time / Part Time"
               value={jobs.jobType}
               onChange={(e) => {
                 setJobs({
@@ -234,7 +234,7 @@ export default function JobEditor({ jobToEdit, props }) {
               className="mt-8 hover:border-black"
               type="text"
               label="duration"
-              placeholder="25 000"
+              placeholder="6 Month"
               value={jobs.duration}
               onChange={(e) => {
                 setJobs({
