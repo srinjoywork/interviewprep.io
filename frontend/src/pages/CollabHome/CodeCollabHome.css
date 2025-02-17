@@ -2,12 +2,13 @@
 .CodeHome {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffffff 0%);
+  background: #1d2661;
   color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
+  padding-top: 50px;
 }
 
 /* Page Transition */
@@ -25,17 +26,20 @@
 .homePageWrapper {
   animation: fadeIn 0.6s ease-in-out;
   display: flex;
-  width: 90%;
-  max-width: 1200px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 80%; /* Reduced from 90% */
+  max-width: 1000px; /* Reduced from 1200px */
+  background: rgba(209, 198, 198, 0.15);
+  border-radius: 15px; /* Slightly smaller corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Softer shadow */
+  backdrop-filter: blur(12px); /* Slightly less blur */
+  border: 1.5px solid rgba(255, 255, 255, 0.2); /* Slightly thinner border */
   overflow: hidden;
   margin: auto;
-  padding: 20px;
+  padding: 10px; /* Reduced from 20px */
+  margin-bottom: 25px !important; /* Adjusted margins */
+  margin-top: 8px;
 }
+
 
 
 /* Left Section */
@@ -47,7 +51,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  
   border-right: 2px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -56,7 +60,7 @@
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
-  color: #222;
+  color: whitesmoke;
 }
 @keyframes textGradient {
   0% {
@@ -73,7 +77,7 @@
 .leftSection p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: rgba(34, 34, 34, 0.9);
+  color: whitesmoke;
 }
 
 .collabImage {
