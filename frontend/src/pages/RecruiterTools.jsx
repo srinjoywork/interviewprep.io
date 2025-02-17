@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import RecruiterToolLeft from "../components/RecruiterTools/RecruiterToolLeft/RecruiterToolLeft";
 import RecruiterToolRight from "../components/RecruiterTools/RecruiterToolRight/RecruiterToolRight";
 import Resume_Summarizer from "../assets/resumesummary.png";
-import notedigitizer from "../assets/notedigitizer.png";
+import Notedigitizer from "../assets/NoteDigitalization.jpg";
 import questiongenai from "../assets/questiongenai.png";
 import isAuth from "libs/isAuth";
 import { userType } from "libs/isAuth";
@@ -32,7 +32,7 @@ const RecruiterTools = () => {
         <>
           {/* Resume Summarizer */}
           <RecruiterToolLeft
-            redirectLink={"https://resume-parser-pdqm.onrender.com/"}
+            redirectLink={"https://code-hire-x-resume-analyzer.onrender.com/"}
             title={"Resume Summarizer"}
             desc={
               "An AI-powered tool that extracts key details from resumes, providing concise summaries of candidates' skills, experience, and qualifications to streamline the recruitment process."
@@ -42,17 +42,17 @@ const RecruiterTools = () => {
 
           {/* Note Digitalizer */}
           <RecruiterToolRight
-            redirectLink={"https://handwritten-digitalization-ocmct9vcwiwrrued5pdaqx.streamlit.app/"}
+            redirectLink={"https://code-hire-x-Notedigitizer.streamlit.app/"}
             title={"Note Digitalizer"}
             desc={
               "A smart tool that converts handwritten or typed notes into digital format, making them easily searchable, editable, and shareable. It enhances productivity by organizing notes efficiently."
             }
-            img={notedigitizer}
+            img={Notedigitizer}
           />
 
           {/* AI Question Generator */}
           <RecruiterToolLeft
-            redirectLink={"https://interview-question-ai.onrender.com/"}
+            redirectLink={"https://code-hire-x-question-generator.onrender.com"}
             title={"Question Generator"}
             desc={
               "An AI-powered tool that creates relevant and diverse questions based on given topics or content. It helps in exam preparation, interviews, and quizzes by generating insightful and structured questions efficiently."
@@ -80,7 +80,7 @@ const RecruiterTools = () => {
             desc={
               "A smart tool that converts handwritten or typed notes into digital format, making them easily searchable, editable, and shareable. It enhances productivity by organizing notes efficiently."
             }
-            img={notedigitizer}
+            img={Notedigitizer}
           />
 
           {/* AI Question Generator */}

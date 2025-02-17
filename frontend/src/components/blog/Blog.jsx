@@ -100,7 +100,7 @@ export default function Blog() {
                   <Link
                     to={
                       isApplicant
-                        ? "https://handwritten-digitalization-ocmct9vcwiwrrued5pdaqx.streamlit.app/"
+                        ? "https://code-hire-x-digiscribe.streamlit.app/"
                         : "/sign-in"
                     }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
@@ -110,7 +110,7 @@ export default function Blog() {
                     </div>
                     <div className="ml-4">
                       <p className="text-md font-semibold text-gray-900  hover:no-underline">
-                        NoteDigitizer
+                        DigiScribe
                       </p>
                     </div>
                   </Link>

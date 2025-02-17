@@ -73,7 +73,7 @@ export default function Footer() {
               className="w-40 opacity-60 hover:opacity-100 font-semibold text-lg"
               to="/sign-up/new-applicant"
             >
-              NoteDigitizer
+              DigiScribe
             </Link>
           </div>
 

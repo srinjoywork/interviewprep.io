@@ -214,7 +214,7 @@ export default function ForRecruiter() {
           <br/>
           {type === "recruiter" ? (
             <a
-            href="https://interview-question-ai.onrender.com/"
+            href="https://code-hire-x-question-generator.onrender.com"
             target="_blank"
             rel="noopener noreferrer"
             className="mx-auto mt-4 hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-4 bg-primary rounded-xl text-black"
