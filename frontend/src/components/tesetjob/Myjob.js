@@ -196,7 +196,7 @@ const Myjob = ({ job }, index) => {
             />
             <div>
               <p className="font-bold text-gray-700">Hiring Reward</p>
-              <p className="text-xl text-gray-900">{job.salary} $</p>
+              <p className="text-xl text-gray-900">₹ {job.salary}</p>
             </div>
           </div>
 
