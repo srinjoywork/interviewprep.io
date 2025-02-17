@@ -22,7 +22,9 @@ import StayUpdatedSection from "./StayUpdatedSection/StayUpdatedSection";
 import Features from "./FeatureCard/Features/Features";
 import Contact from "./Contact/Contact";
 import RecruiterFeature from "./FeatureCard/RecruiterFeature/RecruiterFeature";
+import StudentFeature from "./FeatureCard/StudentFeature/StudentFeature";
 import MainHomePage from "../components/MainHomePage/MainHomePage"
+
 
 export default function Jumbotron() {
   let [isOpen, setIsOpen] = useState(false);
@@ -72,73 +74,32 @@ export default function Jumbotron() {
           {/* <Contact /> */}
         </main>
       ) : type === "applicant" ? (
-        <main className="bg-gradient-to-br from-[#191714] to-[#2234AE] ">
-          {/* <div className="w-11/12 flex flex-wrap mx-auto">
-            <div className="md:w-5/12 w-12/12 md:pt-12 md:pl-10 pl-0 pt-0 md:pb-12 pb-20 mx-auto">
-              <img
-                className="md:mt-28 mt-0 w-full lg:float-right float-none mx-auto"
-                src={phone}
-                alt="phones"
-              />
-            </div>
-            <div className="lg:text-left text-center lg:w-7/12 w-12/12 lg:pt-24 pt-12 lg:pb-40 pb-16 mx-auto">
-              <h1 className="text-black lg:text-6xl text-4xl sm:mt-5 font-bold sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
-                Welcome to Applicant home
-                <br />
-              </h1>
-              <p className="mt-3 text-xl text-black sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
-                Greet let's you introduce your friend to their dream job in
-                tech. As a reward, you get paid if they get interviewed or
-                hired.
-              </p>
-              <div className="mt-4 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <Link
-                  onClick={() => openModal()}
-                  className="transform ease-in duration-100 md:mx-0 text-black  font-semibold rounded-xl items-center justify-center py-3 border-2  hover:bg-black hover:text-primary  text-base  bg-primary md:py-4 md:text-lg px-8"
-                >
-                  See job board
-                </Link>
-              </div>
-            </div>
-          </div> */}
-          <div className="w-[80%] mx-auto pt-20 pb-32 space-y-16 text-white">
-            {/* Hero Section */}
-            <div className="h-[50vh] relative flex flex-col md:flex-row items-center bg-gradient-to-r from-purple-600 to-indigo-600 p-12 rounded-3xl shadow-2xl transform transition duration-500 hover:scale-105">
-              <div className="md:w-1/3 w-full flex justify-center">
-                <img
-                  src="/path/to/transparent-image.png"
-                  className="w-[50vh] h-[40vh] bg-white bg-opacity-10 p-4 rounded-xl shadow-lg"
-                  alt="Transparent"
-                />
-              </div>
-              <div className="md:w-2/3 w-full text-center space-y-6">
-                <h1 className="text-5xl font-extrabold leading-tight">
-                  Heading Text
-                </h1>
-              </div>
-            </div>
-
-            {/* Student Features Section */}
-            {/* <div className="bg-gray-900 text-white text-center p-12 rounded-3xl shadow-lg transform transition hover:scale-105"> */}
-            <Features
-              features={[
-                "Access to exclusive internships",
-                "Career guidance and mentorship",
-                "Skill-building workshops",
-                "Networking opportunities",
-                "Job placement assistance",
-              ]}
-              title={"Student Features"}
-            />
-            {/* </div> */}
-
-            {/* Metrics Section */}
-            <Metrices title={"Our Metrices"} desc={"xxxxxxxxxxxxxxxx"} />
-
-            {/* Contact Section */}
-            <Contact />
+        <main className="bg-gradient-to-br from-[#191714] to-[#2234AE]">
+        <div className="w-11/12 flex flex-wrap mx-auto">
+          <div className="lg:text-left text-center lg:w-7/12 w-12/12 lg:pt-24 pt-12 lg:pb-40 pb-16 mx-auto">
+            <h1 className="text-white lg:text-6xl text-4xl sm:mt-5 font-bold sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
+              Welcome to Applicant Home
+              <br />
+            </h1>
+            <p className="mt-3 text-xl text-white sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
+              With profound knowledge in the IT field and specialized skills,
+              we can assist you in accessing and targeting the best IT
+              Roles.
+            </p>
           </div>
-        </main>
+
+          <div className="md:w-5/12 w-12/12 md:pt-12 md:pl-10 pl-0 pt-0 md:pb-12 pb-20 mx-auto">
+            <img
+              className="md:mt-28 mt-0 w-full lg:float-right float-none mx-auto"
+              src={phones}
+              alt="phones"
+            />
+          </div>
+        </div>
+        <StudentFeature/>
+        {/* <RecruiterFeature /> */}
+        {/* <Contact /> */}
+      </main>
       ) : (
         <main className="bg-gradient-to-br from-[#191714] to-[#2234AE]">
           {/* <div className="text-center lg:w-7/12 w-12/12 ld:pt-52 md:pt-40 pt-32 pb-52 mx-auto h-2/3">

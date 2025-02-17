@@ -14,7 +14,6 @@ function Home() {
       
       {/* <HowItWorks /> */}
       <JobBoard title={false} />
-      
       <CompanyBanner type={userType} />
       <SocialMedia />
       <Banner
