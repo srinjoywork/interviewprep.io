@@ -178,7 +178,7 @@ export default function SignUp() {
               icon: "success",
               message: "Logged in successfully",
             });
-            history("/referrals");
+            history("/");
             console.log("export" + response);
             console.log(response?.data.type);
           })
@@ -267,7 +267,7 @@ export default function SignUp() {
             message: "Logged in successfully",
           });
           console.log(response);
-          history("/admin");
+          history("/");
         })
         .catch((err) => {
           setPopup({
