@@ -45,21 +45,21 @@ export default function MobileMenu() {
                       Job board
                     </Link>
 
-                    <Link
+                    {/* <Link
                       onClick={() => buttonRef.current?.click()}
                       to="/companies"
                       className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                     >
                       Companies
-                    </Link>
+                    </Link> */}
 
-                    <Link
+                    {/* <Link
                       onClick={() => buttonRef.current?.click()}
                       to="/leaderboard"
                       className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                     >
                       Leaderboard
-                    </Link>
+                    </Link> */}
 
                     {type === null ? (
                       <>
