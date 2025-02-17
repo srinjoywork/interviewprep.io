@@ -167,12 +167,16 @@ export default function Jumbotron() {
                   recommendations and expert insights.
                 </p>
                 <div className="mt-6 flex gap-4">
-                  <button className="bg-yellow-400 text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500 transform transition hover:-translate-y-1">
-                    Explore Jobs
-                  </button>
-                  <button className="border-2 border-blue-800 text-black font-semibold py-3 px-6 rounded-full hover:bg-pink-400 hover:text-white transform transition hover:-translate-y-1">
-                    Sign Up Free
-                  </button>
+                  <Link to={"/jobs"}>
+                    <button className="bg-yellow-400 text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500 transform transition hover:-translate-y-1">
+                      Explore Jobs
+                    </button>
+                  </Link>
+                  <Link to={"/sign-up"}>
+                    <button className="border-2 border-blue-800 text-black font-semibold py-3 px-6 rounded-full hover:bg-pink-400 hover:text-white transform transition hover:-translate-y-1">
+                      Sign Up Free
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="md:w-1/2 w-full flex justify-center mt-6 md:mt-0">

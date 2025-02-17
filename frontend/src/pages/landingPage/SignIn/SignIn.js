@@ -164,7 +164,7 @@ export default function SignIn({ login }) {
             type="submit"
             className={`mt-2 w-full font-semibold px-4 py-3 rounded-lg text-sm ${
               allFieldsChecked
-                ? "bg-primary text-gray-500 hover:bg-[#8f5bfd] hover:text-black border-yellow-100 cursor-pointer"
+                ? "bg-yellow-100 text-yellow-800 hover:bg-yellow-400 hover:text-black border-yellow-100 cursor-pointer"
                 : "bg-yellow-100 text-yellow-800 cursor-not-allowed border-yellow-100"
             }`}
           >
