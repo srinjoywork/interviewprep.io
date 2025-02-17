@@ -103,9 +103,9 @@ export default function SignIn({ login }) {
 
   useEffect(() => {
     if (type === "applicant") {
-      history("/referrals");
+      history("/");
     } else if (type === "recruiter") {
-      history("/admin");
+      history("/");
     } else if (type === "admin") {
       history("/dashboard/*");
     }
