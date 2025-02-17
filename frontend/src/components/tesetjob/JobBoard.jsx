@@ -198,11 +198,11 @@ export default function JobBoard({ title, props }) {
 
   return (
     <>
-      <div className=" bg-[#1d2661] text-center">
+      <div className=" bg-gradient-to-br from-[#020024] via-[rgb(9,55,121) 6%] to-[rgba(0,254,255,1) 18%] text-center">
         <div className="md:w-10/12 w-11/12 mx-auto h-full md:pb-28 pb-12">
           {title === false ? (
             <div className="block pt-4">
-              <h1 className="md:text-6xl text-4xl font-bold text-gray-900 text-center md:pb-16 pb-12 pt-10">
+              <h1 className="md:text-6xl text-4xl font-bold text-gray-100 text-center md:pb-16 pb-12 pt-10">
                 Trending jobs ({limitedJobs.length})
               </h1>
             </div>
