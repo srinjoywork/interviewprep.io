@@ -31,7 +31,7 @@ const InterviewPrepTools = () => {
         title="Code IDE"
         description="Code IDEs provide tools for writing, debugging, and testing code efficiently. Popular choices include VS Code, IntelliJ IDEA, and PyCharm."
         image={CodeIDE}
-        link="http://localhost:4000/code-ide"
+        link="https://codehirex.vercel.app/code-ide"
         imagePosition="left"
       />
 
@@ -39,7 +39,7 @@ const InterviewPrepTools = () => {
         title="Note Digitalization"
         description="Note Digitalization uses AI and OCR to convert handwritten or printed notes into editable and searchable digital formats."
         image={NoteDigitalizer}
-        link="https://resume-parser-pdqm.onrender.com"
+        link="https://code-hire-x-digiscribe.streamlit.app"
         imagePosition="right"
       />
 
@@ -47,7 +47,7 @@ const InterviewPrepTools = () => {
         title="DSA Tracker"
         description="DSA Tracker helps monitor problem-solving progress in Data Structures and Algorithms with categorized problems and difficulty levels."
         image={DSATracker}
-        link="http://localhost:4000/dsa-basics"
+        link="https://codehirex.vercel.app/dsa-basics"
         imagePosition="left"
       />
     </div>
