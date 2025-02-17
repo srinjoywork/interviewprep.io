@@ -42,7 +42,7 @@ const RecruiterTools = () => {
 
           {/* Note Digitalizer */}
           <RecruiterToolRight
-            redirectLink={"https://code-hire-x-Notedigitizer.streamlit.app/"}
+            redirectLink={"https://code-hire-x-digiscribe.streamlit.app/"}
             title={"Note Digitalizer"}
             desc={
               "A smart tool that converts handwritten or typed notes into digital format, making them easily searchable, editable, and shareable. It enhances productivity by organizing notes efficiently."
