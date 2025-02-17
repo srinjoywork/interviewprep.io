@@ -3,7 +3,7 @@ import Banner from "components/Banner";
 
 export default function Jobs() {
   return (
-    <div className="bg-light pt-20">
+    <div className=" bg-[#1d2661] text-center">
       <JobBoard title={true} />
       <Banner
         title="Want to post your own jobs?"

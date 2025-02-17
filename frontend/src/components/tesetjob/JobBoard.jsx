@@ -196,9 +196,9 @@ export default function JobBoard({ title, props }) {
     });
   };
 
-  return(
+  return (
     <>
-      <div className="bg-gray-300">
+      <div className=" bg-[#1d2661] text-center">
         <div className="md:w-10/12 w-11/12 mx-auto h-full md:pb-28 pb-12">
           {title === false ? (
             <div className="block pt-4">
@@ -209,7 +209,8 @@ export default function JobBoard({ title, props }) {
           ) : (
             <div className="mb-10">
               <div>
-                <h1 className="md:text-6xl text-4xl font-bold text-gray-900 text-center md:pb-16 pb-12">
+                <br />
+                <h1 className="md:text-6xl text-4xl font-bold text-white text-center md:pb-16 pb-12">
                   Jobs
                 </h1>
               </div>
@@ -252,7 +253,7 @@ export default function JobBoard({ title, props }) {
 
               <div className="flex justify-between items-center gap-4">
                 <div className="pl-4">
-                  <span className="font-semibold text-slate-600 text-2xl">
+                  <span className="font-semibold text-slate-600 text-white text-2xl">
                     {jobs.length} IT Jobs in Here
                   </span>
                 </div>
@@ -350,5 +351,5 @@ export default function JobBoard({ title, props }) {
         </div>
       </div>
     </>
-  )
+  );
 }
