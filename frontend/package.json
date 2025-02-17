@@ -9,6 +9,7 @@
     "@codemirror/lang-python": "^6.1.7",
     "@codemirror/language": "^6.10.8",
     "@codemirror/state": "^6.5.2",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource/league-gothic": "^5.1.1",

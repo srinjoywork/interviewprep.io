@@ -27,6 +27,9 @@ const apiList = {
   allRecruiter: `${server}/user/allRecruiter`,
   getIdRecruiter: `${server}/user/allRecruiter/:id`,
   getIdApplicant: `${server}/user/allApplicant/:id`,
+
+  // New API endpoint for sending room invites
+  sendInvite: `${server}/auth/send-invite`,
 };
 
 export default apiList;

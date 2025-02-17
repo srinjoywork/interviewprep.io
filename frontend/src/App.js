@@ -94,6 +94,7 @@ export default function App() {
     "/code-ide",
     "/playground/:folderId/:playgroundId",
     "/interview-home/:id",
+    "/editor-room/:roomID",
        
 
   ];

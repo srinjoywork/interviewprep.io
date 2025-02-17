@@ -153,6 +153,30 @@ const sendEmail = (recipient_email, OTP) => {
   });
 };
 
+const sendInvite = async (req, res) => {
+  const { email, roomId } = req.body;
+
+  if (!email || !roomId) {
+    return res.status(400).json({ success: false, message: "Email and Room ID are required." });
+  }
+
+  try {
+    const subject = "Interview Room Invitation";
+    const message = `
+      <h2>You're invited to an Interview Room!</h2>
+      <p>Use the Room ID: <strong>${roomId}</strong> to join.</p>
+      <p>Click the link below to join:</p>
+      <a href="http://localhost:3000/editor-room/${roomId}" target="_blank">Join Room</a>
+    `;
+
+    await sendMail(email, subject, message);
+    return res.json({ success: true, message: "Invitation sent successfully." });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return res.status(500).json({ success: false, message: "Failed to send invitation." });
+  }
+};
+
 const VerifyEmail = async (req, res) => {
   console.log("Received OTP verification request");
   const { email, enteredOTP } = req.body;
@@ -195,35 +219,7 @@ const VerifyEmail = async (req, res) => {
 
 // Define a function for user Login
 const Login = (req, res, next) => {
-  // // return new Promise((resolve, reject) => {
-  //   // Use passport for authentication
-  //   passport.authenticate(
-  //     "local",
-  //     { session: false },
-  //     function (err, user, info) {
-  //       if (err) {
-  //         // reject(err);
-  //         return next(err);
-  //       }
-
-  //       // If authentication fails, Response with an unauthorized status
-  //       if (!user) {
-  //         res.status(401).json(info);
-  //         reject(info);
-  //         return;
-  //       }
-
-  //       // Token
-  //       const token = jwt.sign({ _id: user._id }, authKeys.jwtSecretKey);
-  //       // Response with the token and user type
-  //       res.json({
-  //         token: token,
-  //         type: user.type,
-  //       });
-  //       resolve();
-  //     }
-  //   )(req, res, next);
-  // // });
+  
   passport.authenticate(
     "local",
     { session: false },
@@ -342,4 +338,6 @@ module.exports = {
   resetPassword,
   sendEmail,
   VerifyEmail,
+  sendInvite,
 };
+

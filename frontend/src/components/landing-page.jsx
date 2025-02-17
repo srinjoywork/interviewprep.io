@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { useEffect } from "react";
-import codecollaboration from "../assets/codecollaboration.jpg";
+import codecollaboration from "../assets/interviewroom.png";
 export function LandingPage() {
   const navigate = useNavigate();
 
@@ -40,22 +40,21 @@ export function LandingPage() {
       <main className="flex-1">
         <section className="w-full pt-12 md:pt-24 lg:pt-32">
           <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
-            <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-              <div className="animate-fadeInUp">
+            <div className="flex flex-col items-center justify-center  max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-6">
+              <div className="animate-fadeInUp flex items-center justify-center">
                 <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
-                  Collaborative Coding Interviews Redefined
+                Real-Time Coding Interview 
                 </h1>
               </div>
-              <div className="flex flex-col items-start space-y-4">
-              <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-  CodeHireX is the ultimate platform for conducting technical interviews with ease. 
-  Enable real-time code collaboration, integrated video and voice communication, and 
-  seamless execution with Judge0 integration. Simplify hiring by assessing candidates’ 
-  coding skills in a dynamic, interactive environment designed for efficient and fair evaluations.
-</p>
 
+              <div className="flex flex-col items-center justify-center space-y-4">
+                <div>
+                  <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl text-center">
+                  CodeHireX revolutionizes technical interviews by offering real-time code collaboration, integrated video calls, live code editor synchronization, and seamless execution with Judge0 integration. Experience an immersive, interactive environment where candidates can showcase their skills, and recruiters can conduct fair and dynamic evaluations. The auto full-screen mode ensures an uninterrupted experience, while attempting to exit full-screen will prompt a confirmation to stay in the interview.
+                  </p>
+                </div>
 
-                <div className="space-x-4">
+                <div className="space-x-4 flex flex-col items-center justify-center">
                   <Button
                     className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white hover:scale-105 transition-transform shadow-lg shadow-emerald-900/30"
                     onClick={() => navigate("/join-interview")}
@@ -65,6 +64,7 @@ export function LandingPage() {
                 </div>
               </div>
             </div>
+
             <img
               alt="Hero"
               className="mx-auto overflow-hidden rounded-xl object-cover animate-float shadow-2xl shadow-emerald-900/30 border-2 border-emerald-900/50 max-w-[90%] h-auto"
