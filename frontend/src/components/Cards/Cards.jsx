@@ -32,9 +32,9 @@
 
 // export default Cards
 
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
-import './Cards.css';
+import React from "react";
+import { Link } from "react-router-dom"; // Import Link from React Router
+import "./Cards.css";
 
 const Cards = ({ title, img, desc, link }) => {
   return (
@@ -44,11 +44,12 @@ const Cards = ({ title, img, desc, link }) => {
       </div>
       <div className="card__descr-wrapper">
         <p className="card__descr">{desc}</p>
-        
+
         <div className="button-container">
-          <Link to={link} className="checkout-btn">Try Now</Link>  
+          <Link to={link} className="checkout-btn">
+            Try Now
+          </Link>
         </div>
-        
       </div>
     </div>
   );

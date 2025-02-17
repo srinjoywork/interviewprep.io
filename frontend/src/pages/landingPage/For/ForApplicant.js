@@ -5,6 +5,14 @@ import { Link } from "react-router-dom";
 import icon from "assets/images/help.jpg";
 import Cards from "../../../components/Cards/Cards";
 import project_img1 from "../../../assets/CardImages/project_img1.jpeg";
+import codecollaboratorforapplicant from "../../../assets/codecollaboratorforapplicant.jpg";
+import codeideforapplicant from "../../../assets/codeideforapplicant.jpg";
+import resumebuilderforapplicant from "../../../assets/resumecreatorforapplicant.jpg";
+import codeoptimizerforapplicant from "../../../assets/codeoptimizerforapplicant.jpg";
+import codereviewforapplicant from "../../../assets/codereviewforapplicant.jpg";
+import dsatrackerforapplicant from "../../../assets/dsatrckerforapplicant.jpg";
+import notedigitizerforapplicant from "../../../assets/notedigitizerforapplicant.jpg";
+import isAuth from "libs/isAuth";
 import {
   faHandPeace,
   faSearch,
@@ -104,12 +112,12 @@ export default function ForApplicant() {
           </div>
         </div>
       </div>
-      <div className="w-full min-h-screen bg-gradient-to-r from-[#b0e0e6] to-[#4682b4] flex justify-center items-center">
+      <div className="w-full min-h-screen bg-white flex justify-center items-center">
       <div className="grid lg:grid-cols-4 grid-cols-1 gap-14 md:py-32 py-12 
           md:text-center text-center md:w-10/12 w-11/12 mx-auto">
         <Cards
-          link={"/apply-job"}
-          img={`${project_img1}`}
+          link={(isAuth() && userType() === 'applicant') ? "https://ai-code-converter-live.vercel.app/" : "/sign-in"}
+          img={codeoptimizerforapplicant}
           title={"Apply Job"}
           desc={
             "Find and apply for jobs seamlessly with our intuitive job application platform."
@@ -117,8 +125,8 @@ export default function ForApplicant() {
         />
 
         <Cards
-          link={"/code-collab"}
-          // img={`${project_img2}`}
+          link={(isAuth() && userType() === 'applicant') ? "/codecollab" : "/sign-in"}
+          img={codecollaboratorforapplicant}
           title={"Code Collaboration"}
           desc={
             "Work together with teammates in real-time using our collaborative coding environment."
@@ -126,8 +134,8 @@ export default function ForApplicant() {
         />
 
         <Cards
-          link={"/code-ide"}
-          // img={`${project_img3}`}
+          link={(isAuth() && userType() === 'applicant') ? "/code-ide" : "/sign-in"}
+          img={codeideforapplicant}
           title={"Code IDE"}
           desc={
             "Write, debug, and execute your code instantly with our feature-rich online IDE."
@@ -135,8 +143,8 @@ export default function ForApplicant() {
         />
 
         <Cards
-          link={"/resume-builder"}
-          // img={`${project_img4}`}
+          link={(isAuth() && userType() === 'applicant') ? "/build-resume" : "/sign-in"}
+          img={resumebuilderforapplicant}
           title={"Resume Builder"}
           desc={
             "Create a professional ATS resume with our easy-to-use resume-building tool."
@@ -144,11 +152,27 @@ export default function ForApplicant() {
         />
 
         <Cards
-          link={"/ai-interview"}
-          // img={`${project_img5}`}
+          link={(isAuth() && userType() === 'applicant') ? "/https://codebuddy-ai.netlify.app/" : "/sign-in"}
+          img={codereviewforapplicant}
           title={"AI Interview"}
           desc={
             "Practice mock interviews with our AI-powered interview preparation tool."
+          }
+        />
+        <Cards
+          link={(isAuth() && userType() === 'applicant') ? "/dsa-basics" : "/sign-in"}
+          img={dsatrackerforapplicant}
+          title={"DSA Tracker"}
+          desc={
+            "Track your progress in Data Structures and Algorithms with our dedicated tracker."
+          }
+        />
+        <Cards
+          link={(isAuth() && userType() === 'applicant') ? "https://handwritten-digitalization-ocmct9vcwiwrrued5pdaqx.streamlit.app/" : "/sign-in"}
+          img={notedigitizerforapplicant}
+          title={"Note Digitizer"}
+          desc={
+            "Convert your handwritten notes into digital format with our OCR-powered tool."
           }
         />
       </div>
