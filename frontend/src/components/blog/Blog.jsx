@@ -117,7 +117,7 @@ export default function Blog() {
                   <Link
                     to={
                       isApplicant
-                        ? "http://localhost:4000/dsa-basics"
+                        ? "/dsa-basics"
                         : "/sign-in"
                     }
                     className="flex items-center text-left p-2 mx-1 my-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
