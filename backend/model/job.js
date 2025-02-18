@@ -93,7 +93,7 @@ let schema = new mongoose.Schema(
       required: true,
     },
     duration: {
-      type: Number,
+      type: String,
       min: 0,
       validate: [
         {

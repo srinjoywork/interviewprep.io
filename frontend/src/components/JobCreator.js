@@ -63,7 +63,7 @@ export default function JobCreator({ jobToEdit }) {
         .toISOString()
         .substr(0, 16),
       skillsets: [],
-      duration: 0,
+      duration: "",
       jobType: "Full Time",
       location: "",
       status: "Open",
