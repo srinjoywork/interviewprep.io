@@ -152,7 +152,7 @@ export default function ForApplicant() {
         />
 
         <Cards
-          link={(isAuth() && userType() === 'applicant') ? "/https://codebuddy-ai.netlify.app/" : "/sign-in"}
+          link={(isAuth() && userType() === 'applicant') ? "/https://codehirex-ai-code-review.netlify.app/" : "/sign-in"}
           img={codereviewforapplicant}
           title={"AI Interview"}
           desc={

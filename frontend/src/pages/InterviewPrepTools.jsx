@@ -15,7 +15,7 @@ const InterviewPrepTools = () => {
         title="Code Review"
         description="Code Review is the process of examining and improving code quality. It ensures that the code is clean, efficient, and adheres to best practices."
         image={CodeReview}
-        link="https://codebuddy-ai.netlify.app/"
+        link="https://codehirex-ai-code-review.netlify.app/"
         imagePosition="left"
       />
 
